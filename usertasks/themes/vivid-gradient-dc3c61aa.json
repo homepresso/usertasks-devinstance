@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "dc3c61aa-8a2c-413b-afe7-a8a03b68e66b",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "dc3c61aa-8a2c-413b-afe7-a8a03b68e66b",
+    "name": "Vivid Gradient",
+    "description": "A color-rich theme with deep gradients, vibrant accents, and modern styling",
+    "theme": {
+      "card": {
+        "border": "1px solid #334155",
+        "shadow": "0 4px 24px rgba(124, 58, 237, 0.15)",
+        "padding": "28px",
+        "background": "#1E293B",
+        "borderRadius": "16px"
+      },
+      "page": {
+        "padding": "32px",
+        "maxWidth": "720px",
+        "background": "#0F172A"
+      },
+      "colors": {
+        "accent": "#F59E0B",
+        "cardBg": "#1E293B",
+        "danger": "#EF4444",
+        "primary": "#7C3AED",
+        "success": "#10B981",
+        "surface": "#0F172A",
+        "warning": "#F59E0B",
+        "cardText": "#F1F5F9",
+        "errorText": "#FB7185",
+        "focusRing": "#A78BFA",
+        "mutedText": "#94A3B8",
+        "primaryHover": "#6D28D9",
+        "primaryLight": "#F5F3FF",
+        "surfaceBorder": "#334155",
+        "placeholderText": "#64748B"
+      },
+      "inputs": {
+        "height": "44px",
+        "fontSize": "15px",
+        "background": "#0F172A",
+        "borderColor": "#475569",
+        "borderWidth": "1px",
+        "borderRadius": "10px",
+        "focusRingColor": "#A78BFA",
+        "focusRingWidth": "2px"
+      },
+      "buttons": {
+        "height": "44px",
+        "fontSize": "15px",
+        "primaryBg": "#7C3AED",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "10px",
+        "primaryHoverBg": "#6D28D9"
+      },
+      "customCSS": "h1, h2, h3 { background: linear-gradient(90deg, #A78BFA, #F472B6, #FBBF24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%)",
+        "buttonBackground": "linear-gradient(135deg, #7C3AED 0%, #EC4899 100%)",
+        "headerBackground": "linear-gradient(90deg, #7C3AED 0%, #EC4899 50%, #F59E0B 100%)"
+      },
+      "typography": {
+        "fontSize": "15px",
+        "labelSize": "13px",
+        "fontFamily": "'Inter', system-ui, sans-serif",
+        "labelColor": "#CBD5E1",
+        "lineHeight": "1.6",
+        "headingSize": "24px",
+        "labelWeight": "600",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

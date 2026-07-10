@@ -1,0 +1,31 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "fa661654-f2b9-48c6-b4fa-753d5a585fdc",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "fa661654-f2b9-48c6-b4fa-753d5a585fdc",
+    "name": "Test",
+    "description": null,
+    "theme": {
+      "id": "clean-white",
+      "name": "Test",
+      "colors": {
+        "cardBg": "#FFFFFF",
+        "primary": "#2563EB",
+        "surface": "#F9FAFB",
+        "cardText": "#1F2937",
+        "mutedText": "#6B7280",
+        "primaryHover": "#1D4ED8",
+        "primaryLight": "#DBEAFE",
+        "surfaceBorder": "#E5E7EB"
+      },
+      "components": {
+        "cardShadow": "sm",
+        "inputRadius": "6px",
+        "borderRadius": "8px",
+        "buttonRadius": "8px"
+      }
+    }
+  }
+}

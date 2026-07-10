@@ -1,0 +1,56 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c593167c-10cb-442b-8f18-d677c197cdf8",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c593167c-10cb-442b-8f18-d677c197cdf8",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Create a project",
+    "description": "Create a project on your instance.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"name\": \"{{name}}\",\n  \"type\": \"{{type}}\"\n}",
+      "path_template": "/projects"
+    },
+    "inputs": [
+      {
+        "id": "5f4b6aec-a2c7-44c5-a0dd-f647dda55252",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "b1801a16-c0c1-45be-8937-2922e4dce3ed",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "13f1c014-2453-4ed1-93d0-223f75447b34",
+        "name": "type",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "51a31071-2342-4284-a504-454b4c22d490",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "ed4a3402-1a08-45eb-8071-77b9f3e891d6",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "ed4a3402-1a08-45eb-8071-77b9f3e891d6",
+    "integration_id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "Object: PO with Vendor Details",
+    "description": "Purchase Orders joined to Vendors for enriched PO views with vendor contact, risk, and compliance info",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "_executor": "object",
+      "object_id": "04557a67-afd8-4ac6-a8d1-594f36e39520",
+      "operation": "list"
+    },
+    "inputs": [],
+    "outputs": [
+      {
+        "id": "60390758-a501-41ed-ad08-bad414a1bf97",
+        "name": "PO Number",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "6da632c4-39fb-42e5-815b-f8d45cea58b9",
+        "name": "Vendor Name",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "fc6d669f-550f-4717-8674-c688ee3eb27f",
+        "name": "Vendor ID",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "098c3b19-30b0-4d6a-a63e-ab31c2f66995",
+        "name": "Request Title",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "25166b94-5edd-4783-bcd1-aa71b74b2580",
+        "name": "Department",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "af47eaea-e808-4c48-8ebf-b359bb10ff6b",
+        "name": "Total Amount",
+        "path": "po.undefined",
+        "type": "number"
+      },
+      {
+        "id": "e4004ed6-6020-4395-a22e-f0e6b6db2b92",
+        "name": "Currency",
+        "path": "po.undefined",
+        "type": "select"
+      },
+      {
+        "id": "ea02a287-f07b-4de7-86b8-6795607287ae",
+        "name": "Issue Date",
+        "path": "po.undefined",
+        "type": "date"
+      },
+      {
+        "id": "74a45b5e-a1ed-4128-8e1d-2c23b3f808e4",
+        "name": "Delivery Date",
+        "path": "po.undefined",
+        "type": "date"
+      },
+      {
+        "id": "bc4667c1-0fd4-4dac-801d-14017d906e64",
+        "name": "Payment Terms",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "1a87e853-cbf2-4cc3-9f08-7d2a232df4ba",
+        "name": "Status",
+        "path": "po.undefined",
+        "type": "select"
+      },
+      {
+        "id": "392c570a-1bb1-442c-958a-fe981318b465",
+        "name": "Invoice Number",
+        "path": "po.undefined",
+        "type": "text"
+      },
+      {
+        "id": "ba0b16ef-39a2-457a-b611-fa71bc245cd6",
+        "name": "Invoice Amount",
+        "path": "po.undefined",
+        "type": "number"
+      },
+      {
+        "id": "63be9cd5-89f8-4d6c-a58b-0d941ecb00b9",
+        "name": "Paid Date",
+        "path": "po.undefined",
+        "type": "date"
+      },
+      {
+        "id": "f4be3ca8-e7f4-4bd9-9caf-28ee6108aaa1",
+        "name": "Notes",
+        "path": "po.undefined",
+        "type": "longtext"
+      }
+    ]
+  }
+}

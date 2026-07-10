@@ -1,0 +1,26 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "bb901d09-0e33-4d90-876e-8362685c4ee5",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "bb901d09-0e33-4d90-876e-8362685c4ee5",
+    "name": "Azure Blog Storage (Connector)",
+    "type": "rest_api",
+    "config": {
+      "headers": {},
+      "base_url": "https://integrationswaggers.blob.core.windows.net",
+      "auth_type": "api_key",
+      "auth_config": {
+        "_executor": "azure_blob",
+        "container": "ray",
+        "account_key": "__SECRET__",
+        "account_name": "integrationswaggers"
+      }
+    },
+    "is_active": true,
+    "tags": [
+      "azure-blob"
+    ]
+  }
+}

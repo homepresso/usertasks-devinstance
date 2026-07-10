@@ -1,0 +1,139 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "8178350d-23ee-469f-9aa6-53772a9de383",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "8178350d-23ee-469f-9aa6-53772a9de383",
+    "name": "ITSD CSAT Logger",
+    "description": "Log satisfaction scores",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_name": "ITSD CSAT Survey",
+      "form_template_id": "4f083683-bd43-429a-b83d-ba062d2a550c"
+    },
+    "nodes": [
+      {
+        "id": "d5cefbb0-36dc-4a71-a0fb-f0877a092b9b",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_name": "ITSD CSAT Survey",
+          "form_template_id": "4f083683-bd43-429a-b83d-ba062d2a550c"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "var",
+        "type": "set_variable",
+        "label": "Store Score",
+        "config": {
+          "name": "csat_score",
+          "value": "{{satisfaction}}",
+          "variable": "csat_score",
+          "expression": "{{satisfaction}}"
+        },
+        "position": {
+          "x": 280,
+          "y": 260
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Title",
+        "config": {
+          "title": "CSAT: {{ticket_number}} — {{satisfaction}}",
+          "template": "CSAT: {{ticket_number}} — {{satisfaction}}"
+        },
+        "position": {
+          "x": 300,
+          "y": 420
+        }
+      },
+      {
+        "id": "log",
+        "type": "log",
+        "label": "Log",
+        "config": {
+          "message": "CSAT for {{ticket_number}}: {{satisfaction}} from {{requester_name}}"
+        },
+        "position": {
+          "x": 280,
+          "y": 620
+        }
+      },
+      {
+        "id": "86ed949f-d16b-4f6d-b8a7-ec0d967ff033",
+        "type": "condition",
+        "label": "Branch by Condition",
+        "config": {
+          "field": "{{number}}",
+          "value": "1",
+          "branches": [
+            {
+              "label": "If",
+              "logic": "and",
+              "rules": [
+                {
+                  "field": "{{number}}",
+                  "value": "1",
+                  "operator": "equals"
+                }
+              ]
+            }
+          ],
+          "operator": "equals"
+        },
+        "position": {
+          "x": 580,
+          "y": 120
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "fdc4e4be-0312-459b-a27e-91e026fdf508",
+        "source": "var",
+        "target": "title"
+      },
+      {
+        "id": "3120fb6a-b50b-4f85-9d3d-c3d177371535",
+        "source": "title",
+        "target": "log"
+      },
+      {
+        "id": "5754b8fe-1f0d-4fe5-b99f-7c802673e54f",
+        "source": "d5cefbb0-36dc-4a71-a0fb-f0877a092b9b",
+        "target": "86ed949f-d16b-4f6d-b8a7-ec0d967ff033",
+        "sourcePort": "bottom"
+      },
+      {
+        "id": "98606877-0221-4073-91e0-57160163d184",
+        "source": "86ed949f-d16b-4f6d-b8a7-ec0d967ff033",
+        "target": "var",
+        "sourcePort": "bottom"
+      },
+      {
+        "id": "9218f197-2c86-4eeb-a609-a75fac591ecb",
+        "label": "Else",
+        "source": "86ed949f-d16b-4f6d-b8a7-ec0d967ff033",
+        "target": "log"
+      }
+    ],
+    "user_variables": [
+      {
+        "id": "7d03cba7-b383-41ae-9688-934a1a615ef4",
+        "name": "number",
+        "type": "number",
+        "description": "",
+        "defaultValue": ""
+      }
+    ],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

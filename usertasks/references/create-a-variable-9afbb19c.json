@@ -1,0 +1,72 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "9afbb19c-6786-4f69-b835-d8a1b1151680",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "9afbb19c-6786-4f69-b835-d8a1b1151680",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Create a variable",
+    "description": "Create a variable in your instance.",
+    "tags": [
+      "Variables"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"key\": \"{{key}}\",\n  \"value\": \"{{value}}\",\n  \"type\": \"{{type}}\",\n  \"projectId\": \"{{projectId}}\"\n}",
+      "path_template": "/variables"
+    },
+    "inputs": [
+      {
+        "id": "22329ce5-82a2-4a9f-b01d-39e95ba268a3",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "1e7c9ded-19ef-424a-b9f4-83d0c1a04b6a",
+        "name": "key",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "64eb7057-2721-40cf-bde9-74a147f30124",
+        "name": "value",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "fe2adcfe-22aa-4719-9d20-65ff76779419",
+        "name": "type",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "05d674c9-eeba-45cb-8c0a-8154765c80c9",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "224b4220-bf28-4804-9858-517f6240f5a8",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

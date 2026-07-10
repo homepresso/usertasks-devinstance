@@ -1,0 +1,123 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "bba51120-126d-4435-a90c-41cc02d0620e",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "bba51120-126d-4435-a90c-41cc02d0620e",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a workflow",
+    "description": "Delete a workflow.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/workflows/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "4fddf509-d891-435c-bff8-edbfd796b66e",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "5162a652-5449-46b8-88bc-d180fa8c3143",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "b69d6f68-951b-4f9d-8c8e-57c06c8e87b6",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "d5a42fcf-f061-4c05-a753-a6c13497343d",
+        "name": "active",
+        "path": "active",
+        "type": "boolean"
+      },
+      {
+        "id": "f3509972-eb7a-4b5d-8d76-96d8236dd95a",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "ff0e2128-48cf-4ee3-b766-d415edd4d18d",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      },
+      {
+        "id": "0f089c50-ed8f-41e7-91b2-bb1d8645734e",
+        "name": "isArchived",
+        "path": "isArchived",
+        "type": "boolean"
+      },
+      {
+        "id": "96bc163d-56e5-4996-9ed2-9d8b62300d80",
+        "name": "versionId",
+        "path": "versionId",
+        "type": "string"
+      },
+      {
+        "id": "869c034f-53bc-4a47-a24d-009ba6f64d37",
+        "name": "triggerCount",
+        "path": "triggerCount",
+        "type": "number"
+      },
+      {
+        "id": "f046e696-bd8a-4d6e-8bda-058b3d62ace6",
+        "name": "nodes",
+        "path": "nodes",
+        "type": "array"
+      },
+      {
+        "id": "e5a19b53-c61f-479d-9f21-2dbc5bf1e432",
+        "name": "connections",
+        "path": "connections",
+        "type": "object"
+      },
+      {
+        "id": "8414bf20-8555-4cdd-a861-970ebc35b3ca",
+        "name": "settings",
+        "path": "settings",
+        "type": "string"
+      },
+      {
+        "id": "2e7d9abf-0de0-4164-adf6-7e9d96c947d5",
+        "name": "staticData",
+        "path": "staticData",
+        "type": "string"
+      },
+      {
+        "id": "7ec70ad3-d06b-428a-9274-30e8bd1cbbed",
+        "name": "pinData",
+        "path": "pinData",
+        "type": "object"
+      },
+      {
+        "id": "cfed94a0-130e-4616-ae53-9dbe12abe172",
+        "name": "meta",
+        "path": "meta",
+        "type": "object"
+      },
+      {
+        "id": "54911fef-6517-4e78-96ff-3d0a230f7f46",
+        "name": "tags",
+        "path": "tags",
+        "type": "array"
+      }
+    ]
+  }
+}

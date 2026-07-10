@@ -1,0 +1,48 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "852726c7-fe4a-496a-b65d-63cea3910a06",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "852726c7-fe4a-496a-b65d-63cea3910a06",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a user from a project",
+    "description": "Delete a user from a project on your instance.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/projects/{{projectId}}/users/{{userId}}"
+    },
+    "inputs": [
+      {
+        "id": "748151f4-3f34-4589-8ce8-7c54c229e847",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "e1be78b2-7316-47e0-b39a-e2a03ea3b1f8",
+        "name": "userId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "9cb45e08-68f8-478c-a03e-0bc8163fef03",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

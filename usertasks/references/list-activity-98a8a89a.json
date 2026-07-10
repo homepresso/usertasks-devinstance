@@ -1,0 +1,97 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "98a8a89a-0af1-42de-aa1d-f0f805a8830d",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "98a8a89a-0af1-42de-aa1d-f0f805a8830d",
+    "integration_id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "List Activity",
+    "description": "Get all rows from Activity",
+    "tags": [],
+    "request_config": {
+      "method": "QUERY",
+      "path_template": "SELECT * FROM Activity ORDER BY 1 OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY"
+    },
+    "inputs": [
+      {
+        "id": "39074c7f-a4b3-4a27-9982-b62a67b3bd54",
+        "name": "limit",
+        "type": "number",
+        "source": "static",
+        "required": false,
+        "default_value": "100"
+      },
+      {
+        "id": "13b9acf6-c111-4587-8060-c664ad12fc8d",
+        "name": "offset",
+        "type": "number",
+        "source": "static",
+        "required": false,
+        "default_value": "0"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "1f5551ce-734c-4968-b5a2-eecf67ed2029",
+        "name": "ActivityID",
+        "path": "ActivityID",
+        "type": "string"
+      },
+      {
+        "id": "e7c0cf3b-306d-482c-8bac-6d69b1b5985d",
+        "name": "UserEmail",
+        "path": "UserEmail",
+        "type": "string"
+      },
+      {
+        "id": "8448e12f-79ef-4518-a548-b435b4948960",
+        "name": "UserName",
+        "path": "UserName",
+        "type": "string"
+      },
+      {
+        "id": "d59ed9ba-b80e-4c8f-ba4a-c24e7954d1e6",
+        "name": "DateAdded",
+        "path": "DateAdded",
+        "type": "string"
+      },
+      {
+        "id": "ddddb05b-2526-44dd-aa7b-49e39e397caa",
+        "name": "DateAddedUser",
+        "path": "DateAddedUser",
+        "type": "string"
+      },
+      {
+        "id": "a0161f26-594a-4e1d-b5f3-863bde0b3baa",
+        "name": "ActivityType",
+        "path": "ActivityType",
+        "type": "string"
+      },
+      {
+        "id": "4c9862eb-6ecb-469d-a4f9-bef8c9b4b92a",
+        "name": "SFObject",
+        "path": "SFObject",
+        "type": "string"
+      },
+      {
+        "id": "09a2fc5e-aa82-4346-b437-19db732a2af3",
+        "name": "Account",
+        "path": "Account",
+        "type": "string"
+      },
+      {
+        "id": "ad0771ed-e499-45ab-b0e2-520bce5745e7",
+        "name": "Time",
+        "path": "Time",
+        "type": "number"
+      },
+      {
+        "id": "333e4692-afbd-4f39-984e-849c45b72a6d",
+        "name": "SalesRep",
+        "path": "SalesRep",
+        "type": "string"
+      }
+    ]
+  }
+}

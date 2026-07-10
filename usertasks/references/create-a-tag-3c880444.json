@@ -1,0 +1,82 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "3c880444-27ed-4a7e-8c8a-466884ff2b27",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "3c880444-27ed-4a7e-8c8a-466884ff2b27",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Create a tag",
+    "description": "Create a tag in your instance.",
+    "tags": [
+      "Tags"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"name\": \"{{name}}\",\n  \"createdAt\": \"{{createdAt}}\",\n  \"updatedAt\": \"{{updatedAt}}\"\n}",
+      "path_template": "/tags"
+    },
+    "inputs": [
+      {
+        "id": "493e3a60-b965-4c3c-a5f3-c727d9315f9d",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "7540f4ea-2be2-4f40-b344-6c983e27d7c6",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "e762eb3e-6df1-4b98-bf88-d4cffdd2724a",
+        "name": "createdAt",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "7c8ffdee-1fe1-4c3e-acc2-969f26791c7e",
+        "name": "updatedAt",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "0f7166fa-f70e-492f-ad7a-8dfcc37035d6",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "4b274f1d-1e6d-47b0-bfe7-21e9db0ec3c9",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "9412687b-c4e3-4167-8aa2-ff3486397cba",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "169ea613-ef37-4e69-a1b8-4d21a7be72ec",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

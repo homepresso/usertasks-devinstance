@@ -1,0 +1,38 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "0ed1064a-48b9-4c8f-8151-4738bb3518da",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "0ed1064a-48b9-4c8f-8151-4738bb3518da",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: List Users",
+    "description": "List all users in the workspace",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/users.list?limit={{limit}}"
+    },
+    "inputs": [
+      {
+        "name": "limit",
+        "type": "number",
+        "required": false,
+        "description": "Max users",
+        "default_value": "200"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "members",
+        "type": "array"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "73c17198-ead7-4e4a-9681-06c25275e0f4",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "73c17198-ead7-4e4a-9681-06c25275e0f4",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Get Channel History",
+    "description": "Retrieve recent messages from a channel",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/conversations.history?channel={{channel}}&limit={{limit}}&oldest={{oldest}}&latest={{latest}}"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID",
+        "default_value": ""
+      },
+      {
+        "name": "limit",
+        "type": "number",
+        "required": false,
+        "description": "Max messages",
+        "default_value": "50"
+      },
+      {
+        "name": "oldest",
+        "type": "string",
+        "required": false,
+        "description": "Only messages after this timestamp",
+        "default_value": ""
+      },
+      {
+        "name": "latest",
+        "type": "string",
+        "required": false,
+        "description": "Only messages before this timestamp",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "messages",
+        "type": "array"
+      },
+      {
+        "name": "has_more",
+        "type": "boolean"
+      }
+    ]
+  }
+}

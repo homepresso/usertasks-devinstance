@@ -1,0 +1,69 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "bcf57c63-7d88-4497-b239-e77050f35371",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "bcf57c63-7d88-4497-b239-e77050f35371",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Get a data table",
+    "description": "Retrieve a specific data table by ID.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/data-tables/{{dataTableId}}"
+    },
+    "inputs": [
+      {
+        "id": "cb709f10-36aa-48ee-97c4-9b3dbea2be15",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "91f994bd-f1c1-464b-8151-f0664b7a76f7",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "7a4ee394-dc92-4a3d-85d0-cc4ef426fa64",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "abe28cf2-768f-427c-91e0-c1c038b6f15f",
+        "name": "columns",
+        "path": "columns",
+        "type": "array"
+      },
+      {
+        "id": "62478343-1811-4901-8f95-7b89271e9965",
+        "name": "projectId",
+        "path": "projectId",
+        "type": "string"
+      },
+      {
+        "id": "26a8c381-8c1a-47c9-aa8f-c5ebe43f45b2",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "cba65914-671e-4096-a6c0-10df6ff45a66",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

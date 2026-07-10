@@ -1,0 +1,100 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "27a671c0-f366-420a-bcf2-34d4b7fd95f0",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "27a671c0-f366-420a-bcf2-34d4b7fd95f0",
+    "name": "hobbihopp Support Intake",
+    "description": "Triggered on support form submission — saves ticket to HD Tickets table and assigns a review task to Andy Hayes",
+    "trigger_type": "form_submitted",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "trigger",
+        "type": "form_submitted",
+        "label": "Support Form Submitted",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 50
+        }
+      },
+      {
+        "id": "save_ticket",
+        "type": "update_data_table",
+        "label": "Save Ticket to HD Tickets",
+        "config": {
+          "table_id": "7e132ade-c6e5-444a-9e15-69d907a8cada",
+          "operation": "insert",
+          "column_values": {
+            "title": "{{subject}}",
+            "status": "Open",
+            "category": "{{category}}",
+            "priority": "{{priority}}",
+            "assigned_to": "andyhayes",
+            "description": "{{description}}",
+            "created_date": "{{submitted_at}}",
+            "requester_email": "{{requester_email}}"
+          },
+          "output_row_id_var": "ticket_row_id"
+        },
+        "position": {
+          "x": 300,
+          "y": 200
+        }
+      },
+      {
+        "id": "assign_task",
+        "type": "user_task",
+        "label": "Review Support Ticket",
+        "config": {
+          "outcomes": [
+            "Resolved",
+            "Needs Follow-Up",
+            "Escalate"
+          ],
+          "task_title": "[hobbihopp] {{subject}}",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "task_priority": "medium",
+          "assignment_type": "individual",
+          "task_description": "A new support ticket has been submitted on hobbihopp.com.\n\n**From:** {{requester_name}} ({{requester_email}})\n**Category:** {{category}}\n**Priority:** {{priority}}\n\n**Description:**\n{{description}}"
+        },
+        "position": {
+          "x": 300,
+          "y": 380
+        }
+      },
+      {
+        "id": "end",
+        "type": "end_workflow",
+        "label": "Done",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 560
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "trigger",
+        "target": "save_ticket"
+      },
+      {
+        "id": "e2",
+        "source": "save_ticket",
+        "target": "assign_task"
+      },
+      {
+        "id": "e3",
+        "source": "assign_task",
+        "target": "end"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": true
+  }
+}

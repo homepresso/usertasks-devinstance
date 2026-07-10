@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "6dfa83e7-c577-4b56-9428-4f60621322ad",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "6dfa83e7-c577-4b56-9428-4f60621322ad",
+    "name": "xvxd",
+    "description": null,
+    "trigger_type": "schedule",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "1f6285fa-9292-43fc-a948-e94907dd9aaa",
+        "type": "schedule",
+        "label": "Schedule",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    ],
+    "edges": [],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "fade61aa-fa0e-4a95-9063-926f05fb978d",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "fade61aa-fa0e-4a95-9063-926f05fb978d",
+    "integration_id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "Get Activity",
+    "description": "Get a single row from Activity by ActivityID",
+    "tags": [],
+    "request_config": {
+      "method": "QUERY",
+      "path_template": "SELECT * FROM Activity WHERE ActivityID = @ActivityID"
+    },
+    "inputs": [
+      {
+        "id": "ade89ac6-7b9f-4fa9-a29c-67a09e51433c",
+        "name": "ActivityID",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "7230b161-dcd1-4603-b5e1-d3371f32817c",
+        "name": "ActivityID",
+        "path": "ActivityID",
+        "type": "string"
+      },
+      {
+        "id": "709e6aa4-d6e6-49a2-b6bd-c2047faf0f32",
+        "name": "UserEmail",
+        "path": "UserEmail",
+        "type": "string"
+      },
+      {
+        "id": "b360dc38-3a06-46f7-b48a-50034abb1406",
+        "name": "UserName",
+        "path": "UserName",
+        "type": "string"
+      },
+      {
+        "id": "2d9dd739-551d-4b7b-814f-6b6bdbf1de7d",
+        "name": "DateAdded",
+        "path": "DateAdded",
+        "type": "string"
+      },
+      {
+        "id": "26c0aeee-c76c-438c-bafd-a2e6870db25a",
+        "name": "DateAddedUser",
+        "path": "DateAddedUser",
+        "type": "string"
+      },
+      {
+        "id": "013fd93d-760d-43bf-a9a5-344bcf29e46d",
+        "name": "ActivityType",
+        "path": "ActivityType",
+        "type": "string"
+      },
+      {
+        "id": "cf45ca6c-7468-4666-be57-94d8f02de73e",
+        "name": "SFObject",
+        "path": "SFObject",
+        "type": "string"
+      },
+      {
+        "id": "bc182a40-97ac-4712-b8da-ff2ef8f644e2",
+        "name": "Account",
+        "path": "Account",
+        "type": "string"
+      },
+      {
+        "id": "48768d09-9f10-4174-807d-28c46e9224b4",
+        "name": "Time",
+        "path": "Time",
+        "type": "number"
+      },
+      {
+        "id": "9bd68517-616c-4e1b-a50c-e488c504e407",
+        "name": "SalesRep",
+        "path": "SalesRep",
+        "type": "string"
+      }
+    ]
+  }
+}

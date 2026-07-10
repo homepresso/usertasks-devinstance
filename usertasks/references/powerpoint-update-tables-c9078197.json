@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c9078197-eaf1-4d60-a77c-d51048d76065",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c9078197-eaf1-4d60-a77c-d51048d76065",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "PowerPoint Update Tables",
+    "description": "Update tables in PowerPoint slides.",
+    "tags": [
+      "PowerPoint Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Placeholder\": \"{{Placeholder}}\",\n    \"Values\": \"{{Values}}\"\n  }\n]",
+      "path_template": "/powerpoint/update-tables"
+    },
+    "inputs": [
+      {
+        "id": "3e353ae1-bdfa-43aa-b88b-108231c6c3e5",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "6142b04a-54c0-4304-8584-1d8bcdb70a96",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "9aeb70cb-b6a8-4da2-8a64-52f6016c8263",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "c8fa00af-d524-4665-92ea-75837a61b1ab",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "e12aeb7d-a1b8-434b-8aa2-f9e0d4fb92e0",
+        "name": "Values",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "d6aa68a9-d793-4ecb-94de-83bca91ce03c",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

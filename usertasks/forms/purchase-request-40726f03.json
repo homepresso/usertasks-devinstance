@@ -1,0 +1,491 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "40726f03-daf8-4fa6-a3db-46b1d898792f",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "40726f03-daf8-4fa6-a3db-46b1d898792f",
+    "name": "Purchase Request",
+    "description": "Submit a new purchase request for approval routing",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_request",
+          "title": "Request Details",
+          "fields": [
+            {
+              "id": "title",
+              "type": "text",
+              "label": "Request Title",
+              "required": true,
+              "placeholder": "Brief description of what you need"
+            },
+            {
+              "id": "requester",
+              "type": "text",
+              "label": "Your Name",
+              "required": true
+            },
+            {
+              "id": "requester_email",
+              "type": "email",
+              "label": "Your Email",
+              "required": true
+            },
+            {
+              "id": "department",
+              "type": "select",
+              "label": "Department",
+              "options": [
+                "Engineering",
+                "Product",
+                "Design",
+                "Marketing",
+                "Sales",
+                "Finance",
+                "HR",
+                "Operations",
+                "Legal",
+                "IT"
+              ],
+              "required": true
+            },
+            {
+              "id": "vendor_name",
+              "type": "text",
+              "label": "Vendor",
+              "required": true,
+              "placeholder": "Vendor or supplier name"
+            },
+            {
+              "id": "amount",
+              "type": "number",
+              "label": "Estimated Amount (USD)",
+              "required": true
+            },
+            {
+              "id": "currency",
+              "type": "select",
+              "label": "Currency",
+              "options": [
+                "USD",
+                "EUR",
+                "GBP",
+                "NZD",
+                "AUD"
+              ]
+            },
+            {
+              "id": "urgency",
+              "type": "select",
+              "label": "Urgency",
+              "options": [
+                "Low",
+                "Standard",
+                "High",
+                "Critical"
+              ],
+              "required": true
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "title",
+              "type": "text_input",
+              "label": "Request Title",
+              "props": {
+                "placeholder": "Brief description of what you need"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Request Title is required"
+                }
+              ]
+            },
+            {
+              "id": "requester",
+              "type": "text_input",
+              "label": "Your Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Your Name is required"
+                }
+              ]
+            },
+            {
+              "id": "requester_email",
+              "type": "text_input",
+              "label": "Your Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Your Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "department",
+              "type": "dropdown",
+              "label": "Department",
+              "props": {
+                "options": [
+                  {
+                    "id": "department_opt_0",
+                    "label": "Engineering",
+                    "value": "Engineering"
+                  },
+                  {
+                    "id": "department_opt_1",
+                    "label": "Product",
+                    "value": "Product"
+                  },
+                  {
+                    "id": "department_opt_2",
+                    "label": "Design",
+                    "value": "Design"
+                  },
+                  {
+                    "id": "department_opt_3",
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  },
+                  {
+                    "id": "department_opt_4",
+                    "label": "Sales",
+                    "value": "Sales"
+                  },
+                  {
+                    "id": "department_opt_5",
+                    "label": "Finance",
+                    "value": "Finance"
+                  },
+                  {
+                    "id": "department_opt_6",
+                    "label": "HR",
+                    "value": "HR"
+                  },
+                  {
+                    "id": "department_opt_7",
+                    "label": "Operations",
+                    "value": "Operations"
+                  },
+                  {
+                    "id": "department_opt_8",
+                    "label": "Legal",
+                    "value": "Legal"
+                  },
+                  {
+                    "id": "department_opt_9",
+                    "label": "IT",
+                    "value": "IT"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Department is required"
+                }
+              ]
+            },
+            {
+              "id": "vendor_name",
+              "type": "text_input",
+              "label": "Vendor",
+              "props": {
+                "placeholder": "Vendor or supplier name"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Vendor is required"
+                }
+              ]
+            },
+            {
+              "id": "amount",
+              "type": "number",
+              "label": "Estimated Amount (USD)",
+              "props": {
+                "min": 0,
+                "step": 1
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Estimated Amount (USD) is required"
+                }
+              ]
+            },
+            {
+              "id": "currency",
+              "type": "dropdown",
+              "label": "Currency",
+              "props": {
+                "options": [
+                  {
+                    "id": "currency_opt_0",
+                    "label": "USD",
+                    "value": "USD"
+                  },
+                  {
+                    "id": "currency_opt_1",
+                    "label": "EUR",
+                    "value": "EUR"
+                  },
+                  {
+                    "id": "currency_opt_2",
+                    "label": "GBP",
+                    "value": "GBP"
+                  },
+                  {
+                    "id": "currency_opt_3",
+                    "label": "NZD",
+                    "value": "NZD"
+                  },
+                  {
+                    "id": "currency_opt_4",
+                    "label": "AUD",
+                    "value": "AUD"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "urgency",
+              "type": "dropdown",
+              "label": "Urgency",
+              "props": {
+                "options": [
+                  {
+                    "id": "urgency_opt_0",
+                    "label": "Low",
+                    "value": "Low"
+                  },
+                  {
+                    "id": "urgency_opt_1",
+                    "label": "Standard",
+                    "value": "Standard"
+                  },
+                  {
+                    "id": "urgency_opt_2",
+                    "label": "High",
+                    "value": "High"
+                  },
+                  {
+                    "id": "urgency_opt_3",
+                    "label": "Critical",
+                    "value": "Critical"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Urgency is required"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec_justification",
+          "title": "Business Justification",
+          "fields": [
+            {
+              "id": "justification",
+              "type": "textarea",
+              "label": "Business Justification",
+              "required": true,
+              "placeholder": "Why is this purchase needed? What problem does it solve? What alternatives were considered?"
+            },
+            {
+              "id": "budget_code",
+              "type": "text",
+              "label": "Budget Code",
+              "placeholder": "Cost center or GL code"
+            },
+            {
+              "id": "requested_delivery",
+              "type": "date",
+              "label": "Requested Delivery Date"
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "justification",
+              "type": "textarea",
+              "label": "Business Justification",
+              "props": {
+                "rows": 3,
+                "placeholder": "Why is this purchase needed? What problem does it solve? What alternatives were considered?"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Business Justification is required"
+                }
+              ]
+            },
+            {
+              "id": "budget_code",
+              "type": "text_input",
+              "label": "Budget Code",
+              "props": {
+                "placeholder": "Cost center or GL code"
+              },
+              "validation": []
+            },
+            {
+              "id": "requested_delivery",
+              "type": "date_picker",
+              "label": "Requested Delivery Date",
+              "props": {},
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_line_items",
+          "title": "Items",
+          "fields": [
+            {
+              "id": "item_description",
+              "type": "text",
+              "label": "Item Description",
+              "placeholder": "What are you purchasing?"
+            },
+            {
+              "id": "item_quantity",
+              "type": "number",
+              "label": "Quantity"
+            },
+            {
+              "id": "item_unit_price",
+              "type": "number",
+              "label": "Unit Price"
+            },
+            {
+              "id": "item_category",
+              "type": "select",
+              "label": "Category",
+              "options": [
+                "Software License",
+                "Hardware",
+                "Professional Services",
+                "Cloud Compute",
+                "Cloud Storage",
+                "Support Contract",
+                "Training",
+                "Other"
+              ]
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "item_description",
+              "type": "text_input",
+              "label": "Item Description",
+              "props": {
+                "placeholder": "What are you purchasing?"
+              },
+              "validation": []
+            },
+            {
+              "id": "item_quantity",
+              "type": "number",
+              "label": "Quantity",
+              "props": {
+                "min": 0,
+                "step": 1
+              },
+              "validation": []
+            },
+            {
+              "id": "item_unit_price",
+              "type": "number",
+              "label": "Unit Price",
+              "props": {
+                "min": 0,
+                "step": 1
+              },
+              "validation": []
+            },
+            {
+              "id": "item_category",
+              "type": "dropdown",
+              "label": "Category",
+              "props": {
+                "options": [
+                  {
+                    "id": "item_category_opt_0",
+                    "label": "Software License",
+                    "value": "Software License"
+                  },
+                  {
+                    "id": "item_category_opt_1",
+                    "label": "Hardware",
+                    "value": "Hardware"
+                  },
+                  {
+                    "id": "item_category_opt_2",
+                    "label": "Professional Services",
+                    "value": "Professional Services"
+                  },
+                  {
+                    "id": "item_category_opt_3",
+                    "label": "Cloud Compute",
+                    "value": "Cloud Compute"
+                  },
+                  {
+                    "id": "item_category_opt_4",
+                    "label": "Cloud Storage",
+                    "value": "Cloud Storage"
+                  },
+                  {
+                    "id": "item_category_opt_5",
+                    "label": "Support Contract",
+                    "value": "Support Contract"
+                  },
+                  {
+                    "id": "item_category_opt_6",
+                    "label": "Training",
+                    "value": "Training"
+                  },
+                  {
+                    "id": "item_category_opt_7",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

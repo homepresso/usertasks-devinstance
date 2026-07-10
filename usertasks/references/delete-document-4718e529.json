@@ -1,0 +1,41 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "4718e529-c9c2-496c-97ef-6c5604a3fa88",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "4718e529-c9c2-496c-97ef-6c5604a3fa88",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Delete Document",
+    "description": "Delete a document from storage using its DocID.",
+    "tags": [
+      "File Management"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/delete"
+    },
+    "inputs": [
+      {
+        "id": "e8990f2f-48e0-49ef-ab63-b7373e486023",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "40732c1c-106a-4488-bc36-b18f3615bfcc",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "format_version": 3,
+  "asset_type": "pages",
+  "id": "d2135122-5019-4f37-be1d-de35731dcfcd",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "d2135122-5019-4f37-be1d-de35731dcfcd",
+    "name": "Onboarding Portal",
+    "description": "Central dashboard for managing employee onboarding",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_header",
+          "title": "Employee Onboarding Portal",
+          "columns": 1,
+          "components": []
+        },
+        {
+          "id": "sec_actions",
+          "title": "Quick Actions",
+          "columns": 1,
+          "components": [
+            {
+              "id": "btn_new_hire",
+              "type": "form_launcher",
+              "label": "Register New Hire",
+              "props": {},
+              "style": "primary",
+              "validation": []
+            },
+            {
+              "id": "btn_equipment",
+              "type": "form_launcher",
+              "label": "Request Equipment",
+              "props": {},
+              "style": "secondary",
+              "validation": []
+            },
+            {
+              "id": "btn_feedback",
+              "type": "form_launcher",
+              "label": "Submit Feedback",
+              "props": {},
+              "style": "secondary",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_employees",
+          "title": "Current Onboarding Employees",
+          "columns": 1,
+          "components": [
+            {
+              "id": "tbl_employees",
+              "type": "data_table_view",
+              "label": "data_table_view",
+              "props": {},
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_checklist",
+          "title": "Onboarding Checklist Tracker",
+          "columns": 1,
+          "components": [
+            {
+              "id": "tbl_checklist",
+              "type": "data_table_view",
+              "label": "data_table_view",
+              "props": {},
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_equipment",
+          "title": "Equipment Requests",
+          "columns": 1,
+          "components": [
+            {
+              "id": "tbl_equipment",
+              "type": "data_table_view",
+              "label": "data_table_view",
+              "props": {},
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": false,
+    "has_unpublished_changes": false,
+    "allow_public_access": false,
+    "public_share_token": null,
+    "public_title": "Onboarding Portal",
+    "public_description": null,
+    "redirect_url": null,
+    "published_at": null,
+    "updated_at": "2026-04-15T16:46:30.311411+00:00",
+    "created_at": "2026-04-15T16:46:30.311411+00:00"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "e0a5cdfa-47f8-49c1-b4b3-c63148cefab2",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "e0a5cdfa-47f8-49c1-b4b3-c63148cefab2",
+    "name": "Glass",
+    "description": null,
+    "theme": {
+      "id": "fa661654-f2b9-48c6-b4fa-753d5a585fdc",
+      "name": "Glass",
+      "colors": {
+        "cardBg": "rgba(255,255,255,0.7)",
+        "primary": "#06B6D4",
+        "surface": "rgba(248,250,252,0.5)",
+        "cardText": "#0F172A",
+        "mutedText": "#64748B",
+        "primaryHover": "#0891B2",
+        "primaryLight": "#CFFAFE",
+        "surfaceBorder": "rgba(148,163,184,0.3)"
+      },
+      "customCSS": "backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);",
+      "gradients": {
+        "formBackground": "linear-gradient(160deg, #0ea5e9 0%, #a855f7 50%, #ec4899 100%)"
+      },
+      "components": {
+        "cardShadow": "lg",
+        "inputRadius": "10px",
+        "borderRadius": "16px",
+        "buttonRadius": "12px"
+      }
+    }
+  }
+}

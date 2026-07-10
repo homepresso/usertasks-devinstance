@@ -1,0 +1,40 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "f0d4e8f6-2e9b-4c3f-8e55-23a391dbfe91",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "f0d4e8f6-2e9b-4c3f-8e55-23a391dbfe91",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a project",
+    "description": "Delete a project from your instance.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/projects/{{projectId}}"
+    },
+    "inputs": [
+      {
+        "id": "d5d38696-f6b6-47a7-8918-0e6d03fb7f73",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "b80e5525-0a24-49ed-96a5-834907067bd5",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

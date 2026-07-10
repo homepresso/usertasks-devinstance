@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "eb6ebb13-d329-45e9-b8c3-bbfcf5585b33",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "eb6ebb13-d329-45e9-b8c3-bbfcf5585b33",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "PowerPoint Find and Replace",
+    "description": "Find and replace text placeholders in a PowerPoint presentation.",
+    "tags": [
+      "PowerPoint Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Find\": \"{{Find}}\",\n    \"Replace\": \"{{Replace}}\"\n  }\n]",
+      "path_template": "/powerpoint/find-replace"
+    },
+    "inputs": [
+      {
+        "id": "6baef897-70cb-4dfc-9f4a-52167a0479ff",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "26c0c03d-64ec-4393-9bb2-3be0b7088dbe",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "b16eedce-1ec9-49d6-9548-5b63cd04b7b1",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "cb2c6e6f-a5a5-4e31-982a-456c13eb5837",
+        "name": "Find",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "1ca84957-0bca-499c-9ae2-d5b544e81d91",
+        "name": "Replace",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "a9e34138-9cdc-4e79-b5ce-ff8fcf96fe8d",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

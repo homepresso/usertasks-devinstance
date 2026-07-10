@@ -1,0 +1,112 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "91c1bbd0-f726-4fc0-b12f-ec7ce20a1a12",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "91c1bbd0-f726-4fc0-b12f-ec7ce20a1a12",
+    "integration_id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "Object: Contract with Vendor",
+    "description": "Contracts joined to Vendors for contract views enriched with vendor risk score, compliance status, and contact info",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "_executor": "object",
+      "object_id": "38a2d548-d613-40ba-8bde-4ab48f0abddd",
+      "operation": "list"
+    },
+    "inputs": [],
+    "outputs": [
+      {
+        "id": "60e55e2d-88cf-4e3f-876a-f8db15be31c5",
+        "name": "Contract Name",
+        "path": "contract.undefined",
+        "type": "text"
+      },
+      {
+        "id": "790b2f5d-c018-454a-8b76-667e5e6d5785",
+        "name": "Vendor Name",
+        "path": "contract.undefined",
+        "type": "text"
+      },
+      {
+        "id": "2c73c12e-1faa-4530-afe7-5e2ac8e1a4d1",
+        "name": "Contract Type",
+        "path": "contract.undefined",
+        "type": "select"
+      },
+      {
+        "id": "76921073-f8da-4610-8176-9e22a38223db",
+        "name": "Owner",
+        "path": "contract.undefined",
+        "type": "text"
+      },
+      {
+        "id": "15f6140a-bc75-4408-b44a-5cd2c88bcb8a",
+        "name": "Owner Email",
+        "path": "contract.undefined",
+        "type": "text"
+      },
+      {
+        "id": "e9277e41-9169-4339-a3f2-7cc7c779a477",
+        "name": "Annual Value",
+        "path": "contract.undefined",
+        "type": "number"
+      },
+      {
+        "id": "1e4f1fee-7df7-44d4-a984-fc0ef1aee25c",
+        "name": "Total Value",
+        "path": "contract.undefined",
+        "type": "number"
+      },
+      {
+        "id": "66f61df9-006b-42e2-81de-dbd8f0533c10",
+        "name": "Start Date",
+        "path": "contract.undefined",
+        "type": "date"
+      },
+      {
+        "id": "28f6b9d7-d2ae-4721-9221-cab0c172a781",
+        "name": "End Date",
+        "path": "contract.undefined",
+        "type": "date"
+      },
+      {
+        "id": "a2825a34-1511-40f1-8d00-77928e370a6c",
+        "name": "Auto Renew",
+        "path": "contract.undefined",
+        "type": "boolean"
+      },
+      {
+        "id": "94c2bb07-e659-49a0-8328-76da37b28c06",
+        "name": "Notice Period Days",
+        "path": "contract.undefined",
+        "type": "number"
+      },
+      {
+        "id": "ce926330-9e9d-4ffb-a32e-8c483b5aacbc",
+        "name": "Status",
+        "path": "contract.undefined",
+        "type": "select"
+      },
+      {
+        "id": "3cf3eada-53b4-4c7b-b38c-c5cf05053380",
+        "name": "Signed Date",
+        "path": "contract.undefined",
+        "type": "date"
+      },
+      {
+        "id": "1812456c-2f0c-49a1-89af-d10fc0394b6b",
+        "name": "Department",
+        "path": "contract.undefined",
+        "type": "text"
+      },
+      {
+        "id": "826c1b86-4e12-4967-8613-6d60f0e9c8b8",
+        "name": "Notes",
+        "path": "contract.undefined",
+        "type": "longtext"
+      }
+    ]
+  }
+}

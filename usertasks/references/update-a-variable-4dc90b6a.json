@@ -1,0 +1,79 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "4dc90b6a-51c5-42d3-9a8b-9da04cd29ddd",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "4dc90b6a-51c5-42d3-9a8b-9da04cd29ddd",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update a variable",
+    "description": "Update a variable from your instance.",
+    "tags": [
+      "Variables"
+    ],
+    "request_config": {
+      "method": "PUT",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"key\": \"{{key}}\",\n  \"value\": \"{{value}}\",\n  \"type\": \"{{type}}\",\n  \"projectId\": \"{{projectId}}\"\n}",
+      "path_template": "/variables/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "3d96d03d-9c94-40a7-9b20-d6f1ad19beb6",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "ba819278-9445-4a42-917b-928ca76cdaa7",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "84300cc1-44fc-49d1-9c19-2346a77f9623",
+        "name": "key",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "81c02505-53bb-4fe5-89f0-80321c08f624",
+        "name": "value",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "f80308bc-46f8-4363-9cee-358d32f631ba",
+        "name": "type",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "98f478d4-f9eb-4705-9959-1eaa5102b50b",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "427c873a-6be0-4626-ad79-9379face41bc",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

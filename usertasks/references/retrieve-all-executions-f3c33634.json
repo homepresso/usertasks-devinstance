@@ -1,0 +1,83 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "f3c33634-c608-49be-9c9a-5d532cda7451",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "f3c33634-c608-49be-9c9a-5d532cda7451",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve all executions",
+    "description": "Retrieve all executions from your instance.",
+    "tags": [
+      "Execution"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/executions"
+    },
+    "inputs": [
+      {
+        "id": "11f435ce-ee9d-41d6-a368-95b34e203710",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "55a96f4c-c6a2-447b-b4e0-361c6b1db075",
+        "name": "status",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "ce4fdce6-b18d-4eac-b943-42a891ef0c12",
+        "name": "workflowId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "379494f3-fe61-4fe2-bcac-1a9e7c7e3a03",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "107504f5-fe18-488f-86f9-27cfc363fdf4",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "da29a3de-4deb-40fb-b66c-a640f3f23bf2",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "1c329790-eceb-4304-a7f2-680ac9adf6b2",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "df4453cc-9a89-4954-9d83-26e152d5f15c",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

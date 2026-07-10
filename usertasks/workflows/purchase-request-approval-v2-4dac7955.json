@@ -1,0 +1,436 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "4dac7955-0c3b-462c-97d0-6ec13cf91825",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "4dac7955-0c3b-462c-97d0-6ec13cf91825",
+    "name": "Purchase Request Approval v2",
+    "description": "Multi-level approval using user_task outcome branching. Auto-approve under $5K, manager $5K-$50K, VP+Finance $50K+.",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_template_id": "40726f03-daf8-4fa6-a3db-46b1d898792f"
+    },
+    "nodes": [
+      {
+        "id": "trigger",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_template_id": "40726f03-daf8-4fa6-a3db-46b1d898792f"
+        },
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "PR: {{title}} - ${{amount}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "set_pending",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approval Status": "Pending Manager"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "route_approval",
+        "type": "decision_table",
+        "label": "Decision Table",
+        "config": {
+          "input_mappings": {
+            "amount": "{{amount}}",
+            "urgency": "{{urgency}}",
+            "department": "{{department}}"
+          },
+          "decision_table_id": "108d014a-b432-4307-929c-626f709d205c"
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      },
+      {
+        "id": "manager_task",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "outcomes": [
+            "Approved",
+            "Rejected",
+            "Request More Info"
+          ],
+          "task_title": "Approve: {{title}} (${{amount}})",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
+        },
+        "position": {
+          "x": 220,
+          "y": 580
+        }
+      },
+      {
+        "id": "mgr_approved_update",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approved By": "Manager",
+            "Approval Status": "Approved"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 720
+        }
+      },
+      {
+        "id": "mgr_approved_email",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{requester_email}}",
+          "body": "Hi {{requester}}, your purchase request '{{title}}' for ${{amount}} has been approved.",
+          "subject": "Approved: {{title}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 860
+        }
+      },
+      {
+        "id": "rejected_update",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approval Status": "Rejected"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 1000
+        }
+      },
+      {
+        "id": "rejected_email",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{requester_email}}",
+          "body": "Hi {{requester}}, your purchase request '{{title}}' for ${{amount}} was not approved.",
+          "subject": "Declined: {{title}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 1140
+        }
+      },
+      {
+        "id": "more_info_email",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{requester_email}}",
+          "body": "Hi {{requester}}, your manager needs additional information for '{{title}}'. Please follow up.",
+          "subject": "More info needed: {{title}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 1280
+        }
+      },
+      {
+        "id": "vp_task",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "outcomes": [
+            "Approved",
+            "Rejected"
+          ],
+          "task_title": "VP Approval: {{title}} (${{amount}})",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
+        },
+        "position": {
+          "x": 220,
+          "y": 1420
+        }
+      },
+      {
+        "id": "vp_approved_update",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approval Status": "Pending Finance"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 1560
+        }
+      },
+      {
+        "id": "finance_task",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "outcomes": [
+            "Approved",
+            "Rejected - Budget",
+            "Rejected - Compliance"
+          ],
+          "task_title": "Finance Review: {{title}} (${{amount}})",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
+        },
+        "position": {
+          "x": 220,
+          "y": 1700
+        }
+      },
+      {
+        "id": "final_approved",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approved By": "VP + Finance",
+            "Approval Status": "Approved"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 1840
+        }
+      },
+      {
+        "id": "final_email",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{requester_email}}",
+          "body": "Hi {{requester}}, your purchase request '{{title}}' for ${{amount}} has received VP and Finance approval.",
+          "subject": "Fully Approved: {{title}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 1980
+        }
+      },
+      {
+        "id": "vp_rejected",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approval Status": "Rejected"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 2120
+        }
+      },
+      {
+        "id": "fin_rejected",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "e39bd71d-fd02-4afd-b818-2e67d1919acb",
+          "operation": "update",
+          "column_values": {
+            "Approval Status": "Rejected"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 2260
+        }
+      },
+      {
+        "id": "log_complete",
+        "type": "log",
+        "label": "Log",
+        "config": {
+          "message": "PR '{{title}}' workflow completed"
+        },
+        "position": {
+          "x": 220,
+          "y": 2400
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "367893d1-290d-4f5b-a907-b4f0bea05587",
+        "source": "trigger",
+        "target": "title"
+      },
+      {
+        "id": "2ae5e5e8-ff4f-4a45-ad94-f373a2ea4abd",
+        "source": "title",
+        "target": "set_pending"
+      },
+      {
+        "id": "3e6e57dd-32ca-4254-9c02-0195f2674594",
+        "source": "set_pending",
+        "target": "route_approval"
+      },
+      {
+        "id": "c0fc3618-7394-425a-a61a-7704e2070294",
+        "source": "route_approval",
+        "target": "manager_task"
+      },
+      {
+        "id": "23861be4-b2bb-4e96-b840-ce5767a14eb7",
+        "label": "Approved",
+        "source": "manager_task",
+        "target": "mgr_approved_update"
+      },
+      {
+        "id": "21570041-dfeb-421b-8946-6db60367f9f9",
+        "label": "Rejected",
+        "source": "manager_task",
+        "target": "rejected_update"
+      },
+      {
+        "id": "d23b0336-7ec8-43e3-a303-8b7d4d6f2b9c",
+        "label": "Request More Info",
+        "source": "manager_task",
+        "target": "more_info_email"
+      },
+      {
+        "id": "08edc23f-b781-443d-be79-08872b037cc1",
+        "source": "mgr_approved_update",
+        "target": "mgr_approved_email"
+      },
+      {
+        "id": "6915e565-4fd9-4c54-b819-42b0c095e059",
+        "source": "mgr_approved_email",
+        "target": "log_complete"
+      },
+      {
+        "id": "375d08ca-82ee-40f8-9125-d9240aef5475",
+        "source": "rejected_update",
+        "target": "rejected_email"
+      },
+      {
+        "id": "7c01eb27-645d-48fd-a655-12db321af80e",
+        "source": "rejected_email",
+        "target": "log_complete"
+      },
+      {
+        "id": "b4c9c1a5-4cb8-4a35-9242-c19093e45e5e",
+        "source": "more_info_email",
+        "target": "log_complete"
+      },
+      {
+        "id": "cb627eae-3651-4070-9041-0af6d597d6a4",
+        "source": "route_approval",
+        "target": "vp_task"
+      },
+      {
+        "id": "5aa9415f-a39a-4a52-a05d-fecdcf52d71b",
+        "label": "Approved",
+        "source": "vp_task",
+        "target": "vp_approved_update"
+      },
+      {
+        "id": "6b241cde-aba0-4adf-b13f-15d459190b2e",
+        "label": "Rejected",
+        "source": "vp_task",
+        "target": "vp_rejected"
+      },
+      {
+        "id": "62393312-d166-469c-863e-c2f27790f5e3",
+        "source": "vp_approved_update",
+        "target": "finance_task"
+      },
+      {
+        "id": "cdc6d498-9840-49ca-b2a1-277baea155dd",
+        "label": "Approved",
+        "source": "finance_task",
+        "target": "final_approved"
+      },
+      {
+        "id": "46fc6877-975b-4cf6-ab75-94d1054b331a",
+        "label": "Rejected - Budget",
+        "source": "finance_task",
+        "target": "fin_rejected"
+      },
+      {
+        "id": "52a7df51-48c6-47fb-af83-094e36c1a361",
+        "label": "Rejected - Compliance",
+        "source": "finance_task",
+        "target": "fin_rejected"
+      },
+      {
+        "id": "98bc8928-9389-4400-9b02-b07bbeedad41",
+        "source": "final_approved",
+        "target": "final_email"
+      },
+      {
+        "id": "3eb810c8-3afa-442a-874a-94810a9d0155",
+        "source": "final_email",
+        "target": "log_complete"
+      },
+      {
+        "id": "7a9b5eff-006e-4194-a5e9-b8764caeb567",
+        "source": "vp_rejected",
+        "target": "log_complete"
+      },
+      {
+        "id": "2bc948af-d009-4cff-bac4-0c0845521b50",
+        "source": "fin_rejected",
+        "target": "log_complete"
+      }
+    ],
+    "user_variables": [
+      {
+        "id": "9e8a6ed5-227b-421f-b2e1-0acf434067c4",
+        "name": "mark",
+        "type": "string",
+        "description": "",
+        "defaultValue": ""
+      }
+    ],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

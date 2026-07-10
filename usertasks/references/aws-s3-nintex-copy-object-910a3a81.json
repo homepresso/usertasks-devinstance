@@ -1,0 +1,61 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "910a3a81-66cc-4bf1-8a8d-2207e37489a0",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "910a3a81-66cc-4bf1-8a8d-2207e37489a0",
+    "integration_id": "8f8c6539-d8da-49d6-9113-d7f31f2a98f7",
+    "name": "AWS S3 Nintex: Copy Object",
+    "description": "Copy an object within S3 (same or different bucket)",
+    "tags": [],
+    "request_config": {
+      "method": "PUT",
+      "headers": {
+        "x-amz-copy-source": "/{{source_bucket}}/{{source_key}}"
+      },
+      "body_template": "",
+      "path_template": "/{{destination_key}}"
+    },
+    "inputs": [
+      {
+        "name": "bucket",
+        "type": "string",
+        "required": false,
+        "description": "Destination bucket (uses default if empty)",
+        "default_value": ""
+      },
+      {
+        "name": "destination_key",
+        "type": "string",
+        "required": true,
+        "description": "Destination object key",
+        "default_value": ""
+      },
+      {
+        "name": "source_bucket",
+        "type": "string",
+        "required": false,
+        "description": "Source bucket (uses default if empty)",
+        "default_value": ""
+      },
+      {
+        "name": "source_key",
+        "type": "string",
+        "required": true,
+        "description": "Source object key to copy from",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "etag",
+        "type": "string"
+      },
+      {
+        "name": "last_modified",
+        "type": "string"
+      }
+    ]
+  }
+}

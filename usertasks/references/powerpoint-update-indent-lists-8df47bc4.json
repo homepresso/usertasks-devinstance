@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "8df47bc4-8e07-44ae-aaa3-64413d3490d9",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "8df47bc4-8e07-44ae-aaa3-64413d3490d9",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "PowerPoint Update Indent Lists",
+    "description": "Create multi-level indented lists in PowerPoint slides.",
+    "tags": [
+      "PowerPoint Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Placeholder\": \"{{Placeholder}}\",\n    \"Items\": [\n      \"{{Items}}\"\n    ]\n  }\n]",
+      "path_template": "/powerpoint/update-indent-lists"
+    },
+    "inputs": [
+      {
+        "id": "151e4813-016c-4a7a-bacf-89b4a5a76afe",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "42099239-23f1-411f-baf4-9f49eb2e7a14",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "f0d5272c-aaba-4a2a-acb2-caa613eae946",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "cca2fe95-03f4-4187-a70a-8dff6496500d",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "a8295304-06ea-4fb9-bb89-e9d6a2db9784",
+        "name": "Items",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "59729264-42e0-401d-bf9b-24e53ef13723",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

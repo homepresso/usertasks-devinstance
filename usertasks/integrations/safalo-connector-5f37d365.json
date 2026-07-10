@@ -1,0 +1,21 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo (Connector)",
+    "type": "rest_api",
+    "config": {
+      "headers": {},
+      "base_url": "https://slack.com/api",
+      "auth_type": "bearer",
+      "auth_config": {}
+    },
+    "is_active": true,
+    "tags": [
+      "slack"
+    ]
+  }
+}

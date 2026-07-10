@@ -1,0 +1,60 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "76ab6226-7006-4c4a-9dd4-2e89f88f9754",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "76ab6226-7006-4c4a-9dd4-2e89f88f9754",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "List project members",
+    "description": "Returns a list of all members of a project including their role. Requires user:list scope.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/projects/{{projectId}}/users"
+    },
+    "inputs": [
+      {
+        "id": "9741b8ce-b640-4de2-a71e-0640086d9286",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "b38b8651-c9a9-4efe-a97f-0513643c34d3",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "9cf52763-642b-479e-b57c-e5e0a7f5faa3",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "76a0bd52-96c3-4f40-b1a0-b40aa5b5ebf2",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "181a85b3-66a1-4ccc-b23d-95c1cc251613",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

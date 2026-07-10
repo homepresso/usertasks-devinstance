@@ -1,0 +1,53 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "db214da7-4de2-4811-95cb-f06c8cb97641",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "db214da7-4de2-4811-95cb-f06c8cb97641",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Upload Document File",
+    "description": "Upload a Word, Excel, or PowerPoint document and receive a DocID for subsequent operations.",
+    "tags": [
+      "File Management"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/upload/file"
+    },
+    "inputs": [
+      {
+        "id": "97117e70-705c-4459-b2ac-12416c2a3516",
+        "name": "file",
+        "type": "string",
+        "source": "variable",
+        "location": "formData",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "aa7dd8e4-dc27-42d2-b684-eb0912fc0106",
+        "name": "DocId",
+        "path": "DocId",
+        "type": "string"
+      },
+      {
+        "id": "419d0b19-ca93-46b7-9974-5fe004161ef9",
+        "name": "FileName",
+        "path": "FileName",
+        "type": "string"
+      },
+      {
+        "id": "9d4864db-5af1-452e-9f82-136ea75e5280",
+        "name": "FileSize",
+        "path": "FileSize",
+        "type": "number"
+      }
+    ]
+  }
+}

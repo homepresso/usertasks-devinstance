@@ -1,0 +1,47 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "10afdd3f-af0d-45ce-b158-2f5160ac497d",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "10afdd3f-af0d-45ce-b158-2f5160ac497d",
+    "integration_id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "Get SalesAlignment",
+    "description": "Get a single row from SalesAlignment by AlignmentID",
+    "tags": [],
+    "request_config": {
+      "method": "QUERY",
+      "path_template": "SELECT * FROM SalesAlignment WHERE AlignmentID = @AlignmentID"
+    },
+    "inputs": [
+      {
+        "id": "269406d7-71fe-44f9-aa3e-b9372bd4fd98",
+        "name": "AlignmentID",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "ea972974-0a2a-4854-91d6-fcc575b000d7",
+        "name": "AlignmentID",
+        "path": "AlignmentID",
+        "type": "string"
+      },
+      {
+        "id": "7eb2be9f-1e03-41f8-a282-6dd94f9c747e",
+        "name": "SalesRep",
+        "path": "SalesRep",
+        "type": "string"
+      },
+      {
+        "id": "3ffc6acb-9191-42d1-95ba-b8547eb5cc68",
+        "name": "SalesSe",
+        "path": "SalesSe",
+        "type": "string"
+      }
+    ]
+  }
+}

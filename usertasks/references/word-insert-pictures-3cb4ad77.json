@@ -1,0 +1,95 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "3cb4ad77-3acb-46ee-b297-3eec23a8e3c1",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "3cb4ad77-3acb-46ee-b297-3eec23a8e3c1",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Word Insert Pictures",
+    "description": "Insert images at placeholder positions in a Word document. Replaces ALL occurrences.",
+    "tags": [
+      "Word Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Placeholder\": \"{{Placeholder}}\",\n    \"Base64String\": \"{{Base64String}}\",\n    \"ImageWidthInPixels\": \"{{ImageWidthInPixels}}\",\n    \"ImageHeightInPixels\": \"{{ImageHeightInPixels}}\"\n  }\n]",
+      "path_template": "/word/insert-pictures"
+    },
+    "inputs": [
+      {
+        "id": "b54cd7c1-6069-4873-80f9-5282f6830dc2",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "32a88f3c-6b94-43ff-a46e-6250df6d9ef7",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "60786862-0e04-4b3f-a93f-40f91790e428",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "7fa5cb07-4dcc-4854-957b-456f3528e323",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "a2446bcd-2eb1-400a-8b1e-4291f1bee7d7",
+        "name": "Base64String",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "21655897-dc3c-43ed-a9c8-bc16cc9f6be4",
+        "name": "ImageWidthInPixels",
+        "type": "number",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "f20ca818-ee4f-4497-aaa9-169d946a54f6",
+        "name": "ImageHeightInPixels",
+        "type": "number",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "680fe7ca-ca73-4d0d-b63e-93e4b6385eae",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

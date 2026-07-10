@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "d227b12d-cc23-4eb7-9243-bf917ef9632d",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "d227b12d-cc23-4eb7-9243-bf917ef9632d",
+    "name": "TXM Indigo Theme",
+    "description": "Professional indigo travel theme",
+    "theme": {
+      "card": {
+        "border": "1px solid #E2E8F0",
+        "shadow": "0 1px 3px rgba(0,0,0,0.1)",
+        "padding": "24px",
+        "background": "#FFFFFF",
+        "borderRadius": "12px"
+      },
+      "page": {
+        "padding": "24px",
+        "maxWidth": "640px",
+        "background": "#EEF2FF"
+      },
+      "colors": {
+        "accent": "#0EA5E9",
+        "cardBg": "#FFFFFF",
+        "danger": "#EF4444",
+        "primary": "#4F46E5",
+        "success": "#10B981",
+        "surface": "#F8FAFC",
+        "warning": "#F59E0B",
+        "cardText": "#1E293B",
+        "errorText": "#DC2626",
+        "focusRing": "#4F46E5",
+        "mutedText": "#64748B",
+        "primaryHover": "#4338CA",
+        "primaryLight": "#EEF2FF",
+        "surfaceBorder": "#E2E8F0",
+        "placeholderText": "#94A3B8"
+      },
+      "inputs": {
+        "height": "40px",
+        "fontSize": "14px",
+        "background": "#FFFFFF",
+        "borderColor": "#D1D5DB",
+        "borderWidth": "1px",
+        "borderRadius": "8px",
+        "focusRingColor": "#4F46E5",
+        "focusRingWidth": "2px"
+      },
+      "buttons": {
+        "height": "42px",
+        "fontSize": "14px",
+        "primaryBg": "#4F46E5",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "8px",
+        "primaryHoverBg": "#4338CA"
+      },
+      "customCSS": "",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "",
+        "buttonBackground": "",
+        "headerBackground": "linear-gradient(135deg, #4F46E5 0%, #0EA5E9 100%)"
+      },
+      "typography": {
+        "fontSize": "14px",
+        "labelSize": "13px",
+        "fontFamily": "Inter, sans-serif",
+        "labelColor": "#374151",
+        "lineHeight": "1.5",
+        "headingSize": "20px",
+        "labelWeight": "500",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

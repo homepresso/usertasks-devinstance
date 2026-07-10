@@ -1,0 +1,223 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "441d5991-e1a3-45ae-a456-047891523a7c",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "441d5991-e1a3-45ae-a456-047891523a7c",
+    "name": "hobbihopp Support Request",
+    "description": "Submit a support request to the hobbihopp.com team",
+    "schema": {
+      "rules": [
+        {
+          "id": "r_submit",
+          "name": "Submit on click",
+          "actions": [
+            {
+              "type": "submit_form"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "priority": 50,
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_submit"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_contact",
+          "title": "Your Details",
+          "columns": 2,
+          "components": [
+            {
+              "id": "requester_name",
+              "type": "text_input",
+              "label": "Your Name",
+              "props": {
+                "placeholder": "Full name"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Please enter your name"
+                }
+              ]
+            },
+            {
+              "id": "requester_email",
+              "key": "requester_email",
+              "type": "text_input",
+              "label": "Your Email",
+              "props": {
+                "placeholder": "you@example.com"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Enter a valid email address"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec_issue",
+          "title": "About Your Issue",
+          "columns": 2,
+          "components": [
+            {
+              "id": "subject",
+              "key": "title",
+              "type": "text_input",
+              "label": "Subject",
+              "props": {
+                "placeholder": "Brief summary of your issue"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Subject is required"
+                }
+              ]
+            },
+            {
+              "id": "category",
+              "key": "category",
+              "type": "dropdown",
+              "label": "Category",
+              "props": {
+                "options": [
+                  {
+                    "id": "cat_bug",
+                    "label": "Bug / Something's broken",
+                    "value": "Bug"
+                  },
+                  {
+                    "id": "cat_feature",
+                    "label": "Feature Request",
+                    "value": "Feature Request"
+                  },
+                  {
+                    "id": "cat_account",
+                    "label": "Account / Billing",
+                    "value": "Account"
+                  },
+                  {
+                    "id": "cat_general",
+                    "label": "General Question",
+                    "value": "General"
+                  }
+                ],
+                "placeholder": "Select a category..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Please select a category"
+                }
+              ]
+            },
+            {
+              "id": "priority",
+              "key": "priority",
+              "type": "dropdown",
+              "label": "Priority",
+              "props": {
+                "options": [
+                  {
+                    "id": "pri_low",
+                    "label": "Low — not urgent",
+                    "value": "Low"
+                  },
+                  {
+                    "id": "pri_med",
+                    "label": "Medium — affects my work",
+                    "value": "Medium"
+                  },
+                  {
+                    "id": "pri_high",
+                    "label": "High — blocking me",
+                    "value": "High"
+                  },
+                  {
+                    "id": "pri_crit",
+                    "label": "Critical — total outage",
+                    "value": "Critical"
+                  }
+                ],
+                "placeholder": "How urgent is this?"
+              },
+              "validation": []
+            },
+            {
+              "id": "description",
+              "key": "description",
+              "type": "textarea",
+              "label": "Description",
+              "props": {
+                "rows": 5,
+                "placeholder": "Please describe what's happening, what you expected, and any steps to reproduce..."
+              },
+              "width": "full",
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Please describe your issue"
+                },
+                {
+                  "type": "min_length",
+                  "value": 20,
+                  "message": "Please add a bit more detail"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec_submit",
+          "title": "Actions",
+          "columns": 1,
+          "components": [
+            {
+              "id": "btn_submit",
+              "type": "button",
+              "label": "Submit Support Request",
+              "props": {
+                "buttonSize": "lg",
+                "buttonAction": "submit",
+                "buttonVariant": "primary",
+                "buttonFullWidth": false
+              },
+              "style": {
+                "textAlign": "right"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {
+        "padding": "normal",
+        "maxWidth": "lg",
+        "submitConfig": {
+          "mode": "workflow",
+          "workflowId": "27a671c0-f366-420a-bcf2-34d4b7fd95f0"
+        },
+        "labelPosition": "top"
+      }
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

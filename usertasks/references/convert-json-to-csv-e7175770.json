@@ -1,0 +1,41 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "e7175770-fd98-4247-864f-6bf02952a65b",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "e7175770-fd98-4247-864f-6bf02952a65b",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Convert JSON to CSV",
+    "description": "Convert JSON data to CSV format.",
+    "tags": [
+      "Utilities"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"JSON\": \"{{JSON}}\"\n}",
+      "path_template": "/Utilities/JSONToCSV"
+    },
+    "inputs": [
+      {
+        "id": "ded4d885-74e8-45c1-9f14-af32e389d95e",
+        "name": "JSON",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "7b1de2a8-f7a7-48b5-86a2-67236afee42c",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

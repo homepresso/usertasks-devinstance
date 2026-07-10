@@ -1,0 +1,69 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "5fe579cd-ec86-47ab-a8ee-99aec89d6688",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "5fe579cd-ec86-47ab-a8ee-99aec89d6688",
+    "name": "Contract Lifecycle Monitor",
+    "description": "Triggered on schedule to check for expiring contracts and send notifications at 90, 60, and 30 day intervals",
+    "trigger_type": "schedule",
+    "trigger_config": {
+      "cron": "0 8 * * 1"
+    },
+    "nodes": [
+      {
+        "id": "dca08b53-2ba3-43b7-bdf6-8bc7f8bfae3a",
+        "type": "schedule",
+        "label": "Schedule",
+        "config": {
+          "cron": "0 8 * * 1"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "Contract review: Weekly check",
+          "template": "Contract review: Weekly check"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "log",
+        "type": "log",
+        "label": "Log",
+        "config": {
+          "message": "Weekly contract expiration check completed"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "6585bc7f-b9cd-4784-8156-f795cc6d1689",
+        "source": "dca08b53-2ba3-43b7-bdf6-8bc7f8bfae3a",
+        "target": "title"
+      },
+      {
+        "id": "58adea4d-e444-4125-8c04-fc4dd1a6fc14",
+        "source": "title",
+        "target": "log"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

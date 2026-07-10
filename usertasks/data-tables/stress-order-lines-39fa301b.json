@@ -1,0 +1,74 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "39fa301b-4c99-41b6-9e69-a63073dbaec6",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "39fa301b-4c99-41b6-9e69-a63073dbaec6",
+    "name": "Stress Order Lines",
+    "description": "Order line items written by the 16-ultimate-stress test workflow",
+    "columns": [
+      {
+        "id": "dda9363e-3c6d-47e2-a464-a9eaca513b3b",
+        "key": "id",
+        "name": "ID",
+        "type": "number"
+      },
+      {
+        "id": "d7bcf38c-919f-4d30-a3c3-ebbd24582026",
+        "key": "date_created",
+        "name": "Date Created",
+        "type": "date"
+      },
+      {
+        "id": "3a3d8ca3-fc53-423c-8c11-6aab181ea840",
+        "key": "order_no",
+        "name": "Order No",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "281f4abf-1c50-4e5a-bfe6-1be2a77136ed",
+        "key": "sku",
+        "name": "SKU",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "615f1666-7b13-4dca-bbcb-e86b0fa4b422",
+        "key": "name",
+        "name": "Name",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "671ae4a8-dd9c-4304-a13e-d370c4a8c2a3",
+        "key": "qty",
+        "name": "Qty",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "b665dda3-4dca-4d6c-bb30-ca9ac507ae27",
+        "key": "unit_price",
+        "name": "Unit Price",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "6e1c70d9-c7d3-4292-a8bf-79f695beef97",
+        "key": "line_total",
+        "name": "Line Total",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "68427ba7-364a-4ab1-a42b-b6305cf82622",
+        "key": "category",
+        "name": "Category",
+        "type": "text",
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "7895c704-2a13-4e90-b52e-daef878b1ea1",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "7895c704-2a13-4e90-b52e-daef878b1ea1",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Word Update Indent Lists",
+    "description": "Create multi-level indented lists at placeholder positions.",
+    "tags": [
+      "Word Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Placeholder\": \"{{Placeholder}}\",\n    \"Items\": [\n      \"{{Items}}\"\n    ]\n  }\n]",
+      "path_template": "/word/update-indent-lists"
+    },
+    "inputs": [
+      {
+        "id": "1579f00f-2943-4eaa-9053-02c07783f28e",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "72326e44-fbb3-4d17-8210-47d247f7479b",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "b8f01f8b-6740-4d86-a1ec-76c357994501",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "80137d48-b0ae-4b57-a547-766e205d54a7",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "36ee3fb9-f5df-44c9-b489-8a117c6abd44",
+        "name": "Items",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "b0167b86-49ed-4663-a728-a4dc613405a6",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

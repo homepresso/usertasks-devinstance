@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "f86e8b30-7251-4106-91f6-2c8acd5c670b",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "f86e8b30-7251-4106-91f6-2c8acd5c670b",
+    "name": "Comments",
+    "description": "Ticket comments and activity log",
+    "columns": [
+      {
+        "name": "ticket_id",
+        "type": "text"
+      },
+      {
+        "name": "author",
+        "type": "text"
+      },
+      {
+        "name": "body",
+        "type": "textarea"
+      },
+      {
+        "name": "posted_at",
+        "type": "date"
+      }
+    ]
+  }
+}

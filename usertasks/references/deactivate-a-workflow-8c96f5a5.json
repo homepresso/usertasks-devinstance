@@ -1,0 +1,123 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "8c96f5a5-4c27-4a6b-b614-ee9e9b71291b",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "8c96f5a5-4c27-4a6b-b614-ee9e9b71291b",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Deactivate a workflow",
+    "description": "Deactivate a workflow.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/workflows/{{id}}/deactivate"
+    },
+    "inputs": [
+      {
+        "id": "7651c407-f68b-4f23-b417-1ebad14ca03a",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "b036b6e0-15bd-4108-981d-4307f9268430",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "a0b78dc3-9bf2-44fd-af8a-b3af0323ff47",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "19a49137-985f-4b71-8949-c35398a3a38d",
+        "name": "active",
+        "path": "active",
+        "type": "boolean"
+      },
+      {
+        "id": "b56778bc-4dc7-4285-941c-ad259531e236",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "0542ad55-9ae5-4c73-bc0c-6038cc591227",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      },
+      {
+        "id": "6e0e2c41-8c3b-4140-885d-a4d132a33d63",
+        "name": "isArchived",
+        "path": "isArchived",
+        "type": "boolean"
+      },
+      {
+        "id": "50d14ac8-3716-4ea2-ae2f-22a2510c957e",
+        "name": "versionId",
+        "path": "versionId",
+        "type": "string"
+      },
+      {
+        "id": "a90ed694-96cf-4ddb-aa76-3532b6e81663",
+        "name": "triggerCount",
+        "path": "triggerCount",
+        "type": "number"
+      },
+      {
+        "id": "093c3963-1346-40ca-a962-b752d2cbdc47",
+        "name": "nodes",
+        "path": "nodes",
+        "type": "array"
+      },
+      {
+        "id": "7b1d9b69-986f-4074-a80e-0811aadf50ef",
+        "name": "connections",
+        "path": "connections",
+        "type": "object"
+      },
+      {
+        "id": "ce302cb8-0297-466b-b0d3-09f518350d1f",
+        "name": "settings",
+        "path": "settings",
+        "type": "string"
+      },
+      {
+        "id": "12f10534-95ff-460f-a429-db93cc377c85",
+        "name": "staticData",
+        "path": "staticData",
+        "type": "string"
+      },
+      {
+        "id": "5716b5a7-cb96-426d-8cfc-4b677f74b7a1",
+        "name": "pinData",
+        "path": "pinData",
+        "type": "object"
+      },
+      {
+        "id": "e6605de8-521f-4bf7-8bb6-505763d585e7",
+        "name": "meta",
+        "path": "meta",
+        "type": "object"
+      },
+      {
+        "id": "47421a8a-7aa2-49d8-8c7f-4a60c020cb1f",
+        "name": "tags",
+        "path": "tags",
+        "type": "array"
+      }
+    ]
+  }
+}

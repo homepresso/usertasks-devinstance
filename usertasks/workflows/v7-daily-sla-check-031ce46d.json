@@ -1,0 +1,76 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "031ce46d-31ab-43d7-819c-8823b19fd6f5",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "031ce46d-31ab-43d7-819c-8823b19fd6f5",
+    "name": "v7 Daily SLA Check",
+    "description": "Daily scheduled check for overdue tickets",
+    "trigger_type": "schedule",
+    "trigger_config": {
+      "cron": "0 9 * * *"
+    },
+    "nodes": [
+      {
+        "id": "40ce54e1-2832-4ee6-bd6e-450fe3146e8b",
+        "type": "schedule",
+        "label": "Schedule",
+        "config": {
+          "cron": "0 9 * * *"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "node_read_overdue",
+        "name": "Read overdue tickets",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "table_id": "1d0f53e0-14b2-42f2-ac8a-ab653fb69b7c",
+          "operation": "query",
+          "column_values": {
+            "status": "open"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "node_notify_team",
+        "name": "Notify team of overdue tickets",
+        "type": "send_message",
+        "label": "Send Message",
+        "config": {
+          "body": "There are overdue tickets requiring attention.",
+          "user_id": "{{trigger.initiator_id}}",
+          "recipient_mode": "user"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "8a5e163e-e0d1-4a3f-98cc-cc61ded0aa00",
+        "source": "40ce54e1-2832-4ee6-bd6e-450fe3146e8b",
+        "target": "node_read_overdue"
+      },
+      {
+        "id": "155e55d3-508a-44a3-ba7e-ff1a89e4225b",
+        "source": "node_read_overdue",
+        "target": "node_notify_team"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

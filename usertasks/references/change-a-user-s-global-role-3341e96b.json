@@ -1,0 +1,47 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "3341e96b-200b-4d45-be71-2bfc91fed2b9",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "3341e96b-200b-4d45-be71-2bfc91fed2b9",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Change a user's global role",
+    "description": "Change a user's global role",
+    "tags": [
+      "User"
+    ],
+    "request_config": {
+      "method": "PATCH",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"newRoleName\": \"{{newRoleName}}\"\n}",
+      "path_template": "/users/{{id}}/role"
+    },
+    "inputs": [
+      {
+        "id": "ecdb42d9-d9ef-4ebe-97b7-3b3e54ce8a23",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "6b09bc57-90d9-43cd-8c57-2252b8f5b376",
+        "name": "newRoleName",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "3d515148-b62b-496d-b508-b49f7521a338",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

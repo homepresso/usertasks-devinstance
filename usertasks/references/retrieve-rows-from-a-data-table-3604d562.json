@@ -1,0 +1,83 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "3604d562-7dae-47ed-94ef-63885cdebc36",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "3604d562-7dae-47ed-94ef-63885cdebc36",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve rows from a data table",
+    "description": "Query and retrieve rows from a data table with optional filtering, sorting, and pagination.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/data-tables/{{dataTableId}}/rows"
+    },
+    "inputs": [
+      {
+        "id": "125f1f20-fca1-42d8-a99a-b246c821e428",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "86ae435f-920b-4ce9-94c4-3fa10b35cd06",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "916e602f-6806-49b4-9a0b-1656538ca3f0",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "44b67e37-7381-40f2-b0c1-13985648e8ea",
+        "name": "filter",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "9aa082ad-202d-47b8-bc30-56ecdbe07325",
+        "name": "sortBy",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "8b1ddbb8-d6d4-4352-bac9-faa5ff55301e",
+        "name": "search",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "25e14e1f-af1e-4abd-9d35-f9a7b04346a7",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "486dddad-76a2-4064-889c-514b3fb79887",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "62d551e8-5caf-412a-b754-e77025329f5f",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "62d551e8-5caf-412a-b754-e77025329f5f",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Create a new data table",
+    "description": "Create a new data table in your workspace.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"name\": \"{{name}}\",\n  \"columns\": \"{{columns}}\"\n}",
+      "path_template": "/data-tables"
+    },
+    "inputs": [
+      {
+        "id": "eb0a2697-66c4-47cc-9e89-c4682b73ed95",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "ee3c5cb3-1607-40ac-b8db-1e5f34c65749",
+        "name": "columns",
+        "type": "array",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "10ad8d53-bf6b-4ff4-a39b-c350a2cb7410",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "a8678a83-7def-4020-b3ef-e5cf49c4ca80",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "531ac97c-4a17-4ded-ab03-9520a9640f23",
+        "name": "columns",
+        "path": "columns",
+        "type": "array"
+      },
+      {
+        "id": "ab99069a-bb1d-422c-ac25-9c0e73723b2a",
+        "name": "projectId",
+        "path": "projectId",
+        "type": "string"
+      },
+      {
+        "id": "2c43ecb5-119c-439c-a3aa-4e4d530be7ca",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "afd25d1c-2c38-4bc3-bc5e-7057f1124c38",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

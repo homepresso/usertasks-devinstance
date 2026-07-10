@@ -1,0 +1,252 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "cc0b3ff8-3d83-4d02-b30a-0f6ac352d0e8",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "cc0b3ff8-3d83-4d02-b30a-0f6ac352d0e8",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Create a workflow",
+    "description": "Create a workflow in your instance.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"name\": \"{{name}}\",\n  \"active\": \"{{active}}\",\n  \"createdAt\": \"{{createdAt}}\",\n  \"updatedAt\": \"{{updatedAt}}\",\n  \"isArchived\": \"{{isArchived}}\",\n  \"versionId\": \"{{versionId}}\",\n  \"triggerCount\": \"{{triggerCount}}\",\n  \"nodes\": \"{{nodes}}\",\n  \"connections\": \"{{connections}}\",\n  \"settings\": \"{{settings}}\",\n  \"staticData\": \"{{staticData}}\",\n  \"pinData\": \"{{pinData}}\",\n  \"meta\": \"{{meta}}\",\n  \"tags\": \"{{tags}}\",\n  \"shared\": \"{{shared}}\",\n  \"activeVersion\": \"{{activeVersion}}\"\n}",
+      "path_template": "/workflows"
+    },
+    "inputs": [
+      {
+        "id": "0a3be631-8ce7-44a9-9e62-0dffa523504a",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "4d927a4a-586f-45d4-9f4e-aecb3ef25cdf",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "f3606ef1-d0ae-4245-8651-e7d0239d4249",
+        "name": "active",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "23acc045-6db3-4617-9760-2de4fde43e5f",
+        "name": "createdAt",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "2c7c66b1-7b77-4f82-bbb7-f3e43f36a331",
+        "name": "updatedAt",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "c7335864-c027-4e96-8a69-aeba048b9718",
+        "name": "isArchived",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "b41b01f0-c5de-481a-a8bb-0ed181cff2be",
+        "name": "versionId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "19227a87-3f67-48ca-882f-27d0d68041c1",
+        "name": "triggerCount",
+        "type": "number",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "e0bdcc94-83da-4f2c-8f35-b6a8d443e2e1",
+        "name": "nodes",
+        "type": "array",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "1ad7a594-14fb-4d49-8400-268d7a69ce05",
+        "name": "connections",
+        "type": "object",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "231586d6-4e0c-4916-aeda-caabc51031a3",
+        "name": "settings",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "1b1c737b-2a8d-42cb-a8f9-5e6d12df8b5b",
+        "name": "staticData",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "973febb8-a594-45fe-9a44-a1108cb6bedb",
+        "name": "pinData",
+        "type": "object",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "eb6e06b1-2065-4281-8a42-80e813f4f5e1",
+        "name": "meta",
+        "type": "object",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "d6083a1a-d619-4771-97a2-0b3cfc1105be",
+        "name": "tags",
+        "type": "array",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "24a71f80-acdf-46ad-95fa-8757c1a25225",
+        "name": "shared",
+        "type": "array",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "2f53e599-cf8b-4e9c-999d-d38f0f4fce87",
+        "name": "activeVersion",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "2c09b393-7a21-4689-a3e7-03badb06afd0",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "8106b48e-36aa-414d-a74c-9e4ed67ee247",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "a29b8427-e7ef-4028-9c7b-f1f7719418c0",
+        "name": "active",
+        "path": "active",
+        "type": "boolean"
+      },
+      {
+        "id": "b1fa9b68-65c8-441d-be91-1b22ad1935b0",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "9afce880-3ebe-4909-a13f-fd20a61049fd",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      },
+      {
+        "id": "4cbe1761-bf39-44f8-955e-8cd9ba7991dc",
+        "name": "isArchived",
+        "path": "isArchived",
+        "type": "boolean"
+      },
+      {
+        "id": "43bb7f61-75c5-4bbe-b571-2858b93b20f0",
+        "name": "versionId",
+        "path": "versionId",
+        "type": "string"
+      },
+      {
+        "id": "d0430e39-429a-46c1-aaba-aaaff40ae81b",
+        "name": "triggerCount",
+        "path": "triggerCount",
+        "type": "number"
+      },
+      {
+        "id": "b8fac28c-2fca-4fc4-b6c4-30a99eb35b85",
+        "name": "nodes",
+        "path": "nodes",
+        "type": "array"
+      },
+      {
+        "id": "20d82cab-68c7-435a-989d-17b0dd16383c",
+        "name": "connections",
+        "path": "connections",
+        "type": "object"
+      },
+      {
+        "id": "9a4d3205-312c-46f9-b928-ca939ff0d272",
+        "name": "settings",
+        "path": "settings",
+        "type": "string"
+      },
+      {
+        "id": "c4c512cc-42b1-436f-ad95-c2b7ef99e8b4",
+        "name": "staticData",
+        "path": "staticData",
+        "type": "string"
+      },
+      {
+        "id": "f12940f5-0c8e-429e-b53b-c2c837c7913c",
+        "name": "pinData",
+        "path": "pinData",
+        "type": "object"
+      },
+      {
+        "id": "9b3b8a88-94a2-4200-bf3e-df6b763209e2",
+        "name": "meta",
+        "path": "meta",
+        "type": "object"
+      },
+      {
+        "id": "1b3257e2-e1c4-40ca-b4f2-62510caa8f81",
+        "name": "tags",
+        "path": "tags",
+        "type": "array"
+      }
+    ]
+  }
+}

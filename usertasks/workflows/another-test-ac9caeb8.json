@@ -1,0 +1,55 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "ac9caeb8-6839-43c8-9ca1-be9b56a10bb5",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "ac9caeb8-6839-43c8-9ca1-be9b56a10bb5",
+    "name": "Another test",
+    "description": null,
+    "trigger_type": "schedule",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "cea854fa-9813-4870-905b-d082316c64a2",
+        "type": "schedule",
+        "label": "Schedule",
+        "config": {
+          "timezone": "UTC",
+          "time_of_day": "09:00",
+          "schedule_mode": "daily"
+        },
+        "position": {
+          "x": 420,
+          "y": 0
+        }
+      },
+      {
+        "id": "fa7fdb61-ed00-4026-b72a-cdc3b5d68062",
+        "type": "send_message",
+        "label": "Send Message",
+        "config": {
+          "body": "Test scheulde",
+          "subject": "Trst",
+          "user_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "user_name": "Andy Hayes"
+        },
+        "position": {
+          "x": 380,
+          "y": 200
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "4468bede-199a-488f-8f21-a5bf542a48a3",
+        "source": "cea854fa-9813-4870-905b-d082316c64a2",
+        "target": "fa7fdb61-ed00-4026-b72a-cdc3b5d68062",
+        "sourcePort": "bottom"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

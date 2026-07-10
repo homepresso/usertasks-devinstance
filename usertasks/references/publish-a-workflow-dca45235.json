@@ -1,0 +1,147 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "dca45235-11f2-4a52-8c4c-7fd1425fcb35",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "dca45235-11f2-4a52-8c4c-7fd1425fcb35",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Publish a workflow",
+    "description": "Publish a workflow. In n8n v1, this action was termed activating a workflow.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"versionId\": \"{{versionId}}\",\n  \"name\": \"{{name}}\",\n  \"description\": \"{{description}}\"\n}",
+      "path_template": "/workflows/{{id}}/activate"
+    },
+    "inputs": [
+      {
+        "id": "ccee5f2f-f35b-4827-b2a5-4602624198cb",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "fea7393e-fc1a-45cc-9039-7ac22630a91a",
+        "name": "versionId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "a7857110-bfad-48cf-b70d-8af9d77c3d65",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "076d6126-7488-43e0-bd93-03d95cf0e1d0",
+        "name": "description",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "e3ab9ee7-092e-4f36-a527-6e28a98793f8",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "9cfd586d-2c4c-4744-9f83-c3eec41cc7b1",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "67f4f505-c606-4ec9-a112-6d577b7d2ef5",
+        "name": "active",
+        "path": "active",
+        "type": "boolean"
+      },
+      {
+        "id": "1af0d222-6023-41bc-a3dd-ff2a323b3569",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "9423e004-7aae-4227-be80-b7b42ec91940",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      },
+      {
+        "id": "916a7c60-fadc-45cd-9c62-5a1dbe5a5731",
+        "name": "isArchived",
+        "path": "isArchived",
+        "type": "boolean"
+      },
+      {
+        "id": "464ce9bd-abb4-4ac4-a0e7-ef043f64e77e",
+        "name": "versionId",
+        "path": "versionId",
+        "type": "string"
+      },
+      {
+        "id": "048b514f-c10c-4a53-bae9-7929772fc04d",
+        "name": "triggerCount",
+        "path": "triggerCount",
+        "type": "number"
+      },
+      {
+        "id": "370fdaf6-4f2e-4f95-be8e-e3b8f0204a49",
+        "name": "nodes",
+        "path": "nodes",
+        "type": "array"
+      },
+      {
+        "id": "198b0f61-083c-493c-b653-ccb6f18161c2",
+        "name": "connections",
+        "path": "connections",
+        "type": "object"
+      },
+      {
+        "id": "2e128817-d356-4c47-832e-ee7aab09cfe7",
+        "name": "settings",
+        "path": "settings",
+        "type": "string"
+      },
+      {
+        "id": "82189f96-fe39-4cb9-84b8-8bbb9c941339",
+        "name": "staticData",
+        "path": "staticData",
+        "type": "string"
+      },
+      {
+        "id": "1d9888a5-bd05-4afe-a6f3-6f1dd3ac2309",
+        "name": "pinData",
+        "path": "pinData",
+        "type": "object"
+      },
+      {
+        "id": "91468498-98b5-4790-a978-7daeaa6dfac7",
+        "name": "meta",
+        "path": "meta",
+        "type": "object"
+      },
+      {
+        "id": "1a3f4dcb-b7a3-4e6e-9f2c-59ba23f1672a",
+        "name": "tags",
+        "path": "tags",
+        "type": "array"
+      }
+    ]
+  }
+}

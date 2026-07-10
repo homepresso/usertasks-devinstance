@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "767433ad-8a23-4aae-bb4a-0781fd71acac",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "767433ad-8a23-4aae-bb4a-0781fd71acac",
+    "name": "Test",
+    "description": null,
+    "trigger_type": "schedule",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "6c99d0a5-23f5-4065-ac9c-d9167962192e",
+        "type": "schedule",
+        "label": "Schedule",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    ],
+    "edges": [],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

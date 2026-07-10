@@ -1,0 +1,17 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "__objects__",
+    "type": "rest_api",
+    "config": {
+      "base_url": "internal://objects",
+      "_executor": "object"
+    },
+    "is_active": true,
+    "tags": []
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "68ef74fd-5df4-480e-920d-b8c67c8ec2ec",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "68ef74fd-5df4-480e-920d-b8c67c8ec2ec",
+    "integration_id": "8f8c6539-d8da-49d6-9113-d7f31f2a98f7",
+    "name": "AWS S3 Nintex: List Objects",
+    "description": "List files in an S3 bucket with optional prefix filter",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/?list-type=2&prefix={{prefix}}&max-keys={{max_keys}}"
+    },
+    "inputs": [
+      {
+        "name": "bucket",
+        "type": "string",
+        "required": false,
+        "description": "Bucket name",
+        "default_value": ""
+      },
+      {
+        "name": "prefix",
+        "type": "string",
+        "required": false,
+        "description": "Filter by key prefix (folder path)",
+        "default_value": ""
+      },
+      {
+        "name": "max_keys",
+        "type": "number",
+        "required": false,
+        "description": "Max results",
+        "default_value": "100"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "contents",
+        "type": "array"
+      },
+      {
+        "name": "key_count",
+        "type": "number"
+      },
+      {
+        "name": "is_truncated",
+        "type": "boolean"
+      }
+    ]
+  }
+}

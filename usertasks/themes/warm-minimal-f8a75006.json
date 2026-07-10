@@ -1,0 +1,34 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "f8a75006-53a1-4175-8335-d167c16734f9",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "f8a75006-53a1-4175-8335-d167c16734f9",
+    "name": "Warm Minimal",
+    "description": null,
+    "theme": {
+      "id": "fa661654-f2b9-48c6-b4fa-753d5a585fdc",
+      "name": "Warm Minimal",
+      "colors": {
+        "cardBg": "#FFFBEB",
+        "primary": "#D97706",
+        "surface": "#FFF7ED",
+        "cardText": "#292524",
+        "mutedText": "#78716C",
+        "primaryHover": "#B45309",
+        "primaryLight": "#FEF3C7",
+        "surfaceBorder": "#FED7AA"
+      },
+      "components": {
+        "cardShadow": "none",
+        "inputRadius": "4px",
+        "borderRadius": "4px",
+        "buttonRadius": "4px"
+      },
+      "typography": {
+        "headingWeight": "700"
+      }
+    }
+  }
+}

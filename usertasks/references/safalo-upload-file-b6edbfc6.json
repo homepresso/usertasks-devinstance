@@ -1,0 +1,68 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "b6edbfc6-1a2e-4ebc-a82d-9eb45e73be48",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "b6edbfc6-1a2e-4ebc-a82d-9eb45e73be48",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Upload File",
+    "description": "Upload a file to a channel",
+    "tags": [],
+    "request_config": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "multipart/form-data"
+      },
+      "body_template": "{\"channels\":\"{{channel}}\",\"content\":\"{{content}}\",\"filename\":\"{{filename}}\",\"title\":\"{{title}}\",\"initial_comment\":\"{{comment}}\"}",
+      "path_template": "/files.upload"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID to share the file in",
+        "default_value": ""
+      },
+      {
+        "name": "content",
+        "type": "string",
+        "required": true,
+        "description": "File content (text or base64)",
+        "default_value": ""
+      },
+      {
+        "name": "filename",
+        "type": "string",
+        "required": true,
+        "description": "Filename",
+        "default_value": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "File title",
+        "default_value": ""
+      },
+      {
+        "name": "comment",
+        "type": "string",
+        "required": false,
+        "description": "Initial comment with the file",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "file",
+        "type": "object"
+      }
+    ]
+  }
+}

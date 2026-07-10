@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "132cc793-22a5-4ac4-b3f9-1e32b9b4298e",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "132cc793-22a5-4ac4-b3f9-1e32b9b4298e",
+    "name": "Test",
+    "description": null,
+    "trigger_type": "task_created",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "f627c9d7-5778-499e-9b96-70d4ca03c1f9",
+        "type": "task_created",
+        "label": "Task Created",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    ],
+    "edges": [],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "4c9b0258-a6b0-45ff-a15c-3358005aef77",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "4c9b0258-a6b0-45ff-a15c-3358005aef77",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a data table",
+    "description": "Delete a data table. This will also delete all rows in the table.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/data-tables/{{dataTableId}}"
+    },
+    "inputs": [
+      {
+        "id": "f84f9271-3d02-4bd2-9cbd-90f0b8f721e8",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "87e3eea5-a6af-4353-9376-d0995fa2304c",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

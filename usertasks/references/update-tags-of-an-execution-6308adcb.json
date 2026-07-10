@@ -1,0 +1,63 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "6308adcb-53c6-48a7-8757-e2bac07b9e6e",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "6308adcb-53c6-48a7-8757-e2bac07b9e6e",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update tags of an execution",
+    "description": "Update annotation tags of an execution.",
+    "tags": [
+      "Execution"
+    ],
+    "request_config": {
+      "method": "PUT",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{}",
+      "path_template": "/executions/{{id}}/tags"
+    },
+    "inputs": [
+      {
+        "id": "88eb6806-810d-4cc9-bd74-16522b33017a",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "eba3000f-ac88-40d8-b4fe-0f95b3143fd5",
+        "name": "results",
+        "path": "",
+        "type": "array"
+      },
+      {
+        "id": "49f28ff4-b860-4368-82fb-65d154459e07",
+        "name": "id",
+        "path": "[].id",
+        "type": "string"
+      },
+      {
+        "id": "6a1e815e-cb4e-482b-ac03-eaa0bf8faa77",
+        "name": "name",
+        "path": "[].name",
+        "type": "string"
+      },
+      {
+        "id": "7d173273-4e14-4743-9fa8-82fcbffe7f70",
+        "name": "createdAt",
+        "path": "[].createdAt",
+        "type": "string"
+      },
+      {
+        "id": "a4342194-e18c-4f69-af10-b70661601c0c",
+        "name": "updatedAt",
+        "path": "[].updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

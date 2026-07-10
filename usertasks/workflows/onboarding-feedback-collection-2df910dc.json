@@ -1,0 +1,90 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "2df910dc-3d29-4642-8295-873a3ae66684",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "2df910dc-3d29-4642-8295-873a3ae66684",
+    "name": "Onboarding Feedback Collection",
+    "description": "Triggered when onboarding feedback form is submitted. Logs feedback and notifies HR.",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_name": "Onboarding Feedback",
+      "form_template_id": "b180ad8b-75de-49b6-9a1a-8e8a3b900f38"
+    },
+    "nodes": [
+      {
+        "id": "a4729aa9-4b26-4d22-a525-61335ec2cdeb",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_name": "Onboarding Feedback",
+          "form_template_id": "b180ad8b-75de-49b6-9a1a-8e8a3b900f38"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "Feedback: {{employee_name}} ({{feedback_period}})",
+          "template": "Feedback: {{employee_name}} ({{feedback_period}})"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "notify_hr",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "andyhayes.nz@gmail.com",
+          "body": "New onboarding feedback submitted:\n\nEmployee: {{employee_name}}\nPeriod: {{feedback_period}}\nOverall Rating: {{overall_rating}}\n\nWhat went well: {{best_part}}\n\nImprovements: {{improvements}}\n\nMissing info: {{missing_info}}\n\nBuddy feedback: {{buddy_helpful}}\n\nAdditional: {{additional_comments}}",
+          "subject": "Onboarding Feedback Received: {{employee_name}} - {{feedback_period}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "log",
+        "type": "log",
+        "label": "Log",
+        "config": {
+          "message": "Onboarding feedback received from {{employee_name}} for {{feedback_period}} - Rating: {{overall_rating}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "0c3213dd-29e6-4ee6-a063-ea806ccc5945",
+        "source": "a4729aa9-4b26-4d22-a525-61335ec2cdeb",
+        "target": "title"
+      },
+      {
+        "id": "d7f2a68f-d6b2-4872-b4e2-285746daaca2",
+        "source": "title",
+        "target": "notify_hr"
+      },
+      {
+        "id": "dd79a4c9-4b08-407c-a79d-b6d9ae69192b",
+        "source": "notify_hr",
+        "target": "log"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

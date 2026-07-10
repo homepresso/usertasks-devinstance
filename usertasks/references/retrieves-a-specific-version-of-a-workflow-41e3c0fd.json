@@ -1,0 +1,95 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "41e3c0fd-d1f9-429e-9957-a95f9f757bbc",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "41e3c0fd-d1f9-429e-9957-a95f9f757bbc",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieves a specific version of a workflow",
+    "description": "Retrieves a specific version of a workflow from workflow history.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/workflows/{{id}}/{{versionId}}"
+    },
+    "inputs": [
+      {
+        "id": "1eb82f51-dc1e-470f-ae4f-6b2363848e88",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "441e7acb-e09a-415d-98e2-87b916005b25",
+        "name": "versionId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "011b8d2c-0259-4e63-8b92-b927b1a103ad",
+        "name": "versionId",
+        "path": "versionId",
+        "type": "string"
+      },
+      {
+        "id": "4c512375-7377-4626-87ff-03aa2765b4d9",
+        "name": "workflowId",
+        "path": "workflowId",
+        "type": "string"
+      },
+      {
+        "id": "2628a6c7-1d94-46eb-9f66-570d7be8edb4",
+        "name": "nodes",
+        "path": "nodes",
+        "type": "array"
+      },
+      {
+        "id": "6ca36db5-0acd-4c70-a730-7337cffe37aa",
+        "name": "connections",
+        "path": "connections",
+        "type": "object"
+      },
+      {
+        "id": "531cd8f1-2bbe-44e3-8f8e-51bf1c440043",
+        "name": "authors",
+        "path": "authors",
+        "type": "string"
+      },
+      {
+        "id": "b96ffc11-7ab3-49aa-906a-3bb03999b99f",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "2c49f76c-a29d-46fa-ab8b-bd3d1838b0ce",
+        "name": "description",
+        "path": "description",
+        "type": "string"
+      },
+      {
+        "id": "a8e210ac-3851-4b76-9123-95964a83cf9a",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "e027be81-3be0-45de-ba91-b5954ace541c",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

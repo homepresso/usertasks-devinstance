@@ -1,0 +1,131 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "68fddb76-beb3-42d5-9203-3a039e3913dd",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "68fddb76-beb3-42d5-9203-3a039e3913dd",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve a workflow",
+    "description": "Retrieve a workflow.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/workflows/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "e420aad4-1dd1-4f3c-94fb-585ab0f54c3d",
+        "name": "excludePinnedData",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "84df891c-24ab-4d48-bb67-3670a9cd5acc",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "0b0912ce-3240-4943-84af-78908a6f408e",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "073e3ac1-f2e5-4762-8160-a6d08a0aa19e",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "53920b9e-0225-4625-9a55-ce9b70a2f8a0",
+        "name": "active",
+        "path": "active",
+        "type": "boolean"
+      },
+      {
+        "id": "7859885f-d7a5-49ba-bf51-4c75dc2cde48",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "b18f43a5-7658-41fe-8181-b162bf14a1c5",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      },
+      {
+        "id": "0ac7a584-7df5-4776-961f-07d7c349337d",
+        "name": "isArchived",
+        "path": "isArchived",
+        "type": "boolean"
+      },
+      {
+        "id": "2c86a721-e94d-49ab-8b81-86921e7c9ed0",
+        "name": "versionId",
+        "path": "versionId",
+        "type": "string"
+      },
+      {
+        "id": "0aa3ce58-edc1-4697-ab04-966bc944ce67",
+        "name": "triggerCount",
+        "path": "triggerCount",
+        "type": "number"
+      },
+      {
+        "id": "65250235-d2bf-4b45-ac70-b58367d2ca12",
+        "name": "nodes",
+        "path": "nodes",
+        "type": "array"
+      },
+      {
+        "id": "5419097a-5db4-4d95-88b6-33f353d70aa8",
+        "name": "connections",
+        "path": "connections",
+        "type": "object"
+      },
+      {
+        "id": "06bc6ddf-7a12-4b9a-a833-300a58631f2c",
+        "name": "settings",
+        "path": "settings",
+        "type": "string"
+      },
+      {
+        "id": "73322f5f-139e-4eec-bade-702544acad0a",
+        "name": "staticData",
+        "path": "staticData",
+        "type": "string"
+      },
+      {
+        "id": "e5499b8a-3e1c-418f-8106-a2090f53bd0c",
+        "name": "pinData",
+        "path": "pinData",
+        "type": "object"
+      },
+      {
+        "id": "24fae0e2-ade6-4e17-a340-1f415655af2f",
+        "name": "meta",
+        "path": "meta",
+        "type": "object"
+      },
+      {
+        "id": "3f4adcf6-5491-4c61-bc3b-b1f75061d4af",
+        "name": "tags",
+        "path": "tags",
+        "type": "array"
+      }
+    ]
+  }
+}

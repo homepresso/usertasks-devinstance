@@ -1,0 +1,55 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "caba2b20-4ff6-4a3f-89fe-8fd4a17b926c",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "caba2b20-4ff6-4a3f-89fe-8fd4a17b926c",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Insert rows into a data table",
+    "description": "Insert one or more rows into a data table.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"data\": \"{{data}}\",\n  \"returnType\": \"{{returnType}}\"\n}",
+      "path_template": "/data-tables/{{dataTableId}}/rows"
+    },
+    "inputs": [
+      {
+        "id": "b8d23394-6e61-4581-a865-e6e35e66390b",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "83e7bc5e-3954-49d8-8c38-88ab0a7a53a6",
+        "name": "data",
+        "type": "array",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "4a20e0b6-2cb6-48d5-a220-986c752ee85d",
+        "name": "returnType",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": "count"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "10f153d2-6f24-42a4-b95a-137f5267575c",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

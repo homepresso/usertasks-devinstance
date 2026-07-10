@@ -1,0 +1,1533 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "294373ed-c5c1-47f5-874d-57bf173ada0d",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "294373ed-c5c1-47f5-874d-57bf173ada0d",
+    "name": "Travel Approval Flow",
+    "description": "Orchestrates Manager, Finance, and optional CFO approval for employee travel requests, followed by travel booking.",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_template_id": "b49a9bf9-a327-4512-b557-e66616fed031"
+    },
+    "nodes": [
+      {
+        "id": "trigger",
+        "type": "form_submitted",
+        "label": "Travel Request Submitted",
+        "config": {
+          "form_template_id": "b49a9bf9-a327-4512-b557-e66616fed031"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "save_request",
+        "type": "update_data_table",
+        "label": "Save Request Row",
+        "config": {
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "insert",
+          "column_values": {
+            "id": "{{submission_id}}",
+            "status": "Pending Manager",
+            "department": "{{department}}",
+            "depart_date": "{{depart_date}}",
+            "return_date": "{{return_date}}",
+            "cfo_decision": "Not Required",
+            "date_created": "\n",
+            "submitted_at": "{{submitted_at}}",
+            "travel_class": "{{travel_class}}",
+            "request_title": "{{request_title}}",
+            "requester_name": "{{requester_name}}",
+            "travel_purpose": "{{travel_purpose}}",
+            "requester_email": "{{requester_email}}",
+            "destination_city": "{{destination_city}}",
+            "finance_decision": "Pending",
+            "manager_decision": "Pending",
+            "trip_description": "{{trip_description}}",
+            "estimated_cost_usd": "{{estimated_cost_usd}}",
+            "destination_country": "{{destination_country}}"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ],
+          "output_row_id_var": "row_id"
+        },
+        "position": {
+          "x": 320,
+          "y": 160
+        },
+        "collapsed": true
+      },
+      {
+        "id": "route_decision",
+        "type": "decision_table",
+        "label": "Determine Approval Path",
+        "config": {
+          "output_var": "routing",
+          "input_values": {
+            "travel_class": "{{travel_class}}",
+            "estimated_cost_usd": "{{estimated_cost_usd}}"
+          },
+          "decision_table_id": "8c5e42ae-0529-4a6d-95ee-04edb1e62194"
+        },
+        "position": {
+          "x": 300,
+          "y": 260
+        },
+        "collapsed": true
+      },
+      {
+        "id": "set_title",
+        "type": "set_title",
+        "label": "Set Run Title",
+        "config": {
+          "title": "Travel: {{request_title}} ({{routing.spend_tier}})"
+        },
+        "position": {
+          "x": 300,
+          "y": 380
+        },
+        "collapsed": true
+      },
+      {
+        "id": "manager_task",
+        "type": "user_task",
+        "label": "Manager Approval",
+        "config": {
+          "outcomes": [
+            "approved",
+            "rejected"
+          ],
+          "task_title": "Approve travel request: {{request_title}}",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "task_description": "{{requester_name}} has requested travel to {{destination_city}}, {{destination_country}} from {{depart_date}} to {{return_date}}. Estimated cost: ${{estimated_cost_usd}} ({{travel_class}}). Purpose: {{travel_purpose}}.\n\nJustification: {{trip_description}}\n\n{{routing.routing_notes}}"
+        },
+        "position": {
+          "x": 300,
+          "y": 500
+        },
+        "collapsed": true
+      },
+      {
+        "id": "set_pending_finance",
+        "type": "update_data_table",
+        "label": "Update: Pending Finance",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Pending Finance",
+            "manager_decision": "Approved"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 500,
+          "y": 620
+        },
+        "collapsed": true
+      },
+      {
+        "id": "finance_task",
+        "type": "user_task",
+        "label": "Finance Review",
+        "config": {
+          "outcomes": [
+            "approved",
+            "rejected"
+          ],
+          "task_title": "Finance review: {{request_title}}",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "task_description": "Review budget and spend approval for {{requester_name}}'s trip to {{destination_city}}. Estimated cost: ${{estimated_cost_usd}}. Spend tier: {{routing.spend_tier}}."
+        },
+        "position": {
+          "x": 500,
+          "y": 740
+        },
+        "collapsed": true
+      },
+      {
+        "id": "cfo_branch",
+        "type": "condition",
+        "label": "CFO Required?",
+        "config": {
+          "branches": [
+            {
+              "label": "yes",
+              "logic": "and",
+              "rules": [
+                {
+                  "field": "{{routing.requires_cfo}}",
+                  "value": "true",
+                  "operator": "equals"
+                }
+              ]
+            }
+          ],
+          "has_else": true
+        },
+        "position": {
+          "x": 500,
+          "y": 860
+        },
+        "collapsed": true
+      },
+      {
+        "id": "set_pending_cfo",
+        "type": "update_data_table",
+        "label": "Update: Pending CFO",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Pending CFO",
+            "cfo_decision": "Pending",
+            "finance_decision": "Approved"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 700,
+          "y": 980
+        },
+        "collapsed": true
+      },
+      {
+        "id": "cfo_task",
+        "type": "user_task",
+        "label": "CFO Approval",
+        "config": {
+          "outcomes": [
+            "approved",
+            "rejected"
+          ],
+          "task_title": "CFO approval: {{request_title}}",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "task_description": "Final CFO sign-off for high-value travel. Cost ${{estimated_cost_usd}}, class {{travel_class}}. {{routing.routing_notes}}"
+        },
+        "position": {
+          "x": 700,
+          "y": 1100
+        },
+        "collapsed": true
+      },
+      {
+        "id": "set_approved",
+        "type": "update_data_table",
+        "label": "Update: Approved",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Approved",
+            "cfo_decision": "Approved",
+            "finance_decision": "Approved"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 500,
+          "y": 1220
+        },
+        "collapsed": true
+      },
+      {
+        "id": "booking_task",
+        "type": "user_task",
+        "label": "Book Travel",
+        "config": {
+          "outcomes": [
+            "booked",
+            "cancelled"
+          ],
+          "task_title": "Book travel: {{request_title}}",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "task_description": "Fully approved. Book flights and hotels for {{requester_name}} to {{destination_city}} ({{depart_date}} - {{return_date}}, {{travel_class}})."
+        },
+        "position": {
+          "x": 500,
+          "y": 1340
+        },
+        "collapsed": true
+      },
+      {
+        "id": "mark_booked",
+        "type": "update_data_table",
+        "label": "Update: Booked",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Booked"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 500,
+          "y": 1460
+        },
+        "collapsed": true
+      },
+      {
+        "id": "notify_traveler",
+        "type": "send_message",
+        "label": "Notify Traveler",
+        "config": {
+          "body": "Your trip to {{destination_city}} from {{depart_date}} to {{return_date}} has been booked.",
+          "subject": "Travel booked: {{request_title}}",
+          "user_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "recipient_mode": "user"
+        },
+        "position": {
+          "x": 500,
+          "y": 1580
+        },
+        "collapsed": true
+      },
+      {
+        "id": "manager_rejected",
+        "type": "update_data_table",
+        "label": "Update: Rejected by Manager",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Rejected",
+            "manager_decision": "Rejected"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 100,
+          "y": 620
+        },
+        "collapsed": true
+      },
+      {
+        "id": "finance_rejected",
+        "type": "update_data_table",
+        "label": "Update: Rejected by Finance",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Rejected",
+            "finance_decision": "Rejected"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 100,
+          "y": 860
+        },
+        "collapsed": true
+      },
+      {
+        "id": "cfo_rejected",
+        "type": "update_data_table",
+        "label": "Update: Rejected by CFO",
+        "config": {
+          "row_id": "{{row_id}}",
+          "table_id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+          "operation": "update",
+          "column_values": {
+            "status": "Rejected",
+            "cfo_decision": "Rejected"
+          },
+          "_table_columns": [
+            {
+              "key": "id",
+              "type": "number",
+              "label": "ID"
+            },
+            {
+              "key": "date_created",
+              "type": "date",
+              "label": "Date Created"
+            },
+            {
+              "key": "request_title",
+              "type": "text",
+              "label": "Request Title"
+            },
+            {
+              "key": "requester_name",
+              "type": "text",
+              "label": "Requester Name"
+            },
+            {
+              "key": "requester_email",
+              "type": "text",
+              "label": "Requester Email"
+            },
+            {
+              "key": "department",
+              "type": "select",
+              "label": "Department"
+            },
+            {
+              "key": "destination_city",
+              "type": "text",
+              "label": "Destination City"
+            },
+            {
+              "key": "destination_country",
+              "type": "text",
+              "label": "Destination Country"
+            },
+            {
+              "key": "depart_date",
+              "type": "date",
+              "label": "Depart Date"
+            },
+            {
+              "key": "return_date",
+              "type": "date",
+              "label": "Return Date"
+            },
+            {
+              "key": "travel_purpose",
+              "type": "select",
+              "label": "Travel Purpose"
+            },
+            {
+              "key": "trip_description",
+              "type": "longtext",
+              "label": "Trip Description"
+            },
+            {
+              "key": "travel_class",
+              "type": "select",
+              "label": "Travel Class"
+            },
+            {
+              "key": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Cost USD"
+            },
+            {
+              "key": "actual_cost_usd",
+              "type": "number",
+              "label": "Actual Cost USD"
+            },
+            {
+              "key": "status",
+              "type": "select",
+              "label": "Status"
+            },
+            {
+              "key": "manager_decision",
+              "type": "select",
+              "label": "Manager Decision"
+            },
+            {
+              "key": "manager_notes",
+              "type": "longtext",
+              "label": "Manager Notes"
+            },
+            {
+              "key": "finance_decision",
+              "type": "select",
+              "label": "Finance Decision"
+            },
+            {
+              "key": "finance_notes",
+              "type": "longtext",
+              "label": "Finance Notes"
+            },
+            {
+              "key": "cfo_decision",
+              "type": "select",
+              "label": "CFO Decision"
+            },
+            {
+              "key": "cfo_notes",
+              "type": "longtext",
+              "label": "CFO Notes"
+            },
+            {
+              "key": "booking_reference",
+              "type": "text",
+              "label": "Booking Reference"
+            },
+            {
+              "key": "booking_notes",
+              "type": "longtext",
+              "label": "Booking Notes"
+            },
+            {
+              "key": "submitted_at",
+              "type": "date",
+              "label": "Submitted At"
+            },
+            {
+              "key": "completed_at",
+              "type": "date",
+              "label": "Completed At"
+            }
+          ]
+        },
+        "position": {
+          "x": 900,
+          "y": 1220
+        },
+        "collapsed": true
+      },
+      {
+        "id": "notify_rejection",
+        "type": "send_message",
+        "label": "Notify Rejection",
+        "config": {
+          "body": "Your travel request has been rejected. Please reach out to your manager or finance for details.",
+          "subject": "Travel request rejected: {{request_title}}",
+          "user_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "recipient_mode": "user"
+        },
+        "position": {
+          "x": 300,
+          "y": 1100
+        },
+        "collapsed": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "trigger",
+        "target": "save_request"
+      },
+      {
+        "id": "e2",
+        "source": "save_request",
+        "target": "route_decision"
+      },
+      {
+        "id": "e3",
+        "source": "route_decision",
+        "target": "set_title"
+      },
+      {
+        "id": "e4",
+        "source": "set_title",
+        "target": "manager_task"
+      },
+      {
+        "id": "e5",
+        "label": "rejected",
+        "source": "manager_task",
+        "target": "manager_rejected"
+      },
+      {
+        "id": "e6",
+        "label": "approved",
+        "source": "manager_task",
+        "target": "set_pending_finance"
+      },
+      {
+        "id": "e7",
+        "source": "set_pending_finance",
+        "target": "finance_task"
+      },
+      {
+        "id": "e8",
+        "label": "rejected",
+        "source": "finance_task",
+        "target": "finance_rejected"
+      },
+      {
+        "id": "e9",
+        "label": "approved",
+        "source": "finance_task",
+        "target": "cfo_branch"
+      },
+      {
+        "id": "e10",
+        "label": "yes",
+        "source": "cfo_branch",
+        "target": "set_pending_cfo"
+      },
+      {
+        "id": "e11",
+        "label": "no",
+        "source": "cfo_branch",
+        "target": "set_approved"
+      },
+      {
+        "id": "e12",
+        "source": "set_pending_cfo",
+        "target": "cfo_task"
+      },
+      {
+        "id": "e13",
+        "label": "rejected",
+        "source": "cfo_task",
+        "target": "cfo_rejected"
+      },
+      {
+        "id": "e14",
+        "label": "approved",
+        "source": "cfo_task",
+        "target": "set_approved"
+      },
+      {
+        "id": "e15",
+        "source": "set_approved",
+        "target": "booking_task"
+      },
+      {
+        "id": "e16",
+        "source": "booking_task",
+        "target": "mark_booked"
+      },
+      {
+        "id": "e17",
+        "source": "mark_booked",
+        "target": "notify_traveler"
+      },
+      {
+        "id": "e18",
+        "source": "manager_rejected",
+        "target": "notify_rejection"
+      },
+      {
+        "id": "e19",
+        "source": "finance_rejected",
+        "target": "notify_rejection"
+      },
+      {
+        "id": "e20",
+        "source": "cfo_rejected",
+        "target": "notify_rejection"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": true
+  }
+}

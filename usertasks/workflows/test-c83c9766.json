@@ -1,0 +1,55 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "c83c9766-7881-4d30-a695-bad58ad89684",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "c83c9766-7881-4d30-a695-bad58ad89684",
+    "name": "Test",
+    "description": null,
+    "trigger_type": "middleware_received",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "f682e0d9-e2b4-4a27-9cf6-6e9cb607e0b9",
+        "type": "middleware_received",
+        "label": "Middleware",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "796761de-7048-4c11-836b-d2cecf47ec27",
+        "type": "end_workflow",
+        "label": "Return Response",
+        "config": {
+          "reason": "Middleware completed",
+          "response_mappings": [
+            {
+              "key": "ok",
+              "value": "true"
+            }
+          ],
+          "response_body_mode": "json",
+          "response_status_code": "200"
+        },
+        "position": {
+          "x": 300,
+          "y": 180
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "f5f65499-3255-4d93-91bc-52192a20d3c8",
+        "source": "f682e0d9-e2b4-4a27-9cf6-6e9cb607e0b9",
+        "target": "796761de-7048-4c11-836b-d2cecf47ec27"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

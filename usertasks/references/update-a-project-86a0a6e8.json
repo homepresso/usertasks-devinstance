@@ -1,0 +1,64 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "86a0a6e8-44d1-4bab-ad18-6e80704d22a3",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "86a0a6e8-44d1-4bab-ad18-6e80704d22a3",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update a project",
+    "description": "Update a project on your instance.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "PUT",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"name\": \"{{name}}\",\n  \"type\": \"{{type}}\"\n}",
+      "path_template": "/projects/{{projectId}}"
+    },
+    "inputs": [
+      {
+        "id": "e42b998e-5510-43c5-a744-05053f9614c4",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "55e9d094-cd41-4f50-9beb-a6a2420db3ad",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "a49156b1-a6be-4a77-b10c-ddb459ef8094",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "9a5b6615-7639-4383-9540-903c9fbffa38",
+        "name": "type",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "5ed5ecc1-3359-4498-a705-9f24939704d7",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

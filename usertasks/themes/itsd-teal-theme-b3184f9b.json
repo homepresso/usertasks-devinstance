@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "b3184f9b-bee4-4dd1-b308-f0b735cab5bd",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "b3184f9b-bee4-4dd1-b308-f0b735cab5bd",
+    "name": "ITSD Teal Theme",
+    "description": "Teal service desk theme with gradient hero",
+    "theme": {
+      "card": {
+        "border": "1px solid #E2E8F0",
+        "shadow": "0 1px 3px rgba(0,0,0,0.1)",
+        "padding": "24px",
+        "background": "#FFFFFF",
+        "borderRadius": "12px"
+      },
+      "page": {
+        "padding": "24px",
+        "maxWidth": "640px",
+        "background": "#F0FDFA"
+      },
+      "colors": {
+        "accent": "#1E40AF",
+        "cardBg": "#FFFFFF",
+        "danger": "#EF4444",
+        "primary": "#0F766E",
+        "success": "#10B981",
+        "surface": "#F8FAFC",
+        "warning": "#F59E0B",
+        "cardText": "#1E293B",
+        "errorText": "#DC2626",
+        "focusRing": "#0F766E",
+        "mutedText": "#64748B",
+        "primaryHover": "#0D6963",
+        "primaryLight": "#F0FDFA",
+        "surfaceBorder": "#E2E8F0",
+        "placeholderText": "#94A3B8"
+      },
+      "inputs": {
+        "height": "40px",
+        "fontSize": "14px",
+        "background": "#FFFFFF",
+        "borderColor": "#D1D5DB",
+        "borderWidth": "1px",
+        "borderRadius": "8px",
+        "focusRingColor": "#0F766E",
+        "focusRingWidth": "2px"
+      },
+      "buttons": {
+        "height": "42px",
+        "fontSize": "14px",
+        "primaryBg": "#0F766E",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "8px",
+        "primaryHoverBg": "#0D6963"
+      },
+      "customCSS": "",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "",
+        "buttonBackground": "",
+        "headerBackground": "linear-gradient(135deg, #0F766E 0%, #1E40AF 100%)"
+      },
+      "typography": {
+        "fontSize": "14px",
+        "labelSize": "13px",
+        "fontFamily": "Inter, sans-serif",
+        "labelColor": "#374151",
+        "lineHeight": "1.5",
+        "headingSize": "20px",
+        "labelWeight": "500",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

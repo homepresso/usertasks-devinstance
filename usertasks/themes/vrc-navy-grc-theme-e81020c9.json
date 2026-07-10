@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "e81020c9-0d97-4445-b40b-edbfed1c05cb",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "e81020c9-0d97-4445-b40b-edbfed1c05cb",
+    "name": "VRC Navy GRC Theme",
+    "description": "Deep navy GRC theme with red accents for risk indicators",
+    "theme": {
+      "card": {
+        "border": "1px solid #E2E8F0",
+        "shadow": "0 1px 3px rgba(0,0,0,0.1)",
+        "padding": "24px",
+        "background": "#FFFFFF",
+        "borderRadius": "10px"
+      },
+      "page": {
+        "padding": "24px",
+        "maxWidth": "720px",
+        "background": "#F1F5F9"
+      },
+      "colors": {
+        "accent": "#DC2626",
+        "cardBg": "#FFFFFF",
+        "danger": "#DC2626",
+        "primary": "#1E3A5F",
+        "success": "#10B981",
+        "surface": "#F8FAFC",
+        "warning": "#F59E0B",
+        "cardText": "#1E293B",
+        "errorText": "#DC2626",
+        "focusRing": "#1E3A5F",
+        "mutedText": "#64748B",
+        "primaryHover": "#162D4A",
+        "primaryLight": "#EFF6FF",
+        "surfaceBorder": "#E2E8F0",
+        "placeholderText": "#94A3B8"
+      },
+      "inputs": {
+        "height": "40px",
+        "fontSize": "14px",
+        "background": "#FFFFFF",
+        "borderColor": "#D1D5DB",
+        "borderWidth": "1px",
+        "borderRadius": "6px",
+        "focusRingColor": "#1E3A5F",
+        "focusRingWidth": "2px"
+      },
+      "buttons": {
+        "height": "42px",
+        "fontSize": "14px",
+        "primaryBg": "#1E3A5F",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "6px",
+        "primaryHoverBg": "#162D4A"
+      },
+      "customCSS": "",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "",
+        "buttonBackground": "",
+        "headerBackground": "linear-gradient(135deg, #1E3A5F 0%, #0F172A 100%)"
+      },
+      "typography": {
+        "fontSize": "14px",
+        "labelSize": "13px",
+        "fontFamily": "Inter, sans-serif",
+        "labelColor": "#374151",
+        "lineHeight": "1.5",
+        "headingSize": "20px",
+        "labelWeight": "500",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

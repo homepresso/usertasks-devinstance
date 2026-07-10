@@ -1,0 +1,63 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c8a9ab3b-9d38-4a25-a611-599e65637834",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c8a9ab3b-9d38-4a25-a611-599e65637834",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Get execution tags",
+    "description": "Get annotation tags for an execution.",
+    "tags": [
+      "Execution"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/executions/{{id}}/tags"
+    },
+    "inputs": [
+      {
+        "id": "e1f493ce-a780-486c-a3a5-9e1af4e9c525",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "3b075388-cf3f-4305-a569-9ebc662d6d13",
+        "name": "results",
+        "path": "",
+        "type": "array"
+      },
+      {
+        "id": "c422019f-d70a-4cd9-988e-92c925753874",
+        "name": "id",
+        "path": "[].id",
+        "type": "string"
+      },
+      {
+        "id": "bfe4f4a7-7c87-4d86-afec-8d184e87fe9d",
+        "name": "name",
+        "path": "[].name",
+        "type": "string"
+      },
+      {
+        "id": "81dd2f93-2186-4ad5-857d-10c4d2abf81f",
+        "name": "createdAt",
+        "path": "[].createdAt",
+        "type": "string"
+      },
+      {
+        "id": "ddfe2528-177d-41a1-a88f-23bdebef856d",
+        "name": "updatedAt",
+        "path": "[].updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "3c12fc25-e361-4559-a578-da3213c67d17",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "3c12fc25-e361-4559-a578-da3213c67d17",
+    "integration_id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "Andy: Insert",
+    "description": "Insert a new row",
+    "tags": [],
+    "request_config": {
+      "method": "INSERT",
+      "object_id": "7c503e96-13ce-4b4e-a35a-ddf8a34f80a6",
+      "operation": "insert"
+    },
+    "inputs": [
+      {
+        "id": "c3201473-6910-4cb0-b5d2-08b8b3921fd6",
+        "name": "vendor_name",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "968bc06c-13b4-4eae-ae79-2a1eec91bccf",
+        "name": "vendor_code",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "3a5d1061-3e29-41a1-8ad8-b005fe4a6289",
+        "name": "category",
+        "type": "select",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "97815fc3-6f3e-4c95-a5b2-6fdaeffe0f1b",
+        "name": "risk_tier",
+        "type": "select",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "cf778bd5-5ad6-47b9-bef0-2d7b7403158a",
+        "name": "country",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "f33ca627-ca94-45d9-912d-e999274cbf46",
+        "name": "annual_spend",
+        "type": "number",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "96de1565-306d-486a-accb-8bfd04690060",
+        "name": "contract_status",
+        "type": "select",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "fca4e600-9b18-4229-b379-90e860d6e2da",
+        "name": "primary_contact",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "3de97720-5e3f-4b95-b0c5-5623972e3296",
+        "name": "contact_email",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "856e9941-dc2d-4691-b6d4-b8cc649b9926",
+        "name": "rating",
+        "type": "number",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "10346549-60e1-433a-a53f-58ae00ba1b10",
+        "name": "last_review_date",
+        "type": "date",
+        "location": "body",
+        "required": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "67609eb1-a5d4-4da8-86ba-8344f006c6f6",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      }
+    ]
+  }
+}

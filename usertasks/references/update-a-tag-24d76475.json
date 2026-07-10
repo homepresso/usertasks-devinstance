@@ -1,0 +1,89 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "24d76475-2f97-4a44-bf95-475612b588f5",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "24d76475-2f97-4a44-bf95-475612b588f5",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update a tag",
+    "description": "Update a tag.",
+    "tags": [
+      "Tags"
+    ],
+    "request_config": {
+      "method": "PUT",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"id\": \"{{id}}\",\n  \"name\": \"{{name}}\",\n  \"createdAt\": \"{{createdAt}}\",\n  \"updatedAt\": \"{{updatedAt}}\"\n}",
+      "path_template": "/tags/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "33edde7a-6354-406a-8021-2fbd8292316e",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "eb985b50-50af-43ac-b559-2ebd3b228a15",
+        "name": "id",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "887a7734-852d-4be3-99b6-9d386ea995c4",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "9e8e2a0c-bf4e-477f-b1e0-8145ef2e1e97",
+        "name": "createdAt",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "9e34b545-ae6c-4b78-be33-fc7870cb4330",
+        "name": "updatedAt",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "8e228d20-b264-4ebb-b8d0-623faff48c64",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "bb854a56-9758-4cae-82a1-866c36ac3173",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "12c89ef9-a381-4ca5-a031-a0f906ec4c0a",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "99cdc3e6-326c-4044-a973-d1b5b1b67a7d",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

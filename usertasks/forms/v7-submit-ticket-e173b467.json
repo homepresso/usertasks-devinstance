@@ -1,0 +1,184 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "e173b467-16b5-4cd6-b8b0-bd96aa16ae7a",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "e173b467-16b5-4cd6-b8b0-bd96aa16ae7a",
+    "name": "v7 Submit Ticket",
+    "description": "Public ticket submission form",
+    "schema": {
+      "id": "form_submit",
+      "name": "v7 Submit Ticket",
+      "rules": [
+        {
+          "id": "auto_submit_7772bbd9",
+          "name": "Submit form",
+          "actions": [
+            {
+              "type": "save_to_datasource",
+              "datasource": {
+                "type": "custom_table",
+                "tableId": "1d0f53e0-14b2-42f2-ac8a-ab653fb69b7c"
+              },
+              "rowMappings": [
+                {
+                  "column": "a44f3944-4480-408d-bb7f-05c5aceb176b",
+                  "sourceField": "a44f3944-4480-408d-bb7f-05c5aceb176b"
+                },
+                {
+                  "column": "435e26be-1457-4fbb-8656-b2b9449337b9",
+                  "sourceField": "435e26be-1457-4fbb-8656-b2b9449337b9"
+                },
+                {
+                  "column": "7971f42d-3c5c-4a78-85e0-6284476634ee",
+                  "sourceField": "7971f42d-3c5c-4a78-85e0-6284476634ee"
+                },
+                {
+                  "column": "36bd4d20-f634-4959-a493-48e9fe78998d",
+                  "sourceField": "36bd4d20-f634-4959-a493-48e9fe78998d"
+                },
+                {
+                  "column": "385dc932-9d50-420f-ba8d-f1687ce98ed3",
+                  "sourceField": "385dc932-9d50-420f-ba8d-f1687ce98ed3"
+                }
+              ]
+            },
+            {
+              "type": "submit_form"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "priority": 50,
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "7772bbd9-5ff5-44ed-bece-ab6e07fe9950"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_main",
+          "title": "v7 Submit Ticket",
+          "columns": 1,
+          "components": [
+            {
+              "id": "a44f3944-4480-408d-bb7f-05c5aceb176b",
+              "key": "title",
+              "type": "text_input",
+              "label": "Title",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Title is required"
+                }
+              ]
+            },
+            {
+              "id": "435e26be-1457-4fbb-8656-b2b9449337b9",
+              "key": "description",
+              "type": "textarea",
+              "label": "Description",
+              "props": {
+                "rows": 3
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Description is required"
+                }
+              ]
+            },
+            {
+              "id": "7971f42d-3c5c-4a78-85e0-6284476634ee",
+              "key": "category",
+              "type": "dropdown",
+              "label": "Category",
+              "props": {
+                "options": [],
+                "placeholder": "Select..."
+              },
+              "validation": [],
+              "data_source": {
+                "table_id": "b15daa73-50ca-46a4-bfb1-6b4cd37f0718",
+                "label_column": "name",
+                "value_column": "name"
+              }
+            },
+            {
+              "id": "36bd4d20-f634-4959-a493-48e9fe78998d",
+              "key": "priority",
+              "type": "dropdown",
+              "label": "Priority",
+              "props": {
+                "options": [
+                  {
+                    "id": "opt_0",
+                    "label": "Low",
+                    "value": "low"
+                  },
+                  {
+                    "id": "opt_1",
+                    "label": "Medium",
+                    "value": "medium"
+                  },
+                  {
+                    "id": "opt_2",
+                    "label": "High",
+                    "value": "high"
+                  },
+                  {
+                    "id": "opt_3",
+                    "label": "Critical",
+                    "value": "critical"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "385dc932-9d50-420f-ba8d-f1687ce98ed3",
+              "key": "requester_email",
+              "type": "email",
+              "label": "Requester Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Requester Email is required"
+                }
+              ]
+            },
+            {
+              "id": "7772bbd9-5ff5-44ed-bece-ab6e07fe9950",
+              "type": "button",
+              "label": "Submit",
+              "props": {
+                "buttonSize": "md",
+                "buttonAction": "submit",
+                "buttonVariant": "primary",
+                "buttonFullWidth": false
+              },
+              "style": {
+                "textAlign": "right"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "description": "Public ticket submission form",
+      "formSettings": {},
+      "data_table_id": "1d0f53e0-14b2-42f2-ac8a-ab653fb69b7c"
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

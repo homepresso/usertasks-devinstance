@@ -1,0 +1,168 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "08e152df-1ba8-4652-b560-555cca70e0ae",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "08e152df-1ba8-4652-b560-555cca70e0ae",
+    "name": "New Hire Onboarding Kickoff",
+    "description": "Triggered when a new hire registration form is submitted. Creates onboarding checklist tasks, sends welcome email, and assigns manager review.",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_name": "New Hire Registration",
+      "form_template_id": "6eacb4f9-adf8-451e-ad7c-b958e6f98527"
+    },
+    "nodes": [
+      {
+        "id": "22f920ad-21e2-46f3-943d-a8c430ede53b",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_name": "New Hire Registration",
+          "form_template_id": "6eacb4f9-adf8-451e-ad7c-b958e6f98527"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "Onboarding: {{full_name}}",
+          "template": "Onboarding: {{full_name}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "set_status",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "values": {
+            "Onboarding Status": "In Progress"
+          },
+          "table_id": "776da67e-c7cc-4e6c-93b1-ababbbf2ee55",
+          "operation": "update",
+          "table_name": "Employees",
+          "match_value": "{{personal_email}}",
+          "match_column": "Email",
+          "column_values": {
+            "Onboarding Status": "In Progress"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "decide_tasks",
+        "type": "decision_table",
+        "label": "Decision Table",
+        "config": {
+          "inputs": {
+            "location": "{{location}}",
+            "department": "{{department}}"
+          },
+          "input_mappings": {
+            "location": "{{location}}",
+            "department": "{{department}}"
+          },
+          "decision_table_id": "367cdc1b-9bb5-4bff-b7bc-1944e0d07fcc",
+          "decision_table_name": "Onboarding Task Assignment"
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      },
+      {
+        "id": "welcome_email",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{personal_email}}",
+          "body": "Hi {{full_name}},\n\nWe're thrilled to have you joining us as {{job_title}} in the {{department}} team!\n\nYour start date is {{start_date}} and you'll be based at {{location}}.\n\nYour onboarding buddy is {{onboarding_buddy}} and your manager {{manager_name}} will be reaching out soon.\n\nWe'll have everything set up and ready for your first day. If you have any questions before then, just reply to this email.\n\nWelcome aboard!",
+          "subject": "Welcome to the team, {{full_name}}!"
+        },
+        "position": {
+          "x": 220,
+          "y": 580
+        }
+      },
+      {
+        "id": "notify_manager",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{manager_email}}",
+          "body": "Hi {{manager_name}},\n\n{{full_name}} has been registered for onboarding as {{job_title}} starting {{start_date}}.\n\nOnboarding checklist tasks have been created automatically. Please review and ensure you've blocked time for introductions and any team-specific onboarding items.\n\nLocation: {{location}}\nOnboarding Buddy: {{onboarding_buddy}}",
+          "subject": "New hire onboarding started: {{full_name}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 720
+        }
+      },
+      {
+        "id": "manager_review",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "title": "Review onboarding plan for {{full_name}}",
+          "outcomes": [
+            "Approved",
+            "Needs Changes"
+          ],
+          "description": "A new hire registration has been submitted for {{full_name}} ({{job_title}}, {{department}}). Please review the onboarding checklist, confirm equipment requests, and add any team-specific tasks.\n\nStart Date: {{start_date}}\nLocation: {{location}}\nBuddy: {{onboarding_buddy}}",
+          "assign_to_user_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
+        },
+        "position": {
+          "x": 220,
+          "y": 860
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "b62334c3-ff06-4dc2-bc43-23519a9d607b",
+        "source": "22f920ad-21e2-46f3-943d-a8c430ede53b",
+        "target": "title"
+      },
+      {
+        "id": "cfdca06b-6790-4b03-bb39-40f7136ab48f",
+        "source": "title",
+        "target": "set_status"
+      },
+      {
+        "id": "0005a338-90f0-4d65-b355-9d85b572e63a",
+        "source": "set_status",
+        "target": "decide_tasks"
+      },
+      {
+        "id": "c813432f-9610-46d9-91b0-94b79a08b17f",
+        "source": "decide_tasks",
+        "target": "welcome_email"
+      },
+      {
+        "id": "a343c2fb-6bdd-4fa2-93e1-d34d5dad2484",
+        "source": "welcome_email",
+        "target": "notify_manager"
+      },
+      {
+        "id": "e7c6186f-f47d-4ec8-b88e-fb65a1ef2d7d",
+        "source": "notify_manager",
+        "target": "manager_review"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

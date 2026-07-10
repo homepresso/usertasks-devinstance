@@ -1,0 +1,48 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "77c8b894-ba78-4b91-b695-e352e3fc6be4",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "77c8b894-ba78-4b91-b695-e352e3fc6be4",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Add one or more users to a project",
+    "description": "Add one or more users to a project on your instance.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"relations\": \"{{relations}}\"\n}",
+      "path_template": "/projects/{{projectId}}/users"
+    },
+    "inputs": [
+      {
+        "id": "a3a98273-4be1-422f-ac09-fb921f3cf7db",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "117cc139-0ebb-4633-b9d6-4830472ca8c3",
+        "name": "relations",
+        "type": "array",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "c100835f-2ea2-444f-9d57-03869737b1cb",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

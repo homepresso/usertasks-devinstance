@@ -1,0 +1,64 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "6453fb5a-6138-4b75-b0ab-f03a26f18ba2",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "6453fb5a-6138-4b75-b0ab-f03a26f18ba2",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Stop multiple executions",
+    "description": "Stop multiple executions from your instance based on filter criteria.",
+    "tags": [
+      "Execution"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"status\": \"{{status}}\",\n  \"workflowId\": \"{{workflowId}}\",\n  \"startedAfter\": \"{{startedAfter}}\",\n  \"startedBefore\": \"{{startedBefore}}\"\n}",
+      "path_template": "/executions/stop"
+    },
+    "inputs": [
+      {
+        "id": "4932c757-4de1-4da5-8f74-708886362074",
+        "name": "status",
+        "type": "array",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "432ccaa5-b35d-4620-915c-f6d17f8daa4a",
+        "name": "workflowId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "a50eb375-c500-4160-b4f3-97dcf1a44b56",
+        "name": "startedAfter",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "f5d9ffa4-9e7b-4457-87a4-077856c1a482",
+        "name": "startedBefore",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "33ac945b-7775-4d25-87b9-84b6f417f683",
+        "name": "stopped",
+        "path": "stopped",
+        "type": "number"
+      }
+    ]
+  }
+}

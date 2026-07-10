@@ -1,0 +1,245 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "9e3147e9-ca31-47a1-aeda-1d2e661c34db",
+    "name": "Travel Requests",
+    "description": "Master record of all employee travel requests, updated as requests move through approval and booking.",
+    "columns": [
+      {
+        "id": "4208994d-ae35-41b0-a83f-4c1d7e035bcc",
+        "key": "id",
+        "name": "ID",
+        "type": "number"
+      },
+      {
+        "id": "95774d69-8b9c-4880-8dc5-b47f50488863",
+        "key": "date_created",
+        "name": "Date Created",
+        "type": "date"
+      },
+      {
+        "id": "ebc99347-34c9-4fe3-b931-73c2c830627a",
+        "key": "request_title",
+        "name": "Request Title",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "02c93428-cd66-4184-b86e-e588ccea9c4c",
+        "key": "requester_name",
+        "name": "Requester Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "4a27c8dc-851a-4a6b-a6e0-c9cdfce40178",
+        "key": "requester_email",
+        "name": "Requester Email",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "ba26020b-3919-47c5-a16a-cac01528d8fb",
+        "key": "department",
+        "name": "Department",
+        "type": "select",
+        "options": [
+          "Sales",
+          "Engineering",
+          "Marketing",
+          "Finance",
+          "Operations",
+          "HR",
+          "Executive",
+          "Other"
+        ],
+        "required": true
+      },
+      {
+        "id": "ff5f7558-451a-4c9d-9dc1-7100b29c9a6e",
+        "key": "destination_city",
+        "name": "Destination City",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "6499ca73-da62-45a5-b7d9-cb96f8c92aa6",
+        "key": "destination_country",
+        "name": "Destination Country",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "e1cb7fdd-ca69-44f8-82d1-9e9fc4136d45",
+        "key": "depart_date",
+        "name": "Depart Date",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "18e5436c-00d0-4d97-ac4c-50991205bc5a",
+        "key": "return_date",
+        "name": "Return Date",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "200c7f59-64bb-4e82-a9b9-4eddf6b712c9",
+        "key": "travel_purpose",
+        "name": "Travel Purpose",
+        "type": "select",
+        "options": [
+          "Customer Meeting",
+          "Conference",
+          "Internal Meeting",
+          "Training",
+          "Sales Event",
+          "Site Visit",
+          "Other"
+        ],
+        "required": true
+      },
+      {
+        "id": "1a92fff6-84bd-4d5c-a8fd-da670ee4bb7c",
+        "key": "trip_description",
+        "name": "Trip Description",
+        "type": "longtext",
+        "required": false
+      },
+      {
+        "id": "6609e440-b8cc-46f8-a5d2-a74ce207ca3b",
+        "key": "travel_class",
+        "name": "Travel Class",
+        "type": "select",
+        "options": [
+          "Economy",
+          "Premium Economy",
+          "Business",
+          "First"
+        ],
+        "required": true
+      },
+      {
+        "id": "da81e0d3-1a49-45b8-a46a-bf7c3837c1ac",
+        "key": "estimated_cost_usd",
+        "name": "Estimated Cost USD",
+        "type": "number",
+        "required": true
+      },
+      {
+        "id": "de9a9ace-b679-4283-a723-087be3f232b3",
+        "key": "actual_cost_usd",
+        "name": "Actual Cost USD",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "f847fc0c-6c7f-43cb-ab80-6e68dc7f4d3e",
+        "key": "status",
+        "name": "Status",
+        "type": "select",
+        "options": [
+          "Draft",
+          "Pending Manager",
+          "Pending Finance",
+          "Pending CFO",
+          "Approved",
+          "Booked",
+          "Completed",
+          "Rejected",
+          "Cancelled"
+        ],
+        "required": true
+      },
+      {
+        "id": "4e987bea-d961-4a40-bc0d-49a230215643",
+        "key": "manager_decision",
+        "name": "Manager Decision",
+        "type": "select",
+        "options": [
+          "Pending",
+          "Approved",
+          "Rejected"
+        ],
+        "required": false
+      },
+      {
+        "id": "bdb1cbfc-04d2-4162-9194-e5b33757b8d8",
+        "key": "manager_notes",
+        "name": "Manager Notes",
+        "type": "longtext",
+        "required": false
+      },
+      {
+        "id": "23b5e1cb-ff0c-4cfe-9efe-8ad89096ef5f",
+        "key": "finance_decision",
+        "name": "Finance Decision",
+        "type": "select",
+        "options": [
+          "Pending",
+          "Approved",
+          "Rejected"
+        ],
+        "required": false
+      },
+      {
+        "id": "e7822c15-05f3-45b9-b575-2ada47389a61",
+        "key": "finance_notes",
+        "name": "Finance Notes",
+        "type": "longtext",
+        "required": false
+      },
+      {
+        "id": "fe8c1bc9-b64e-4432-8b98-98f7bd891c6a",
+        "key": "cfo_decision",
+        "name": "CFO Decision",
+        "type": "select",
+        "options": [
+          "Not Required",
+          "Pending",
+          "Approved",
+          "Rejected"
+        ],
+        "required": false
+      },
+      {
+        "id": "1317bd34-a1b1-4aa2-ae27-81bac7d1840a",
+        "key": "cfo_notes",
+        "name": "CFO Notes",
+        "type": "longtext",
+        "required": false
+      },
+      {
+        "id": "7f1985af-9826-4d1f-a0e8-f7ef98a143f0",
+        "key": "booking_reference",
+        "name": "Booking Reference",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "1aed1f35-180b-4f2e-a40e-bd0a2cd1b2bf",
+        "key": "booking_notes",
+        "name": "Booking Notes",
+        "type": "longtext",
+        "required": false
+      },
+      {
+        "id": "aa8058bc-404f-40bd-80fc-ec667bdc88bb",
+        "key": "submitted_at",
+        "name": "Submitted At",
+        "type": "date",
+        "required": false
+      },
+      {
+        "id": "da341e20-8e06-4d3a-a555-1f6a69c614a9",
+        "key": "completed_at",
+        "name": "Completed At",
+        "type": "date",
+        "required": false
+      }
+    ]
+  }
+}

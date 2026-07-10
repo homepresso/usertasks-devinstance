@@ -1,0 +1,236 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "4f083683-bd43-429a-b83d-ba062d2a550c",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "4f083683-bd43-429a-b83d-ba062d2a550c",
+    "name": "ITSD CSAT Survey",
+    "description": "Post-resolution satisfaction survey",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "83904032-357e-4844-bcd0-d5cb700196a8",
+          "title": "Your Feedback",
+          "fields": [
+            {
+              "id": "ticket_number",
+              "type": "text",
+              "label": "Ticket Number",
+              "required": true
+            },
+            {
+              "id": "requester_name",
+              "type": "text",
+              "label": "Your Name",
+              "required": true
+            },
+            {
+              "id": "satisfaction",
+              "type": "select",
+              "label": "Overall Satisfaction",
+              "options": [
+                "1 - Very Dissatisfied",
+                "2 - Dissatisfied",
+                "3 - Neutral",
+                "4 - Satisfied",
+                "5 - Very Satisfied"
+              ],
+              "required": true
+            },
+            {
+              "id": "resolution_quality",
+              "type": "select",
+              "label": "Resolution Quality",
+              "options": [
+                "1 - Poor",
+                "2 - Fair",
+                "3 - Good",
+                "4 - Very Good",
+                "5 - Excellent"
+              ],
+              "required": true
+            },
+            {
+              "id": "agent_helpfulness",
+              "type": "select",
+              "label": "Agent Helpfulness",
+              "options": [
+                "1 - Poor",
+                "2 - Fair",
+                "3 - Good",
+                "4 - Very Good",
+                "5 - Excellent"
+              ]
+            },
+            {
+              "id": "comments",
+              "type": "textarea",
+              "label": "Comments or Suggestions"
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "ticket_number",
+              "type": "text_input",
+              "label": "Ticket Number",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Ticket Number is required"
+                }
+              ]
+            },
+            {
+              "id": "requester_name",
+              "type": "text_input",
+              "label": "Your Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Your Name is required"
+                }
+              ]
+            },
+            {
+              "id": "satisfaction",
+              "type": "dropdown",
+              "label": "Overall Satisfaction",
+              "props": {
+                "options": [
+                  {
+                    "id": "satisfaction_opt_0",
+                    "label": "1 - Very Dissatisfied",
+                    "value": "1 - Very Dissatisfied"
+                  },
+                  {
+                    "id": "satisfaction_opt_1",
+                    "label": "2 - Dissatisfied",
+                    "value": "2 - Dissatisfied"
+                  },
+                  {
+                    "id": "satisfaction_opt_2",
+                    "label": "3 - Neutral",
+                    "value": "3 - Neutral"
+                  },
+                  {
+                    "id": "satisfaction_opt_3",
+                    "label": "4 - Satisfied",
+                    "value": "4 - Satisfied"
+                  },
+                  {
+                    "id": "satisfaction_opt_4",
+                    "label": "5 - Very Satisfied",
+                    "value": "5 - Very Satisfied"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Overall Satisfaction is required"
+                }
+              ]
+            },
+            {
+              "id": "resolution_quality",
+              "type": "dropdown",
+              "label": "Resolution Quality",
+              "props": {
+                "options": [
+                  {
+                    "id": "resolution_quality_opt_0",
+                    "label": "1 - Poor",
+                    "value": "1 - Poor"
+                  },
+                  {
+                    "id": "resolution_quality_opt_1",
+                    "label": "2 - Fair",
+                    "value": "2 - Fair"
+                  },
+                  {
+                    "id": "resolution_quality_opt_2",
+                    "label": "3 - Good",
+                    "value": "3 - Good"
+                  },
+                  {
+                    "id": "resolution_quality_opt_3",
+                    "label": "4 - Very Good",
+                    "value": "4 - Very Good"
+                  },
+                  {
+                    "id": "resolution_quality_opt_4",
+                    "label": "5 - Excellent",
+                    "value": "5 - Excellent"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Resolution Quality is required"
+                }
+              ]
+            },
+            {
+              "id": "agent_helpfulness",
+              "type": "dropdown",
+              "label": "Agent Helpfulness",
+              "props": {
+                "options": [
+                  {
+                    "id": "agent_helpfulness_opt_0",
+                    "label": "1 - Poor",
+                    "value": "1 - Poor"
+                  },
+                  {
+                    "id": "agent_helpfulness_opt_1",
+                    "label": "2 - Fair",
+                    "value": "2 - Fair"
+                  },
+                  {
+                    "id": "agent_helpfulness_opt_2",
+                    "label": "3 - Good",
+                    "value": "3 - Good"
+                  },
+                  {
+                    "id": "agent_helpfulness_opt_3",
+                    "label": "4 - Very Good",
+                    "value": "4 - Very Good"
+                  },
+                  {
+                    "id": "agent_helpfulness_opt_4",
+                    "label": "5 - Excellent",
+                    "value": "5 - Excellent"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "comments",
+              "type": "textarea",
+              "label": "Comments or Suggestions",
+              "props": {
+                "rows": 3
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "3755710c-1901-4cae-8100-d6781ec8c25c",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "3755710c-1901-4cae-8100-d6781ec8c25c",
+    "name": "New Vendor Registration",
+    "description": "Register a new vendor in the system",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_vendor",
+          "title": "Vendor Information",
+          "fields": [
+            {
+              "id": "vendor_name",
+              "type": "text",
+              "label": "Vendor Name",
+              "required": true
+            },
+            {
+              "id": "category",
+              "type": "select",
+              "label": "Category",
+              "options": [
+                "Software",
+                "Hardware",
+                "Professional Services",
+                "Cloud Infrastructure",
+                "Marketing Services",
+                "Facilities",
+                "Staffing",
+                "Consulting",
+                "Other"
+              ],
+              "required": true
+            },
+            {
+              "id": "primary_contact",
+              "type": "text",
+              "label": "Primary Contact Name",
+              "required": true
+            },
+            {
+              "id": "contact_email",
+              "type": "email",
+              "label": "Contact Email",
+              "required": true
+            },
+            {
+              "id": "phone",
+              "type": "text",
+              "label": "Phone"
+            },
+            {
+              "id": "website",
+              "type": "text",
+              "label": "Website",
+              "placeholder": "https://"
+            },
+            {
+              "id": "tax_id",
+              "type": "text",
+              "label": "Tax ID / EIN"
+            },
+            {
+              "id": "payment_terms",
+              "type": "select",
+              "label": "Requested Payment Terms",
+              "options": [
+                "Net 15",
+                "Net 30",
+                "Net 45",
+                "Net 60",
+                "Net 90",
+                "Prepaid"
+              ]
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "vendor_name",
+              "type": "text_input",
+              "label": "Vendor Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Vendor Name is required"
+                }
+              ]
+            },
+            {
+              "id": "category",
+              "type": "dropdown",
+              "label": "Category",
+              "props": {
+                "options": [
+                  {
+                    "id": "category_opt_0",
+                    "label": "Software",
+                    "value": "Software"
+                  },
+                  {
+                    "id": "category_opt_1",
+                    "label": "Hardware",
+                    "value": "Hardware"
+                  },
+                  {
+                    "id": "category_opt_2",
+                    "label": "Professional Services",
+                    "value": "Professional Services"
+                  },
+                  {
+                    "id": "category_opt_3",
+                    "label": "Cloud Infrastructure",
+                    "value": "Cloud Infrastructure"
+                  },
+                  {
+                    "id": "category_opt_4",
+                    "label": "Marketing Services",
+                    "value": "Marketing Services"
+                  },
+                  {
+                    "id": "category_opt_5",
+                    "label": "Facilities",
+                    "value": "Facilities"
+                  },
+                  {
+                    "id": "category_opt_6",
+                    "label": "Staffing",
+                    "value": "Staffing"
+                  },
+                  {
+                    "id": "category_opt_7",
+                    "label": "Consulting",
+                    "value": "Consulting"
+                  },
+                  {
+                    "id": "category_opt_8",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Category is required"
+                }
+              ]
+            },
+            {
+              "id": "primary_contact",
+              "type": "text_input",
+              "label": "Primary Contact Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Primary Contact Name is required"
+                }
+              ]
+            },
+            {
+              "id": "contact_email",
+              "type": "text_input",
+              "label": "Contact Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Contact Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "phone",
+              "type": "text_input",
+              "label": "Phone",
+              "props": {},
+              "validation": []
+            },
+            {
+              "id": "website",
+              "type": "text_input",
+              "label": "Website",
+              "props": {
+                "placeholder": "https://"
+              },
+              "validation": []
+            },
+            {
+              "id": "tax_id",
+              "type": "text_input",
+              "label": "Tax ID / EIN",
+              "props": {},
+              "validation": []
+            },
+            {
+              "id": "payment_terms",
+              "type": "dropdown",
+              "label": "Requested Payment Terms",
+              "props": {
+                "options": [
+                  {
+                    "id": "payment_terms_opt_0",
+                    "label": "Net 15",
+                    "value": "Net 15"
+                  },
+                  {
+                    "id": "payment_terms_opt_1",
+                    "label": "Net 30",
+                    "value": "Net 30"
+                  },
+                  {
+                    "id": "payment_terms_opt_2",
+                    "label": "Net 45",
+                    "value": "Net 45"
+                  },
+                  {
+                    "id": "payment_terms_opt_3",
+                    "label": "Net 60",
+                    "value": "Net 60"
+                  },
+                  {
+                    "id": "payment_terms_opt_4",
+                    "label": "Net 90",
+                    "value": "Net 90"
+                  },
+                  {
+                    "id": "payment_terms_opt_5",
+                    "label": "Prepaid",
+                    "value": "Prepaid"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_compliance",
+          "title": "Compliance & Notes",
+          "fields": [
+            {
+              "id": "annual_spend_estimate",
+              "type": "number",
+              "label": "Estimated Annual Spend"
+            },
+            {
+              "id": "notes",
+              "type": "textarea",
+              "label": "Additional Notes",
+              "placeholder": "Any additional context about this vendor..."
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "annual_spend_estimate",
+              "type": "number",
+              "label": "Estimated Annual Spend",
+              "props": {
+                "min": 0,
+                "step": 1
+              },
+              "validation": []
+            },
+            {
+              "id": "notes",
+              "type": "textarea",
+              "label": "Additional Notes",
+              "props": {
+                "rows": 3,
+                "placeholder": "Any additional context about this vendor..."
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

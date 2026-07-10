@@ -1,0 +1,41 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "4c592623-4a10-4bdf-abb8-e7e55b314894",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "4c592623-4a10-4bdf-abb8-e7e55b314894",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Convert CSV to JSON",
+    "description": "Convert CSV data to JSON format.",
+    "tags": [
+      "Utilities"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"CSV\": \"{{CSV}}\"\n}",
+      "path_template": "/Utilities/CSVToJSON"
+    },
+    "inputs": [
+      {
+        "id": "951149b6-b765-44e1-80b9-5141a1845d41",
+        "name": "CSV",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "57436ec6-c9e2-4d04-932c-353752d3b55c",
+        "name": "results",
+        "path": "",
+        "type": "array"
+      }
+    ]
+  }
+}

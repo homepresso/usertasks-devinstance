@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "f1e9e728-d164-42bc-b26d-aafbdf5f0245",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "f1e9e728-d164-42bc-b26d-aafbdf5f0245",
+    "name": "kanban",
+    "description": null,
+    "trigger_type": "task_created",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "5bc66b92-d35f-494f-89b6-896da4a9c942",
+        "type": "task_created",
+        "label": "Task Created",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    ],
+    "edges": [],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

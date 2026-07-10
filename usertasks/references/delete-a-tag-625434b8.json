@@ -1,0 +1,57 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "625434b8-d5c2-4bb6-a968-b3190d65bbb7",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "625434b8-d5c2-4bb6-a968-b3190d65bbb7",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a tag",
+    "description": "Deletes a tag.",
+    "tags": [
+      "Tags"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/tags/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "c3445ab8-006d-41e5-ae5e-db498838d302",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "47f43769-3cc5-4728-92f4-dd0110f84a01",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "a513fa1a-a7b1-41e6-8828-bc01cc5919df",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "3f68d77d-1a57-4ad0-b345-d0bd5da3a709",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "0b748d49-326b-4b03-9032-e6ceea957dc1",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

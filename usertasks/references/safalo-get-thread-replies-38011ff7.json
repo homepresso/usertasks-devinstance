@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "38011ff7-40d6-41fd-9da8-fa985c0483bf",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "38011ff7-40d6-41fd-9da8-fa985c0483bf",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Get Thread Replies",
+    "description": "Retrieve all replies in a message thread",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/conversations.replies?channel={{channel}}&ts={{thread_ts}}&limit={{limit}}"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID",
+        "default_value": ""
+      },
+      {
+        "name": "thread_ts",
+        "type": "string",
+        "required": true,
+        "description": "Parent message timestamp",
+        "default_value": ""
+      },
+      {
+        "name": "limit",
+        "type": "number",
+        "required": false,
+        "description": "Max replies",
+        "default_value": "100"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "messages",
+        "type": "array"
+      }
+    ]
+  }
+}

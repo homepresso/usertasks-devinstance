@@ -1,0 +1,71 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "62a32178-3270-4256-a7a6-04e5ef1d9039",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "62a32178-3270-4256-a7a6-04e5ef1d9039",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update rows in a data table",
+    "description": "Update rows matching filter conditions in a data table.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "PATCH",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"filter\": \"{{filter}}\",\n  \"data\": \"{{data}}\",\n  \"returnData\": \"{{returnData}}\",\n  \"dryRun\": \"{{dryRun}}\"\n}",
+      "path_template": "/data-tables/{{dataTableId}}/rows/update"
+    },
+    "inputs": [
+      {
+        "id": "40c7fb85-2e03-48f5-8e2c-7d6a0c3afe9d",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "e4780dd4-cd54-4602-b07b-1ad8096a7164",
+        "name": "filter",
+        "type": "object",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "af6d0285-9778-47c0-8e6b-ebfe41bdd892",
+        "name": "data",
+        "type": "object",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "c86b5205-2701-4084-8da9-bfbd1dbd23c1",
+        "name": "returnData",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "2d891267-b6f5-4d7b-a7d9-570cc18626c8",
+        "name": "dryRun",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": "false"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "94284665-94e1-4b2a-83db-a159e357924c",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

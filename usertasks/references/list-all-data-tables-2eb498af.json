@@ -1,0 +1,68 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "2eb498af-2aae-4e1e-b166-40513b720a31",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "2eb498af-2aae-4e1e-b166-40513b720a31",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "List all data tables",
+    "description": "Retrieve a list of all data tables with optional filtering, sorting, and pagination.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/data-tables"
+    },
+    "inputs": [
+      {
+        "id": "579bd4d7-5a0f-4734-9a0f-b9a6cd97b909",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "1fc2f242-ef65-4c76-b381-cbf2d6c8d1cb",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "f48285e7-efdb-4f33-95b2-08d5771520a2",
+        "name": "filter",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "a547f730-c5ca-4db4-8d56-7d327361a203",
+        "name": "sortBy",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "9c9e9df8-dc8b-4d6c-82c9-d0df75e7982d",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "2b7e0c62-2aa3-42a2-8349-857d13f807fa",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

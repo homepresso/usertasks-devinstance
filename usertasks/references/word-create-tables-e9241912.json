@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "e9241912-321d-451b-b926-72a304a169b3",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "e9241912-321d-451b-b926-72a304a169b3",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Word Create Tables",
+    "description": "Create tables at placeholder positions in a Word document.",
+    "tags": [
+      "Word Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Placeholder\": \"{{Placeholder}}\",\n    \"Values\": \"{{Values}}\"\n  }\n]",
+      "path_template": "/word/create-tables"
+    },
+    "inputs": [
+      {
+        "id": "08a8380f-d3ef-40b9-a49a-637b8d389ae3",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "85899a87-e03c-4ca9-8735-029317145835",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "72bdf333-89c3-48c6-bbbf-f4ee2643daa3",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "fc2f7037-890f-400c-9194-b4d27e877c02",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "3c0f0584-ee88-456b-8838-8e7cb2e1ddf8",
+        "name": "Values",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "f164a51d-ab43-410b-884b-0a2b6970e127",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

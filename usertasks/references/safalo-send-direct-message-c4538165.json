@@ -1,0 +1,47 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c4538165-5050-4cdb-a5ec-a0aaa2da88c8",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "c4538165-5050-4cdb-a5ec-a0aaa2da88c8",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Send Direct Message",
+    "description": "Send a direct message to a user",
+    "tags": [],
+    "request_config": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "{\"channel\":\"{{user_id}}\",\"text\":\"{{message}}\"}",
+      "path_template": "/chat.postMessage"
+    },
+    "inputs": [
+      {
+        "name": "user_id",
+        "type": "string",
+        "required": true,
+        "description": "Slack User ID (e.g. U01234567)",
+        "default_value": ""
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "required": true,
+        "description": "Message text",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "ts",
+        "type": "string"
+      }
+    ]
+  }
+}

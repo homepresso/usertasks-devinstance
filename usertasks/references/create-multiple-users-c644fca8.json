@@ -1,0 +1,37 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c644fca8-b6a6-4126-a57d-7062f72a247b",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c644fca8-b6a6-4126-a57d-7062f72a247b",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Create multiple users",
+    "description": "Create one or more users.",
+    "tags": [
+      "User"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{}",
+      "path_template": "/users"
+    },
+    "inputs": [],
+    "outputs": [
+      {
+        "id": "d846932b-6cbf-4b82-8a64-0797e2e648bb",
+        "name": "user",
+        "path": "user",
+        "type": "object"
+      },
+      {
+        "id": "e7d6cc00-3b99-48a4-a51b-a34b03e4f487",
+        "name": "error",
+        "path": "error",
+        "type": "string"
+      }
+    ]
+  }
+}

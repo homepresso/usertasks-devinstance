@@ -1,0 +1,112 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "22eaa590-8c15-44d7-a593-5334da9d2aba",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "22eaa590-8c15-44d7-a593-5334da9d2aba",
+    "integration_id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "Andy: Update",
+    "description": "Update a row by ID",
+    "tags": [],
+    "request_config": {
+      "method": "EXEC",
+      "object_id": "7c503e96-13ce-4b4e-a35a-ddf8a34f80a6",
+      "operation": "update"
+    },
+    "inputs": [
+      {
+        "id": "0a097cad-a28e-460f-8d1d-3d21344e6d86",
+        "name": "id",
+        "type": "string",
+        "location": "path",
+        "required": true
+      },
+      {
+        "id": "9d340607-fd20-4fd6-a02f-4f589c8838b7",
+        "name": "vendor_name",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "e4568a2c-d7e6-4db6-a831-946f97874bf8",
+        "name": "vendor_code",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "4a53865d-0f08-43bd-af39-25dbbcbd8bdd",
+        "name": "category",
+        "type": "select",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "f258f09b-db12-4e97-bd56-f53d7f86b8d5",
+        "name": "risk_tier",
+        "type": "select",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "9b1f9b2f-6012-4c53-9aa9-9238fb5b808e",
+        "name": "country",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "caef179f-b598-40e0-a91d-1ec7a1a5afa7",
+        "name": "annual_spend",
+        "type": "number",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "2609dfb6-f4ad-4196-b13c-d4b8162ab09e",
+        "name": "contract_status",
+        "type": "select",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "a7b1a991-4f33-406d-a43d-6aeaa792a5a8",
+        "name": "primary_contact",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "d0217f24-071c-4d62-a4c6-59cf97fbf7a1",
+        "name": "contact_email",
+        "type": "text",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "bf17b907-50b0-4b2b-8e89-2c9abc46054c",
+        "name": "rating",
+        "type": "number",
+        "location": "body",
+        "required": false
+      },
+      {
+        "id": "cc077d7c-85bd-4e0c-8353-b88f3bd9115e",
+        "name": "last_review_date",
+        "type": "date",
+        "location": "body",
+        "required": false
+      }
+    ],
+    "outputs": [
+      {
+        "id": "68cd86ec-2875-4861-ac9e-108e1eef5b4e",
+        "name": "updated",
+        "path": "updated",
+        "type": "boolean"
+      }
+    ]
+  }
+}

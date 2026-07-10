@@ -1,0 +1,49 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "a3fb2926-c1b9-4ee8-9d5c-333dfe6c308d",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "a3fb2926-c1b9-4ee8-9d5c-333dfe6c308d",
+    "name": "v3 Tickets",
+    "description": "Main ticket tracking table",
+    "columns": [
+      {
+        "name": "title",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "type": "textarea"
+      },
+      {
+        "name": "category",
+        "type": "text"
+      },
+      {
+        "name": "priority",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "requester_email",
+        "type": "email"
+      },
+      {
+        "name": "assigned_to",
+        "type": "text"
+      },
+      {
+        "name": "resolution_notes",
+        "type": "textarea"
+      },
+      {
+        "name": "created_date",
+        "type": "date"
+      }
+    ]
+  }
+}

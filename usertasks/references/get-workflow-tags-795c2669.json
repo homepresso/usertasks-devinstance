@@ -1,0 +1,63 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "795c2669-8b08-471a-8e36-a9a6b8804481",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "795c2669-8b08-471a-8e36-a9a6b8804481",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Get workflow tags",
+    "description": "Get workflow tags.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/workflows/{{id}}/tags"
+    },
+    "inputs": [
+      {
+        "id": "45188ae6-9047-40c3-9d0b-13b56c271c26",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "0092e206-be8d-4cd9-98f4-eb874d0e4648",
+        "name": "results",
+        "path": "",
+        "type": "array"
+      },
+      {
+        "id": "c57f351f-4d39-4849-a429-7b490a7f82e3",
+        "name": "id",
+        "path": "[].id",
+        "type": "string"
+      },
+      {
+        "id": "5e1a3325-fbde-4ee4-a616-59e089e71712",
+        "name": "name",
+        "path": "[].name",
+        "type": "string"
+      },
+      {
+        "id": "4122bf60-887f-4cd7-8b24-00211bcccbd4",
+        "name": "createdAt",
+        "path": "[].createdAt",
+        "type": "string"
+      },
+      {
+        "id": "694b843f-8f3e-4a4f-ac8d-c439e7b20f8d",
+        "name": "updatedAt",
+        "path": "[].updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

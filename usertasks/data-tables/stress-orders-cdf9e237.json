@@ -1,0 +1,109 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "cdf9e237-9a11-45ef-9fff-4adf343fcbec",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "cdf9e237-9a11-45ef-9fff-4adf343fcbec",
+    "name": "Stress Orders",
+    "description": "Order headers written by the 16-ultimate-stress test workflow",
+    "columns": [
+      {
+        "id": "efe673b2-80c4-4be4-99ac-ff6de1441b55",
+        "key": "id",
+        "name": "ID",
+        "type": "number"
+      },
+      {
+        "id": "3a2ea79d-5f24-4763-84f0-79c169e004d1",
+        "key": "date_created",
+        "name": "Date Created",
+        "type": "date"
+      },
+      {
+        "id": "b2005122-599f-4e40-b0d2-523542daa426",
+        "key": "order_no",
+        "name": "Order No",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "a1096e19-8a23-4c35-8838-3d9fac10abe3",
+        "key": "customer",
+        "name": "Customer",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "1ca81fc9-fb8b-408c-b4cc-c568feeab5b8",
+        "key": "tier",
+        "name": "Tier",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "eabd84e2-a322-4659-8cb6-14d44f55e45a",
+        "key": "region",
+        "name": "Region",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "b74b4281-df17-40c9-8e52-a714bce578e8",
+        "key": "item_count",
+        "name": "Item Count",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "b671338d-365b-43d8-b751-09f9b7bede4d",
+        "key": "order_total",
+        "name": "Order Total",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "6a8f2c2c-b079-4385-848d-29aad90288ad",
+        "key": "discount_pct",
+        "name": "Discount Pct",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "a21306a7-8f59-46eb-b35a-efae6ebc3578",
+        "key": "ship_method",
+        "name": "Ship Method",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "3f2bffb0-dc10-40e4-b49c-7f8abef98d07",
+        "key": "ship_cost",
+        "name": "Ship Cost",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "45eddf7c-18e3-4c16-b2c8-afbb2bccc426",
+        "key": "grand_total",
+        "name": "Grand Total",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "9df456ea-afbb-4444-950c-7fe7cab8737c",
+        "key": "status",
+        "name": "Status",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "e19580eb-bc25-4ff0-80dc-067bbb7da1ed",
+        "key": "notes",
+        "name": "Notes",
+        "type": "text",
+        "required": false
+      }
+    ]
+  }
+}

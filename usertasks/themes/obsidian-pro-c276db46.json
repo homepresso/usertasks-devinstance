@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "c276db46-eccd-4428-b9b8-f5677e1aa6ee",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "c276db46-eccd-4428-b9b8-f5677e1aa6ee",
+    "name": "Obsidian Pro",
+    "description": "Dark modern theme with gradient accents for professional forms",
+    "theme": {
+      "card": {
+        "border": "1px solid #334155",
+        "shadow": "0 4px 24px rgba(0,0,0,0.4)",
+        "padding": "28px",
+        "background": "#1E293B",
+        "borderRadius": "16px"
+      },
+      "page": {
+        "padding": "32px",
+        "maxWidth": "720px",
+        "background": "#020617"
+      },
+      "colors": {
+        "accent": "#F59E0B",
+        "cardBg": "#1E293B",
+        "danger": "#EF4444",
+        "primary": "#6366F1",
+        "success": "#10B981",
+        "surface": "#0F172A",
+        "warning": "#F59E0B",
+        "cardText": "#F1F5F9",
+        "errorText": "#FCA5A5",
+        "focusRing": "#818CF8",
+        "mutedText": "#94A3B8",
+        "primaryHover": "#4F46E5",
+        "primaryLight": "#312E81",
+        "surfaceBorder": "#334155",
+        "placeholderText": "#64748B"
+      },
+      "inputs": {
+        "height": "44px",
+        "fontSize": "15px",
+        "background": "#0F172A",
+        "borderColor": "#475569",
+        "borderWidth": "1px",
+        "borderRadius": "10px",
+        "focusRingColor": "#818CF8",
+        "focusRingWidth": "2px"
+      },
+      "buttons": {
+        "height": "44px",
+        "fontSize": "15px",
+        "primaryBg": "#6366F1",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "10px",
+        "primaryHoverBg": "#4F46E5"
+      },
+      "customCSS": "input::placeholder { color: #64748B; } .form-header { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "linear-gradient(135deg, #020617 0%, #0F172A 50%, #1E1B4B 100%)",
+        "buttonBackground": "linear-gradient(135deg, #6366F1, #8B5CF6)",
+        "headerBackground": "linear-gradient(90deg, #6366F1, #8B5CF6)"
+      },
+      "typography": {
+        "fontSize": "15px",
+        "labelSize": "13px",
+        "fontFamily": "'Inter', system-ui, sans-serif",
+        "labelColor": "#CBD5E1",
+        "lineHeight": "1.6",
+        "headingSize": "22px",
+        "labelWeight": "600",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

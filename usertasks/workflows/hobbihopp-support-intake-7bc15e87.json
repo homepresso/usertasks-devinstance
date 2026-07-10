@@ -1,0 +1,104 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "7bc15e87-69e2-4a03-8db5-14fb1ea6429c",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "7bc15e87-69e2-4a03-8db5-14fb1ea6429c",
+    "name": "hobbihopp Support Intake",
+    "description": "Triggered when a hobbihopp.com support form is submitted. Saves ticket data to the HD Tickets table and assigns a review task to Andy Hayes.",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_template_id": "PLACEHOLDER"
+    },
+    "nodes": [
+      {
+        "id": "trigger",
+        "type": "form_submitted",
+        "label": "Support Form Submitted",
+        "config": {
+          "form_template_id": "PLACEHOLDER"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        }
+      },
+      {
+        "id": "save_ticket",
+        "type": "update_data_table",
+        "label": "Save Ticket to HD Tickets",
+        "config": {
+          "table_id": "7e132ade-c6e5-444a-9e15-69d907a8cada",
+          "operation": "insert",
+          "column_values": {
+            "title": "{{subject}}",
+            "status": "Open",
+            "category": "{{category}}",
+            "priority": "{{priority}}",
+            "assigned_to": "andyhayes",
+            "description": "{{description}}",
+            "created_date": "{{submitted_at}}",
+            "requester_email": "{{requester_email}}"
+          },
+          "output_row_id_var": "ticket_row_id"
+        },
+        "position": {
+          "x": 300,
+          "y": 200
+        }
+      },
+      {
+        "id": "assign_task",
+        "type": "user_task",
+        "label": "Review Support Ticket",
+        "config": {
+          "outcomes": [
+            "resolved",
+            "needs_follow_up",
+            "escalate"
+          ],
+          "task_title": "[hobbihopp] New Support Ticket: {{subject}}",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "task_priority": "medium",
+          "assignment_type": "individual",
+          "task_description": "A new support ticket has been submitted on hobbihopp.com.\n\n**Category:** {{category}}\n**Priority:** {{priority}}\n**From:** {{requester_email}}\n\n**Description:**\n{{description}}"
+        },
+        "position": {
+          "x": 300,
+          "y": 380
+        }
+      },
+      {
+        "id": "end",
+        "type": "end_workflow",
+        "label": "Done",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 560
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "trigger",
+        "target": "save_ticket"
+      },
+      {
+        "id": "e2",
+        "source": "save_ticket",
+        "target": "assign_task"
+      },
+      {
+        "id": "e3",
+        "source": "assign_task",
+        "target": "end"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": true
+  }
+}

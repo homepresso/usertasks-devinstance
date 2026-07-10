@@ -1,0 +1,413 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "b49a9bf9-a327-4512-b557-e66616fed031",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "b49a9bf9-a327-4512-b557-e66616fed031",
+    "name": "Travel Request",
+    "description": "Employees submit new business travel requests here. Submissions trigger the Travel Approval Flow workflow.",
+    "schema": {
+      "rules": [
+        {
+          "id": "r_submit",
+          "name": "Submit form on click",
+          "actions": [
+            {
+              "type": "confirm",
+              "message": "Are you sure you want to continue?",
+              "eventName": "submit.form.on.click.confirm",
+              "messageTitle": "Please confirm",
+              "confirmButtons": [
+                {
+                  "label": "Cancel",
+                  "value": "cancel",
+                  "variant": "outline"
+                },
+                {
+                  "label": "Continue",
+                  "value": "ok",
+                  "variant": "primary"
+                }
+              ]
+            },
+            {
+              "type": "submit_form"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "priority": 50,
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_submit"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_trip",
+          "title": "Trip Details",
+          "columns": 2,
+          "components": [
+            {
+              "id": "request_title",
+              "type": "text_input",
+              "label": "Request Title",
+              "props": {
+                "placeholder": "e.g. Q2 Customer Summit in New York"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Give your request a short title"
+                },
+                {
+                  "type": "max_length",
+                  "value": 120
+                }
+              ]
+            },
+            {
+              "id": "travel_purpose",
+              "type": "dropdown",
+              "label": "Travel Purpose",
+              "props": {
+                "options": [
+                  {
+                    "id": "travel_purpose_0",
+                    "label": "Customer Meeting",
+                    "value": "Customer Meeting"
+                  },
+                  {
+                    "id": "travel_purpose_1",
+                    "label": "Conference",
+                    "value": "Conference"
+                  },
+                  {
+                    "id": "travel_purpose_2",
+                    "label": "Internal Meeting",
+                    "value": "Internal Meeting"
+                  },
+                  {
+                    "id": "travel_purpose_3",
+                    "label": "Training",
+                    "value": "Training"
+                  },
+                  {
+                    "id": "travel_purpose_4",
+                    "label": "Sales Event",
+                    "value": "Sales Event"
+                  },
+                  {
+                    "id": "travel_purpose_5",
+                    "label": "Site Visit",
+                    "value": "Site Visit"
+                  },
+                  {
+                    "id": "travel_purpose_6",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Select a travel purpose"
+                }
+              ]
+            },
+            {
+              "id": "destination_city",
+              "type": "text_input",
+              "label": "Destination City",
+              "props": {
+                "placeholder": "e.g. London"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Destination city is required"
+                }
+              ]
+            },
+            {
+              "id": "destination_country",
+              "type": "text_input",
+              "label": "Destination Country",
+              "props": {
+                "placeholder": "e.g. United Kingdom"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Destination country is required"
+                }
+              ]
+            },
+            {
+              "id": "depart_date",
+              "type": "date_picker",
+              "label": "Depart Date",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Depart date is required"
+                }
+              ]
+            },
+            {
+              "id": "return_date",
+              "type": "date_picker",
+              "label": "Return Date",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Return date is required"
+                },
+                {
+                  "type": "after_field",
+                  "value": "depart_date",
+                  "message": "Return must be after departure"
+                }
+              ]
+            },
+            {
+              "id": "trip_description",
+              "type": "textarea",
+              "label": "Trip Description / Business Justification",
+              "props": {
+                "rows": 4,
+                "placeholder": "Briefly describe the trip and why it matters."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "A short justification helps your approvers"
+                },
+                {
+                  "type": "min_length",
+                  "value": 20,
+                  "message": "Please add at least a sentence of detail"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec_requester",
+          "title": "Requester",
+          "columns": 2,
+          "components": [
+            {
+              "id": "requester_name",
+              "type": "text_input",
+              "label": "Your Name",
+              "props": {
+                "placeholder": "Full name"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Your name is required"
+                }
+              ]
+            },
+            {
+              "id": "requester_email",
+              "type": "text_input",
+              "label": "Your Email",
+              "props": {
+                "placeholder": "you@company.com"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Your email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Enter a valid email address"
+                }
+              ]
+            },
+            {
+              "id": "department",
+              "type": "dropdown",
+              "label": "Department",
+              "props": {
+                "options": [
+                  {
+                    "id": "department_0",
+                    "label": "Sales",
+                    "value": "Sales"
+                  },
+                  {
+                    "id": "department_1",
+                    "label": "Engineering",
+                    "value": "Engineering"
+                  },
+                  {
+                    "id": "department_2",
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  },
+                  {
+                    "id": "department_3",
+                    "label": "Finance",
+                    "value": "Finance"
+                  },
+                  {
+                    "id": "department_4",
+                    "label": "Operations",
+                    "value": "Operations"
+                  },
+                  {
+                    "id": "department_5",
+                    "label": "HR",
+                    "value": "HR"
+                  },
+                  {
+                    "id": "department_6",
+                    "label": "Executive",
+                    "value": "Executive"
+                  },
+                  {
+                    "id": "department_7",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Select a department"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec_cost",
+          "title": "Cost and Class",
+          "columns": 2,
+          "components": [
+            {
+              "id": "travel_class",
+              "type": "dropdown",
+              "label": "Travel Class",
+              "props": {
+                "options": [
+                  {
+                    "id": "travel_class_0",
+                    "label": "Economy",
+                    "value": "Economy"
+                  },
+                  {
+                    "id": "travel_class_1",
+                    "label": "Premium Economy",
+                    "value": "Premium Economy"
+                  },
+                  {
+                    "id": "travel_class_2",
+                    "label": "Business",
+                    "value": "Business"
+                  },
+                  {
+                    "id": "travel_class_3",
+                    "label": "First",
+                    "value": "First"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Select a travel class"
+                }
+              ]
+            },
+            {
+              "id": "estimated_cost_usd",
+              "type": "number",
+              "label": "Estimated Total Cost (USD)",
+              "props": {
+                "min": 0,
+                "step": 50,
+                "unit": "$"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Provide an estimated total cost"
+                },
+                {
+                  "type": "min",
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "id": "cost_guidance",
+              "type": "content",
+              "label": "Cost Guidance",
+              "props": {
+                "code": "<div style=\"padding:10px 12px;background:#f5f7fb;border-left:3px solid #4b6cb7;border-radius:4px;font-size:13px;color:#334155\"><strong>Heads up:</strong> Trips over <strong>$5,000</strong> or booked in First class require <strong>CFO approval</strong> in addition to your manager and finance.</div>"
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_submit",
+          "title": "",
+          "columns": 1,
+          "components": [
+            {
+              "id": "btn_submit",
+              "type": "button",
+              "label": "Submit Travel Request",
+              "props": {
+                "buttonSize": "lg",
+                "buttonAction": "submit",
+                "buttonVariant": "primary",
+                "buttonFullWidth": false
+              },
+              "style": {
+                "textAlign": "right"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {
+        "padding": "normal",
+        "maxWidth": "lg",
+        "submitConfig": {
+          "mode": "workflow",
+          "workflowId": "294373ed-c5c1-47f5-874d-57bf173ada0d"
+        },
+        "labelPosition": "top"
+      },
+      "translations": {
+        "strings": {},
+        "languages": []
+      }
+    },
+    "version": 1,
+    "is_published": false
+  }
+}

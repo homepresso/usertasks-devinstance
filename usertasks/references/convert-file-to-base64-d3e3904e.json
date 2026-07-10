@@ -1,0 +1,47 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "d3e3904e-ac44-45ad-9855-d620c93ec3e5",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "d3e3904e-ac44-45ad-9855-d620c93ec3e5",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Convert File to Base64",
+    "description": "Convert an uploaded file to a Base64-encoded string.",
+    "tags": [
+      "Utilities"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/Utilities/FileToBase64"
+    },
+    "inputs": [
+      {
+        "id": "bf1bf8b1-18b4-4b35-8eb7-1528b5822436",
+        "name": "file",
+        "type": "string",
+        "source": "variable",
+        "location": "formData",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "e352fa83-d203-4089-973c-499280fe1caa",
+        "name": "Base64",
+        "path": "Base64",
+        "type": "string"
+      },
+      {
+        "id": "6835bfc6-d44d-42bc-85ab-53f76b8c789f",
+        "name": "FileName",
+        "path": "FileName",
+        "type": "string"
+      }
+    ]
+  }
+}

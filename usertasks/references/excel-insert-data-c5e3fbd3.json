@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c5e3fbd3-20cc-49ed-9c0f-34ff7d5a4b5b",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c5e3fbd3-20cc-49ed-9c0f-34ff7d5a4b5b",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Excel Insert Data",
+    "description": "Insert CSV data at a placeholder position in Excel.",
+    "tags": [
+      "Excel Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"Placeholder\": \"{{Placeholder}}\",\n  \"Values\": \"{{Values}}\"\n}",
+      "path_template": "/excel/insert-data"
+    },
+    "inputs": [
+      {
+        "id": "d06c820b-b2ef-4c02-a8fd-2719fb4cc59e",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "f311d36a-bd36-46e6-801f-d7b90299d33d",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "35191769-a3c3-48aa-b9a4-c4cd2128b814",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "16fe181d-6276-4230-a7d4-ad46e6c788f2",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "bee39ea9-bc58-4f01-9594-770244bfd70b",
+        "name": "Values",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "0364f404-44bd-4a65-935e-4f6ee6afda7b",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

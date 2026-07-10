@@ -1,0 +1,57 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "d79ab1dd-018b-4274-abd7-0df5dbea1612",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "d79ab1dd-018b-4274-abd7-0df5dbea1612",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieves a tag",
+    "description": "Retrieves a tag.",
+    "tags": [
+      "Tags"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/tags/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "84995af6-e388-4af0-a692-170c01c8b923",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "593750a7-6590-475a-a08f-3dff16039951",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "aa01add7-0614-48b4-8573-90eb6f5b9cf3",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "d4b076eb-23a7-4bdb-b359-c1a9aa3643e5",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "1991b2d5-20f0-4283-b706-d362a8d84b7d",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

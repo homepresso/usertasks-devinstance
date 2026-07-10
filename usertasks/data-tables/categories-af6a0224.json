@@ -1,0 +1,25 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "af6a0224-c2db-4865-9f39-c93678a37709",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "af6a0224-c2db-4865-9f39-c93678a37709",
+    "name": "Categories",
+    "description": "Ticket categories with SLA targets",
+    "columns": [
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "sla_hours",
+        "type": "number"
+      },
+      {
+        "name": "owning_team",
+        "type": "text"
+      }
+    ]
+  }
+}

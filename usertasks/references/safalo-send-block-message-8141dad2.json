@@ -1,0 +1,54 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "8141dad2-9241-4acf-9699-2a62b5070e3e",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "8141dad2-9241-4acf-9699-2a62b5070e3e",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Send Block Message",
+    "description": "Send a rich message using Slack Block Kit (buttons, sections, images)",
+    "tags": [],
+    "request_config": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "{\"channel\":\"{{channel}}\",\"text\":\"{{fallback_text}}\",\"blocks\":\"{{blocks_json}}\"}",
+      "path_template": "/chat.postMessage"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID",
+        "default_value": ""
+      },
+      {
+        "name": "blocks_json",
+        "type": "string",
+        "required": true,
+        "description": "JSON array of Block Kit blocks",
+        "default_value": ""
+      },
+      {
+        "name": "fallback_text",
+        "type": "string",
+        "required": true,
+        "description": "Fallback text for notifications",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "ts",
+        "type": "string"
+      }
+    ]
+  }
+}

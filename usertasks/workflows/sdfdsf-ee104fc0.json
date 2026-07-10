@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "ee104fc0-01cb-4a79-bc27-02b7acc1a321",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "ee104fc0-01cb-4a79-bc27-02b7acc1a321",
+    "name": "sdfdsf",
+    "description": null,
+    "trigger_type": "workflow_error",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "cc5ed72b-5ec9-40bf-bbc3-14d80b565301",
+        "type": "workflow_error",
+        "label": "Workflow Error",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    ],
+    "edges": [],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

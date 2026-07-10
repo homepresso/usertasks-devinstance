@@ -1,0 +1,403 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "18279622-eeac-4385-9629-88ddd177fa4d",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "18279622-eeac-4385-9629-88ddd177fa4d",
+    "name": "New Contract",
+    "description": "Create a new vendor contract record",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_contract",
+          "title": "Contract Details",
+          "fields": [
+            {
+              "id": "contract_name",
+              "type": "text",
+              "label": "Contract Name",
+              "required": true
+            },
+            {
+              "id": "vendor_name",
+              "type": "text",
+              "label": "Vendor",
+              "required": true
+            },
+            {
+              "id": "contract_type",
+              "type": "select",
+              "label": "Contract Type",
+              "options": [
+                "Master Service Agreement",
+                "Statement of Work",
+                "Software License",
+                "SaaS Subscription",
+                "NDA",
+                "Maintenance Agreement",
+                "Lease",
+                "Amendment"
+              ],
+              "required": true
+            },
+            {
+              "id": "owner",
+              "type": "text",
+              "label": "Contract Owner",
+              "required": true
+            },
+            {
+              "id": "owner_email",
+              "type": "email",
+              "label": "Owner Email",
+              "required": true
+            },
+            {
+              "id": "department",
+              "type": "select",
+              "label": "Department",
+              "options": [
+                "Engineering",
+                "Product",
+                "Design",
+                "Marketing",
+                "Sales",
+                "Finance",
+                "HR",
+                "Operations",
+                "Legal",
+                "IT"
+              ]
+            },
+            {
+              "id": "annual_value",
+              "type": "number",
+              "label": "Annual Value"
+            },
+            {
+              "id": "total_value",
+              "type": "number",
+              "label": "Total Contract Value"
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "contract_name",
+              "type": "text_input",
+              "label": "Contract Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Contract Name is required"
+                }
+              ]
+            },
+            {
+              "id": "vendor_name",
+              "type": "text_input",
+              "label": "Vendor",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Vendor is required"
+                }
+              ]
+            },
+            {
+              "id": "contract_type",
+              "type": "dropdown",
+              "label": "Contract Type",
+              "props": {
+                "options": [
+                  {
+                    "id": "contract_type_opt_0",
+                    "label": "Master Service Agreement",
+                    "value": "Master Service Agreement"
+                  },
+                  {
+                    "id": "contract_type_opt_1",
+                    "label": "Statement of Work",
+                    "value": "Statement of Work"
+                  },
+                  {
+                    "id": "contract_type_opt_2",
+                    "label": "Software License",
+                    "value": "Software License"
+                  },
+                  {
+                    "id": "contract_type_opt_3",
+                    "label": "SaaS Subscription",
+                    "value": "SaaS Subscription"
+                  },
+                  {
+                    "id": "contract_type_opt_4",
+                    "label": "NDA",
+                    "value": "NDA"
+                  },
+                  {
+                    "id": "contract_type_opt_5",
+                    "label": "Maintenance Agreement",
+                    "value": "Maintenance Agreement"
+                  },
+                  {
+                    "id": "contract_type_opt_6",
+                    "label": "Lease",
+                    "value": "Lease"
+                  },
+                  {
+                    "id": "contract_type_opt_7",
+                    "label": "Amendment",
+                    "value": "Amendment"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Contract Type is required"
+                }
+              ]
+            },
+            {
+              "id": "owner",
+              "type": "text_input",
+              "label": "Contract Owner",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Contract Owner is required"
+                }
+              ]
+            },
+            {
+              "id": "owner_email",
+              "type": "text_input",
+              "label": "Owner Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Owner Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "department",
+              "type": "dropdown",
+              "label": "Department",
+              "props": {
+                "options": [
+                  {
+                    "id": "department_opt_0",
+                    "label": "Engineering",
+                    "value": "Engineering"
+                  },
+                  {
+                    "id": "department_opt_1",
+                    "label": "Product",
+                    "value": "Product"
+                  },
+                  {
+                    "id": "department_opt_2",
+                    "label": "Design",
+                    "value": "Design"
+                  },
+                  {
+                    "id": "department_opt_3",
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  },
+                  {
+                    "id": "department_opt_4",
+                    "label": "Sales",
+                    "value": "Sales"
+                  },
+                  {
+                    "id": "department_opt_5",
+                    "label": "Finance",
+                    "value": "Finance"
+                  },
+                  {
+                    "id": "department_opt_6",
+                    "label": "HR",
+                    "value": "HR"
+                  },
+                  {
+                    "id": "department_opt_7",
+                    "label": "Operations",
+                    "value": "Operations"
+                  },
+                  {
+                    "id": "department_opt_8",
+                    "label": "Legal",
+                    "value": "Legal"
+                  },
+                  {
+                    "id": "department_opt_9",
+                    "label": "IT",
+                    "value": "IT"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "annual_value",
+              "type": "number",
+              "label": "Annual Value",
+              "props": {
+                "min": 0,
+                "step": 1
+              },
+              "validation": []
+            },
+            {
+              "id": "total_value",
+              "type": "number",
+              "label": "Total Contract Value",
+              "props": {
+                "min": 0,
+                "step": 1
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_dates",
+          "title": "Dates & Renewal",
+          "fields": [
+            {
+              "id": "start_date",
+              "type": "date",
+              "label": "Start Date",
+              "required": true
+            },
+            {
+              "id": "end_date",
+              "type": "date",
+              "label": "End Date",
+              "required": true
+            },
+            {
+              "id": "auto_renew",
+              "type": "select",
+              "label": "Auto-Renew?",
+              "options": [
+                "Yes",
+                "No"
+              ]
+            },
+            {
+              "id": "notice_period",
+              "type": "number",
+              "label": "Notice Period (Days)",
+              "placeholder": "90"
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "start_date",
+              "type": "date_picker",
+              "label": "Start Date",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Start Date is required"
+                }
+              ]
+            },
+            {
+              "id": "end_date",
+              "type": "date_picker",
+              "label": "End Date",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "End Date is required"
+                }
+              ]
+            },
+            {
+              "id": "auto_renew",
+              "type": "dropdown",
+              "label": "Auto-Renew?",
+              "props": {
+                "options": [
+                  {
+                    "id": "auto_renew_opt_0",
+                    "label": "Yes",
+                    "value": "Yes"
+                  },
+                  {
+                    "id": "auto_renew_opt_1",
+                    "label": "No",
+                    "value": "No"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "notice_period",
+              "type": "number",
+              "label": "Notice Period (Days)",
+              "props": {
+                "min": 0,
+                "step": 1,
+                "placeholder": "90"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_notes",
+          "title": "Notes",
+          "fields": [
+            {
+              "id": "notes",
+              "type": "textarea",
+              "label": "Contract Notes",
+              "placeholder": "Key terms, special conditions, negotiation notes..."
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "notes",
+              "type": "textarea",
+              "label": "Contract Notes",
+              "props": {
+                "rows": 3,
+                "placeholder": "Key terms, special conditions, negotiation notes..."
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

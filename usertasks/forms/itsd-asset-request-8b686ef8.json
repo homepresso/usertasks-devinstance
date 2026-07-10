@@ -1,0 +1,297 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "8b686ef8-7024-419b-9631-71c5fd41911a",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "8b686ef8-7024-419b-9631-71c5fd41911a",
+    "name": "ITSD Asset Request",
+    "description": "New hardware/software asset request",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "6682a0cb-98f1-47d3-9fd4-9fd8bfe085c3",
+          "title": "Requestor",
+          "fields": [
+            {
+              "id": "requestor_name",
+              "type": "text",
+              "label": "Name",
+              "required": true
+            },
+            {
+              "id": "requestor_email",
+              "type": "email",
+              "label": "Email",
+              "required": true
+            },
+            {
+              "id": "department",
+              "type": "select",
+              "label": "Department",
+              "options": [
+                "Engineering",
+                "Sales",
+                "Marketing",
+                "Finance",
+                "HR",
+                "Operations",
+                "Legal",
+                "Executive"
+              ],
+              "required": true
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "requestor_name",
+              "type": "text_input",
+              "label": "Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Name is required"
+                }
+              ]
+            },
+            {
+              "id": "requestor_email",
+              "type": "text_input",
+              "label": "Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "department",
+              "type": "dropdown",
+              "label": "Department",
+              "props": {
+                "options": [
+                  {
+                    "id": "department_opt_0",
+                    "label": "Engineering",
+                    "value": "Engineering"
+                  },
+                  {
+                    "id": "department_opt_1",
+                    "label": "Sales",
+                    "value": "Sales"
+                  },
+                  {
+                    "id": "department_opt_2",
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  },
+                  {
+                    "id": "department_opt_3",
+                    "label": "Finance",
+                    "value": "Finance"
+                  },
+                  {
+                    "id": "department_opt_4",
+                    "label": "HR",
+                    "value": "HR"
+                  },
+                  {
+                    "id": "department_opt_5",
+                    "label": "Operations",
+                    "value": "Operations"
+                  },
+                  {
+                    "id": "department_opt_6",
+                    "label": "Legal",
+                    "value": "Legal"
+                  },
+                  {
+                    "id": "department_opt_7",
+                    "label": "Executive",
+                    "value": "Executive"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Department is required"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1acc9b1f-47ac-4490-90ce-fd3f81e7d934",
+          "title": "Asset Details",
+          "fields": [
+            {
+              "id": "asset_type",
+              "type": "select",
+              "label": "Asset Type",
+              "options": [
+                "Laptop",
+                "Desktop",
+                "Monitor",
+                "Phone",
+                "Tablet",
+                "Software License",
+                "Peripheral",
+                "Other"
+              ],
+              "required": true
+            },
+            {
+              "id": "make_model",
+              "type": "text",
+              "label": "Preferred Make/Model"
+            },
+            {
+              "id": "justification",
+              "type": "textarea",
+              "label": "Business Justification",
+              "required": true
+            },
+            {
+              "id": "urgency",
+              "type": "select",
+              "label": "Urgency",
+              "options": [
+                "Standard (5-7 days)",
+                "Expedited (2-3 days)",
+                "Emergency (24 hours)"
+              ],
+              "required": true
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "asset_type",
+              "type": "dropdown",
+              "label": "Asset Type",
+              "props": {
+                "options": [
+                  {
+                    "id": "asset_type_opt_0",
+                    "label": "Laptop",
+                    "value": "Laptop"
+                  },
+                  {
+                    "id": "asset_type_opt_1",
+                    "label": "Desktop",
+                    "value": "Desktop"
+                  },
+                  {
+                    "id": "asset_type_opt_2",
+                    "label": "Monitor",
+                    "value": "Monitor"
+                  },
+                  {
+                    "id": "asset_type_opt_3",
+                    "label": "Phone",
+                    "value": "Phone"
+                  },
+                  {
+                    "id": "asset_type_opt_4",
+                    "label": "Tablet",
+                    "value": "Tablet"
+                  },
+                  {
+                    "id": "asset_type_opt_5",
+                    "label": "Software License",
+                    "value": "Software License"
+                  },
+                  {
+                    "id": "asset_type_opt_6",
+                    "label": "Peripheral",
+                    "value": "Peripheral"
+                  },
+                  {
+                    "id": "asset_type_opt_7",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Asset Type is required"
+                }
+              ]
+            },
+            {
+              "id": "make_model",
+              "type": "text_input",
+              "label": "Preferred Make/Model",
+              "props": {},
+              "validation": []
+            },
+            {
+              "id": "justification",
+              "type": "textarea",
+              "label": "Business Justification",
+              "props": {
+                "rows": 3
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Business Justification is required"
+                }
+              ]
+            },
+            {
+              "id": "urgency",
+              "type": "dropdown",
+              "label": "Urgency",
+              "props": {
+                "options": [
+                  {
+                    "id": "urgency_opt_0",
+                    "label": "Standard (5-7 days)",
+                    "value": "Standard (5-7 days)"
+                  },
+                  {
+                    "id": "urgency_opt_1",
+                    "label": "Expedited (2-3 days)",
+                    "value": "Expedited (2-3 days)"
+                  },
+                  {
+                    "id": "urgency_opt_2",
+                    "label": "Emergency (24 hours)",
+                    "value": "Emergency (24 hours)"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Urgency is required"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "52bfbbbf-9179-4a47-8901-0e2a1b7b638b",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "52bfbbbf-9179-4a47-8901-0e2a1b7b638b",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Discover available API capabilities",
+    "description": "Returns a filtered capability map based on the caller's API key scopes. Each resource includes the operations and endpoints accessible to the authenticated API key. Use query parameters to narrow the response.\n",
+    "tags": [
+      "Discover"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/discover"
+    },
+    "inputs": [
+      {
+        "id": "2af6283e-1be2-4074-bc69-2f34f7015a8d",
+        "name": "include",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "99d84857-f2e7-4f04-9180-b7b9267ead13",
+        "name": "resource",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "9cecd927-1c42-48bb-96b9-3ab616b414f2",
+        "name": "operation",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "8d3cba27-43ba-42bb-8d47-f7410a89337b",
+        "name": "data",
+        "path": "data",
+        "type": "object"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "0eeb152c-72a1-487c-a16c-35f96930771d",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "0eeb152c-72a1-487c-a16c-35f96930771d",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve variables",
+    "description": "Retrieve variables from your instance.",
+    "tags": [
+      "Variables"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/variables"
+    },
+    "inputs": [
+      {
+        "id": "4b155852-a521-4bc0-ba92-b86879369f8a",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "3323309a-8156-48d7-ae72-c9771cf992d3",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "efba0af6-d1a8-4364-8453-7d1dbbc0e1a8",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "9dc77508-7681-48ba-bf94-8f2b2c0c1c01",
+        "name": "state",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "66306d4a-78f8-4731-aaf0-c57a90c531af",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "fe289f65-5c0a-4cdf-a9b1-2424d9f244f3",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

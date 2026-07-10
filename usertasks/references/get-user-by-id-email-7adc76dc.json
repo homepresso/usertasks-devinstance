@@ -1,0 +1,88 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "7adc76dc-00f0-4945-ba94-0184a6868edc",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "7adc76dc-00f0-4945-ba94-0184a6868edc",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Get user by ID/Email",
+    "description": "Retrieve a user from your instance. Only available for the instance owner.",
+    "tags": [
+      "User"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/users/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "f72265da-f408-46f4-8de0-8ef754b80686",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "09a934e8-0e34-47ca-aaeb-57c855f326cc",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "0ca650b9-0d2c-4a3d-9171-5efcecd05fd4",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "29992b8c-d9c5-4d0b-94c0-285a487e6c2c",
+        "name": "email",
+        "path": "email",
+        "type": "string"
+      },
+      {
+        "id": "d00fb658-d8da-4edc-92f6-9b99676744c1",
+        "name": "firstName",
+        "path": "firstName",
+        "type": "string"
+      },
+      {
+        "id": "ecfe6c05-35be-4e6a-b776-73f82ce30038",
+        "name": "lastName",
+        "path": "lastName",
+        "type": "string"
+      },
+      {
+        "id": "9aaf9dc8-9424-407f-8613-bf8b95d40645",
+        "name": "isPending",
+        "path": "isPending",
+        "type": "boolean"
+      },
+      {
+        "id": "c994f662-6b5b-4102-a9c5-3fab82710bb6",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "1fb3367e-ee04-4d7d-88e8-1781fcdb9327",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      },
+      {
+        "id": "83527b79-542e-477f-84a8-33b022692225",
+        "name": "role",
+        "path": "role",
+        "type": "string"
+      }
+    ]
+  }
+}

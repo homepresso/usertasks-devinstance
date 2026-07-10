@@ -1,0 +1,104 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "bc1af4d0-7923-43ad-9345-8c49c4290916",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "bc1af4d0-7923-43ad-9345-8c49c4290916",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "PowerPoint Complex Operations",
+    "description": "Execute multiple PowerPoint operations in a single request.",
+    "tags": [
+      "PowerPoint Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"FindAndReplaceitems\": [\n    \"{{FindAndReplaceitems}}\"\n  ],\n  \"UpdateTable\": [\n    \"{{UpdateTable}}\"\n  ],\n  \"UpdateList\": [\n    \"{{UpdateList}}\"\n  ],\n  \"UpdateIndentList\": [\n    \"{{UpdateIndentList}}\"\n  ],\n  \"InsertPicture\": [\n    \"{{InsertPicture}}\"\n  ]\n}",
+      "path_template": "/powerpoint/complex"
+    },
+    "inputs": [
+      {
+        "id": "ce1dde26-5269-4fce-87fb-adf764a595b1",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "187a84fa-1708-465d-835a-61c3318bc539",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "ee4fdd93-52b4-4a0a-806d-d4efb6c3d5f4",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "44c98949-37c3-413d-b0f8-6d131ab4017d",
+        "name": "FindAndReplaceitems",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "20aabba6-48ad-4668-a259-9220ed18ca0d",
+        "name": "UpdateTable",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "2c573b4d-9853-4e86-aee4-cad21f5ae332",
+        "name": "UpdateList",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "d5b245fc-94a3-4b37-ab14-d0da2e04933e",
+        "name": "UpdateIndentList",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "eeea1225-7686-48cc-a376-ca4eb09c8b17",
+        "name": "InsertPicture",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "607ea09b-4615-4604-9642-bab4cdc38362",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

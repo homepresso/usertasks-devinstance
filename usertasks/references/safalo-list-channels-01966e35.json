@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "01966e35-94a2-4982-8083-bddb5bc95a83",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "01966e35-94a2-4982-8083-bddb5bc95a83",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: List Channels",
+    "description": "List public and private channels in the workspace",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/conversations.list?types={{types}}&limit={{limit}}&exclude_archived={{exclude_archived}}"
+    },
+    "inputs": [
+      {
+        "name": "types",
+        "type": "string",
+        "required": false,
+        "description": "Channel types: public_channel, private_channel, mpim, im",
+        "default_value": "public_channel,private_channel"
+      },
+      {
+        "name": "limit",
+        "type": "number",
+        "required": false,
+        "description": "Max channels",
+        "default_value": "100"
+      },
+      {
+        "name": "exclude_archived",
+        "type": "string",
+        "required": false,
+        "description": "Exclude archived channels",
+        "default_value": "true"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "channels",
+        "type": "array"
+      }
+    ]
+  }
+}

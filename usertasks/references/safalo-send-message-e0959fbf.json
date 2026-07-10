@@ -1,0 +1,65 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "e0959fbf-7731-42f3-87a5-e8bfa3f31975",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "e0959fbf-7731-42f3-87a5-e8bfa3f31975",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Send Message",
+    "description": "Send a message to a Slack channel",
+    "tags": [],
+    "request_config": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "{\"channel\":\"{{channel}}\",\"text\":\"{{message}}\",\"thread_ts\":\"{{thread_ts}}\",\"unfurl_links\":\"{{unfurl_links}}\"}",
+      "path_template": "/chat.postMessage"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID or name (e.g. #general or C01234567)",
+        "default_value": ""
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "required": true,
+        "description": "Message text (supports Slack mrkdwn)",
+        "default_value": ""
+      },
+      {
+        "name": "thread_ts",
+        "type": "string",
+        "required": false,
+        "description": "Thread timestamp to reply in a thread",
+        "default_value": ""
+      },
+      {
+        "name": "unfurl_links",
+        "type": "string",
+        "required": false,
+        "description": "Unfurl URLs in message",
+        "default_value": "true"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "ts",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      }
+    ]
+  }
+}

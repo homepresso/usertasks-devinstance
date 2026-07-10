@@ -1,0 +1,166 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "09a5168f-b717-4aa7-be1d-3e4ddffe425b",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "09a5168f-b717-4aa7-be1d-3e4ddffe425b",
+    "name": "ITSD KB Article Submission",
+    "description": "Internal KB article submission",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "b164dcf6-161e-4f11-b0e7-d4ccfbffa838",
+          "title": "Article Details",
+          "fields": [
+            {
+              "id": "article_title",
+              "type": "text",
+              "label": "Article Title",
+              "required": true
+            },
+            {
+              "id": "category",
+              "type": "select",
+              "label": "Category",
+              "options": [
+                "How-To",
+                "Troubleshooting",
+                "FAQ",
+                "Policy",
+                "Known Issue"
+              ],
+              "required": true
+            },
+            {
+              "id": "content",
+              "type": "textarea",
+              "label": "Content",
+              "required": true
+            },
+            {
+              "id": "resolution_steps",
+              "type": "textarea",
+              "label": "Resolution Steps"
+            },
+            {
+              "id": "applicable_systems",
+              "type": "text",
+              "label": "Applicable Systems"
+            },
+            {
+              "id": "author",
+              "type": "text",
+              "label": "Author",
+              "required": true
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "article_title",
+              "type": "text_input",
+              "label": "Article Title",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Article Title is required"
+                }
+              ]
+            },
+            {
+              "id": "category",
+              "type": "dropdown",
+              "label": "Category",
+              "props": {
+                "options": [
+                  {
+                    "id": "category_opt_0",
+                    "label": "How-To",
+                    "value": "How-To"
+                  },
+                  {
+                    "id": "category_opt_1",
+                    "label": "Troubleshooting",
+                    "value": "Troubleshooting"
+                  },
+                  {
+                    "id": "category_opt_2",
+                    "label": "FAQ",
+                    "value": "FAQ"
+                  },
+                  {
+                    "id": "category_opt_3",
+                    "label": "Policy",
+                    "value": "Policy"
+                  },
+                  {
+                    "id": "category_opt_4",
+                    "label": "Known Issue",
+                    "value": "Known Issue"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Category is required"
+                }
+              ]
+            },
+            {
+              "id": "content",
+              "type": "textarea",
+              "label": "Content",
+              "props": {
+                "rows": 3
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Content is required"
+                }
+              ]
+            },
+            {
+              "id": "resolution_steps",
+              "type": "textarea",
+              "label": "Resolution Steps",
+              "props": {
+                "rows": 3
+              },
+              "validation": []
+            },
+            {
+              "id": "applicable_systems",
+              "type": "text_input",
+              "label": "Applicable Systems",
+              "props": {},
+              "validation": []
+            },
+            {
+              "id": "author",
+              "type": "text_input",
+              "label": "Author",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Author is required"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

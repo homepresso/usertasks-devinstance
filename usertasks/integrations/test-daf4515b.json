@@ -1,0 +1,27 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "Test",
+    "type": "database",
+    "config": {
+      "base_url": "mssql://nintexse.database.windows.net:5432/easylogdb",
+      "db_config": {
+        "ssl": false,
+        "host": "nintexse.database.windows.net",
+        "port": 1433,
+        "db_type": "mssql",
+        "encrypt": true,
+        "database": "EasyLogApp",
+        "username": "sqladmin",
+        "auth_method": "sql",
+        "trustServerCertificate": true
+      }
+    },
+    "is_active": true,
+    "tags": []
+  }
+}

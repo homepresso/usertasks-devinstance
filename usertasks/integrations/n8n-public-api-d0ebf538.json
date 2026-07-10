@@ -1,0 +1,21 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "n8n Public API",
+    "type": "rest_api",
+    "config": {
+      "headers": {},
+      "base_url": "/api/v1",
+      "auth_type": "api_key",
+      "auth_config": {
+        "key_name": "X-N8N-API-KEY"
+      }
+    },
+    "is_active": true,
+    "tags": []
+  }
+}

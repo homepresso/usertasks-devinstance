@@ -1,0 +1,38 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "ac924be6-1fc2-4634-9ae9-d2b51d772899",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "ac924be6-1fc2-4634-9ae9-d2b51d772899",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Get User Info",
+    "description": "Get detailed profile info for a user",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/users.info?user={{user_id}}"
+    },
+    "inputs": [
+      {
+        "name": "user_id",
+        "type": "string",
+        "required": true,
+        "description": "Slack User ID",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "user",
+        "type": "object"
+      }
+    ]
+  }
+}

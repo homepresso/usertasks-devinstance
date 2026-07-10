@@ -1,0 +1,222 @@
+{
+  "format_version": 3,
+  "asset_type": "pages",
+  "id": "3e54f9b9-dc43-4f5e-a3f5-72be1922a26a",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "3e54f9b9-dc43-4f5e-a3f5-72be1922a26a",
+    "name": "v7 Helpdesk Portal",
+    "description": "Main helpdesk dashboard and portal",
+    "schema": {
+      "rules": [
+        {
+          "id": "rule_auto_refresh_on_overlay_submit",
+          "name": "Refresh lists after a drawer form submits",
+          "actions": [
+            {
+              "type": "close_overlay"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "92deb67b-2126-401a-96ab-d4a8a59e4caa"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "3c4527f4-0c31-4902-aa7d-542a25095ed4"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_asset_submitted",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "description": "Closes the launched form/page overlay and refreshes every data_table on this page so newly-written rows appear without a manual reload.",
+          "elseActions": []
+        },
+        {
+          "id": "rule_auto_refresh_on_overlay_submit",
+          "name": "Refresh lists after a drawer form submits",
+          "actions": [
+            {
+              "type": "close_overlay"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "92deb67b-2126-401a-96ab-d4a8a59e4caa"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "3c4527f4-0c31-4902-aa7d-542a25095ed4"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_asset_submitted",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "description": "Closes the launched form/page overlay and refreshes every data_table on this page so newly-written rows appear without a manual reload.",
+          "elseActions": []
+        }
+      ],
+      "sections": [
+        {
+          "id": "a8155712-b606-4842-af91-f48c6abf5d54",
+          "title": "Navigation",
+          "columns": 1,
+          "components": [
+            {
+              "id": "f479808f-b63b-45cd-b835-9c1e7c8c29ff",
+              "type": "page_navigation",
+              "label": "Navigation",
+              "props": {
+                "navItems": [
+                  {
+                    "id": "528c0f2a-0fe9-43bc-b6f8-4a6004a6119a",
+                    "label": "Submit Ticket",
+                    "assetId": "e173b467-16b5-4cd6-b8b0-bd96aa16ae7a",
+                    "targetType": "form",
+                    "overlaySize": "lg",
+                    "presentation": "drawer_right"
+                  },
+                  {
+                    "id": "69ec4056-8a17-42b6-9379-5d8c2caee32b",
+                    "label": "Add Comment",
+                    "assetId": "711e4e09-16cc-46ee-97f7-86e96ff795c4",
+                    "targetType": "form",
+                    "overlaySize": "lg",
+                    "presentation": "drawer_right"
+                  }
+                ]
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "1c54c55d-c246-42dd-8a0f-d6c25a2c2a2f",
+          "title": "At a glance",
+          "columns": 1,
+          "components": [
+            {
+              "id": "0b017ebf-c94b-4451-aa41-0d9194cc5923",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "",
+                "html": "<h2>IT Helpdesk</h2><p>Welcome to the internal IT helpdesk portal.</p>"
+              },
+              "validation": []
+            },
+            {
+              "id": "7c1a9fd1-403e-41d4-90ce-a0b5ad1a65b1",
+              "type": "dashboard_widget",
+              "label": "Tasks Widget",
+              "props": {
+                "widgetType": "metric_active_tasks",
+                "widgetSettings": {}
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "8772cde5-e41f-4fe7-a0ee-113918d4f1ec",
+          "title": "Analytics",
+          "columns": 1,
+          "components": [
+            {
+              "id": "e353fd12-d58c-4168-833e-d06e8eceb13f",
+              "type": "saved_report",
+              "label": "Saved Report",
+              "props": {
+                "reportId": "5bae2698-cd38-423f-ab6b-97e14001794a"
+              },
+              "width": "full",
+              "validation": []
+            },
+            {
+              "id": "5d4d053a-c1b6-4d0c-b2b2-ad189058a1ed",
+              "type": "saved_report",
+              "label": "Saved Report",
+              "props": {
+                "reportId": "34305d62-0188-4140-b163-8bb42c4e82da"
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "7dc7a940-ec1c-499a-8a36-691124ddd30a",
+          "title": "Recent activity",
+          "columns": 1,
+          "components": [
+            {
+              "id": "92deb67b-2126-401a-96ab-d4a8a59e4caa",
+              "type": "data_table",
+              "label": "Tickets",
+              "props": {
+                "columns": [
+                  {
+                    "key": "title",
+                    "label": "Title"
+                  },
+                  {
+                    "key": "priority",
+                    "label": "Priority"
+                  },
+                  {
+                    "key": "status",
+                    "label": "Status"
+                  },
+                  {
+                    "key": "requester_email",
+                    "label": "Requester Email"
+                  }
+                ],
+                "selectable": false
+              },
+              "binding": {
+                "source": "custom_table",
+                "tableId": "1d0f53e0-14b2-42f2-ac8a-ab653fb69b7c"
+              },
+              "validation": []
+            },
+            {
+              "id": "3c4527f4-0c31-4902-aa7d-542a25095ed4",
+              "type": "data_table",
+              "label": "Comments",
+              "props": {
+                "columns": [],
+                "selectable": false
+              },
+              "binding": {
+                "source": "custom_table",
+                "tableId": "23129f55-af93-4931-aa7e-6b9bc04a6887"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": false,
+    "has_unpublished_changes": false,
+    "allow_public_access": false,
+    "public_share_token": null,
+    "public_title": "v7 Helpdesk Portal",
+    "public_description": null,
+    "redirect_url": null,
+    "published_at": null,
+    "updated_at": "2026-04-16T15:15:55.307339+00:00",
+    "created_at": "2026-04-16T15:15:55.307339+00:00"
+  }
+}

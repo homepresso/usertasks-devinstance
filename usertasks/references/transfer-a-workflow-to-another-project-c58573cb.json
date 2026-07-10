@@ -1,0 +1,47 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c58573cb-df2e-4ce4-9ac3-a339a1760789",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "c58573cb-df2e-4ce4-9ac3-a339a1760789",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Transfer a workflow to another project",
+    "description": "Transfer a workflow to another project",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "PUT",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"destinationProjectId\": \"{{destinationProjectId}}\"\n}",
+      "path_template": "/workflows/{{id}}/transfer"
+    },
+    "inputs": [
+      {
+        "id": "ac700582-646a-452b-9e51-539814fdfb20",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "990902e6-6658-4ab6-a52a-75ee67890785",
+        "name": "destinationProjectId",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "d8a0e0ea-a5e1-452b-85a9-0a61ee7dd4f6",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "e79f8012-a279-448e-9a4e-562133128d62",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "e79f8012-a279-448e-9a4e-562133128d62",
+    "integration_id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "Andy: Delete",
+    "description": "Delete a row by ID",
+    "tags": [],
+    "request_config": {
+      "method": "EXEC",
+      "object_id": "7c503e96-13ce-4b4e-a35a-ddf8a34f80a6",
+      "operation": "delete"
+    },
+    "inputs": [
+      {
+        "id": "2c19b2eb-fa2a-406e-8abe-5dff0a3fc768",
+        "name": "id",
+        "type": "string",
+        "location": "path",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "e9715758-3e92-4ab4-b196-228d8435be4b",
+        "name": "deleted",
+        "path": "deleted",
+        "type": "boolean"
+      }
+    ]
+  }
+}

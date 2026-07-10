@@ -1,0 +1,248 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "b180ad8b-75de-49b6-9a1a-8e8a3b900f38",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "b180ad8b-75de-49b6-9a1a-8e8a3b900f38",
+    "name": "Onboarding Feedback",
+    "description": "New hire feedback form collected at end of first week and first month",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_feedback",
+          "title": "Your Onboarding Experience",
+          "fields": [
+            {
+              "id": "employee_name",
+              "type": "text",
+              "label": "Your Name",
+              "required": true
+            },
+            {
+              "id": "feedback_period",
+              "type": "select",
+              "label": "Feedback Period",
+              "options": [
+                "Week 1",
+                "Month 1",
+                "Month 3"
+              ],
+              "required": true
+            },
+            {
+              "id": "overall_rating",
+              "type": "select",
+              "label": "Overall Onboarding Rating",
+              "options": [
+                "5 - Excellent",
+                "4 - Good",
+                "3 - Average",
+                "2 - Below Average",
+                "1 - Poor"
+              ],
+              "required": true
+            },
+            {
+              "id": "best_part",
+              "type": "textarea",
+              "label": "What went well?",
+              "placeholder": "Tell us the best parts of your onboarding..."
+            },
+            {
+              "id": "improvements",
+              "type": "textarea",
+              "label": "What could be improved?",
+              "placeholder": "Areas where onboarding could be better..."
+            },
+            {
+              "id": "missing_info",
+              "type": "textarea",
+              "label": "Was anything missing from your onboarding?",
+              "placeholder": "Tools, access, information you needed but didn't receive..."
+            },
+            {
+              "id": "buddy_helpful",
+              "type": "select",
+              "label": "Was your onboarding buddy helpful?",
+              "options": [
+                "Very helpful",
+                "Somewhat helpful",
+                "Not applicable",
+                "Could be better"
+              ]
+            },
+            {
+              "id": "additional_comments",
+              "type": "textarea",
+              "label": "Additional Comments"
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "employee_name",
+              "type": "text_input",
+              "label": "Your Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Your Name is required"
+                }
+              ]
+            },
+            {
+              "id": "feedback_period",
+              "type": "dropdown",
+              "label": "Feedback Period",
+              "props": {
+                "options": [
+                  {
+                    "id": "feedback_period_opt_0",
+                    "label": "Week 1",
+                    "value": "Week 1"
+                  },
+                  {
+                    "id": "feedback_period_opt_1",
+                    "label": "Month 1",
+                    "value": "Month 1"
+                  },
+                  {
+                    "id": "feedback_period_opt_2",
+                    "label": "Month 3",
+                    "value": "Month 3"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Feedback Period is required"
+                }
+              ]
+            },
+            {
+              "id": "overall_rating",
+              "type": "dropdown",
+              "label": "Overall Onboarding Rating",
+              "props": {
+                "options": [
+                  {
+                    "id": "overall_rating_opt_0",
+                    "label": "5 - Excellent",
+                    "value": "5 - Excellent"
+                  },
+                  {
+                    "id": "overall_rating_opt_1",
+                    "label": "4 - Good",
+                    "value": "4 - Good"
+                  },
+                  {
+                    "id": "overall_rating_opt_2",
+                    "label": "3 - Average",
+                    "value": "3 - Average"
+                  },
+                  {
+                    "id": "overall_rating_opt_3",
+                    "label": "2 - Below Average",
+                    "value": "2 - Below Average"
+                  },
+                  {
+                    "id": "overall_rating_opt_4",
+                    "label": "1 - Poor",
+                    "value": "1 - Poor"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Overall Onboarding Rating is required"
+                }
+              ]
+            },
+            {
+              "id": "best_part",
+              "type": "textarea",
+              "label": "What went well?",
+              "props": {
+                "rows": 3,
+                "placeholder": "Tell us the best parts of your onboarding..."
+              },
+              "validation": []
+            },
+            {
+              "id": "improvements",
+              "type": "textarea",
+              "label": "What could be improved?",
+              "props": {
+                "rows": 3,
+                "placeholder": "Areas where onboarding could be better..."
+              },
+              "validation": []
+            },
+            {
+              "id": "missing_info",
+              "type": "textarea",
+              "label": "Was anything missing from your onboarding?",
+              "props": {
+                "rows": 3,
+                "placeholder": "Tools, access, information you needed but didn't receive..."
+              },
+              "validation": []
+            },
+            {
+              "id": "buddy_helpful",
+              "type": "dropdown",
+              "label": "Was your onboarding buddy helpful?",
+              "props": {
+                "options": [
+                  {
+                    "id": "buddy_helpful_opt_0",
+                    "label": "Very helpful",
+                    "value": "Very helpful"
+                  },
+                  {
+                    "id": "buddy_helpful_opt_1",
+                    "label": "Somewhat helpful",
+                    "value": "Somewhat helpful"
+                  },
+                  {
+                    "id": "buddy_helpful_opt_2",
+                    "label": "Not applicable",
+                    "value": "Not applicable"
+                  },
+                  {
+                    "id": "buddy_helpful_opt_3",
+                    "label": "Could be better",
+                    "value": "Could be better"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "additional_comments",
+              "type": "textarea",
+              "label": "Additional Comments",
+              "props": {
+                "rows": 3
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "4448fab8-4f12-47b4-a632-32e94cbefd19",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "4448fab8-4f12-47b4-a632-32e94cbefd19",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete an execution",
+    "description": "Deletes an execution from your instance.",
+    "tags": [
+      "Execution"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/executions/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "a37d3f29-9c5a-47e2-8d51-95f89044d984",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "2613d179-8a8f-448e-8dae-2742cc9ae7a6",
+        "name": "id",
+        "path": "id",
+        "type": "number"
+      },
+      {
+        "id": "12a3cf42-486c-4392-b9d1-6cc9c17ffae1",
+        "name": "data",
+        "path": "data",
+        "type": "object"
+      },
+      {
+        "id": "3108a69c-ae01-4628-b19e-f3275d7ab7b8",
+        "name": "finished",
+        "path": "finished",
+        "type": "boolean"
+      },
+      {
+        "id": "7f73b6b3-19ac-411e-becd-f070add85f0a",
+        "name": "mode",
+        "path": "mode",
+        "type": "string"
+      },
+      {
+        "id": "233374f0-380d-4010-9b5a-24389b6f0205",
+        "name": "retryOf",
+        "path": "retryOf",
+        "type": "number"
+      },
+      {
+        "id": "48940a8c-861e-4b2b-bc9f-f7a8d4a6f0b6",
+        "name": "retrySuccessId",
+        "path": "retrySuccessId",
+        "type": "number"
+      },
+      {
+        "id": "18894ef6-d67d-4004-b9ca-219683cb5276",
+        "name": "startedAt",
+        "path": "startedAt",
+        "type": "string"
+      },
+      {
+        "id": "aee79c16-5e38-428e-a4e3-584e3ce41af0",
+        "name": "stoppedAt",
+        "path": "stoppedAt",
+        "type": "string"
+      },
+      {
+        "id": "a8e1614c-a157-4d34-bc9d-d14a8b3736af",
+        "name": "workflowId",
+        "path": "workflowId",
+        "type": "number"
+      },
+      {
+        "id": "b8efa008-e7f0-41cb-81d6-be1208b324d0",
+        "name": "waitTill",
+        "path": "waitTill",
+        "type": "string"
+      },
+      {
+        "id": "1c3cbe10-dea5-4c43-959f-00cdeca94a7b",
+        "name": "customData",
+        "path": "customData",
+        "type": "object"
+      },
+      {
+        "id": "ccad0a82-7522-46ee-bbda-a7b59a712ce2",
+        "name": "status",
+        "path": "status",
+        "type": "string"
+      }
+    ]
+  }
+}

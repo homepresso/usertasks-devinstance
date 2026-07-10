@@ -1,0 +1,50 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "25e7e6d8-edc0-4aee-b382-5741d258621c",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "25e7e6d8-edc0-4aee-b382-5741d258621c",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Convert Base64 to File",
+    "description": "Convert a Base64-encoded string to a downloadable file.",
+    "tags": [
+      "Utilities"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"base64\": \"{{base64}}\"\n}",
+      "path_template": "/Utilities/Base64ToFile"
+    },
+    "inputs": [
+      {
+        "id": "2e1cc932-1b4a-4b95-bd5d-48ff6dd1dd07",
+        "name": "FileName",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "bea3f932-b985-47df-b48d-881efe78c40f",
+        "name": "base64",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "a3700f69-8d08-4a3d-84ac-4e3c13bb9572",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

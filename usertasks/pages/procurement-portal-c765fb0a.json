@@ -1,0 +1,475 @@
+{
+  "format_version": 3,
+  "asset_type": "pages",
+  "id": "c765fb0a-cac0-415a-813e-8552be42b4a0",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "c765fb0a-cac0-415a-813e-8552be42b4a0",
+    "name": "Procurement Portal",
+    "description": "Central procurement portal with topbar navigation, KPI widgets, embedded reports, CTA buttons with drawer actions, and joined data table views",
+    "schema": {
+      "rules": [
+        {
+          "id": "rule_open_purchase",
+          "name": "Open Purchase Request",
+          "actions": [
+            {
+              "type": "open_asset",
+              "assetId": "40726f03-daf8-4fa6-a3db-46b1d898792f",
+              "assetType": "form",
+              "assetPresentation": "drawer_right"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_purchase"
+        },
+        {
+          "id": "rule_open_vendor",
+          "name": "Open Vendor Registration",
+          "actions": [
+            {
+              "type": "open_asset",
+              "assetId": "3755710c-1901-4cae-8100-d6781ec8c25c",
+              "assetType": "form",
+              "assetPresentation": "drawer_right"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_vendor"
+        },
+        {
+          "id": "rule_open_contract",
+          "name": "Open New Contract",
+          "actions": [
+            {
+              "type": "open_asset",
+              "assetId": "18279622-eeac-4385-9629-88ddd177fa4d",
+              "assetType": "form",
+              "assetPresentation": "drawer_right"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_contract"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_nav",
+          "title": "Navigation",
+          "columns": 1,
+          "components": [
+            {
+              "id": "main_nav",
+              "type": "page_navigation",
+              "label": "Procurement Navigation",
+              "props": {
+                "navItems": [
+                  {
+                    "id": "338b0a9c-23fb-49d4-9f74-0a246acf3bf9",
+                    "label": "Overview",
+                    "assetId": "#overview",
+                    "targetType": "url",
+                    "description": "Dashboard and KPIs",
+                    "overlaySize": "lg",
+                    "presentation": "navigate"
+                  },
+                  {
+                    "id": "b2d4da40-b44b-412e-a1e2-79b753d1f3f5",
+                    "label": "New Request",
+                    "assetId": "40726f03-daf8-4fa6-a3db-46b1d898792f",
+                    "targetType": "form",
+                    "description": "Submit purchase request",
+                    "overlaySize": "lg",
+                    "presentation": "drawer_right"
+                  },
+                  {
+                    "id": "9fa4610a-4427-458f-9d34-1878614faca0",
+                    "label": "Register Vendor",
+                    "assetId": "3755710c-1901-4cae-8100-d6781ec8c25c",
+                    "targetType": "form",
+                    "description": "Add new vendor",
+                    "overlaySize": "lg",
+                    "presentation": "drawer_right"
+                  },
+                  {
+                    "id": "353cd5fe-7f3a-4396-b858-4e0a6aa3af6c",
+                    "label": "New Contract",
+                    "assetId": "18279622-eeac-4385-9629-88ddd177fa4d",
+                    "targetType": "form",
+                    "description": "Create contract",
+                    "overlaySize": "lg",
+                    "presentation": "drawer_right"
+                  }
+                ],
+                "navSticky": false,
+                "navDensity": "comfortable",
+                "navVariant": "topbar",
+                "navIconSize": "md",
+                "navShowIcons": true,
+                "navShowBadges": true,
+                "navActiveStyle": "fill",
+                "navOverlaySize": "lg",
+                "navDividerStyle": "subtle",
+                "navOpenBehavior": "navigate",
+                "navVisibleItems": 5,
+                "navMobileBehavior": "menu",
+                "navOverflowBehavior": "collapse",
+                "navShowDescriptions": true
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_hero",
+          "title": "Welcome",
+          "columns": 1,
+          "components": [
+            {
+              "id": "hero_content",
+              "type": "content",
+              "label": "Hero",
+              "props": {
+                "code": "<div style='padding:24px 0'><h2 style='margin:0 0 8px;font-size:22px;font-weight:600'>Vendor Procurement & Contracts</h2><p style='margin:0;color:var(--color-text-secondary);font-size:15px'>Submit purchase requests, manage vendors, track contracts, and monitor spend.</p></div>"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_actions",
+          "title": "Quick Actions",
+          "columns": 3,
+          "components": [
+            {
+              "id": "btn_purchase",
+              "type": "button",
+              "label": "New Purchase Request",
+              "props": {
+                "buttonSize": "md",
+                "buttonAction": "custom",
+                "buttonVariant": "primary",
+                "buttonFullWidth": false
+              },
+              "validation": []
+            },
+            {
+              "id": "btn_vendor",
+              "type": "button",
+              "label": "Register Vendor",
+              "props": {
+                "buttonSize": "md",
+                "buttonAction": "custom",
+                "buttonVariant": "secondary",
+                "buttonFullWidth": false
+              },
+              "validation": []
+            },
+            {
+              "id": "btn_contract",
+              "type": "button",
+              "label": "New Contract",
+              "props": {
+                "buttonSize": "md",
+                "buttonAction": "custom",
+                "buttonVariant": "secondary",
+                "buttonFullWidth": false
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_kpis",
+          "title": "Activity",
+          "columns": 1,
+          "components": [
+            {
+              "id": "active_tasks_widget",
+              "type": "dashboard_widget",
+              "label": "Active Approval Tasks",
+              "props": {
+                "widgetType": "metric_active_tasks",
+                "widgetSettings": {}
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_reports",
+          "title": "Analytics",
+          "columns": 2,
+          "components": [
+            {
+              "id": "workflow_report",
+              "type": "saved_report",
+              "label": "Workflow Status",
+              "props": {
+                "reportId": "3e6e92f1-f9d8-49a9-b52a-e34dbfbfcd15",
+                "reportHeight": 320,
+                "reportShowTitle": true
+              },
+              "width": "half",
+              "validation": []
+            },
+            {
+              "id": "task_report",
+              "type": "saved_report",
+              "label": "Approval Tasks",
+              "props": {
+                "reportId": "4737b360-f3ad-45a3-92ae-a30260b2b0fb",
+                "reportHeight": 320,
+                "reportShowTitle": true
+              },
+              "width": "half",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_vendors",
+          "title": "Vendor Directory",
+          "columns": 1,
+          "components": [
+            {
+              "id": "vendors_tbl",
+              "type": "data_table",
+              "label": "Vendors",
+              "props": {
+                "columns": [
+                  {
+                    "key": "vendor-name",
+                    "label": "Vendor"
+                  },
+                  {
+                    "key": "category",
+                    "label": "Category"
+                  },
+                  {
+                    "key": "primary-contact",
+                    "label": "Contact"
+                  },
+                  {
+                    "key": "risk-score",
+                    "label": "Risk"
+                  },
+                  {
+                    "key": "compliance-status",
+                    "label": "Compliance"
+                  },
+                  {
+                    "key": "payment-terms",
+                    "label": "Terms"
+                  },
+                  {
+                    "key": "status",
+                    "label": "Status"
+                  }
+                ],
+                "selectable": true
+              },
+              "width": "full",
+              "binding": {
+                "source": "custom_table",
+                "tableId": "dbffebdd-acd7-416c-a4b4-27918315de07"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_requests",
+          "title": "Purchase Requests",
+          "columns": 1,
+          "components": [
+            {
+              "id": "requests_tbl",
+              "type": "data_table",
+              "label": "Purchase Requests",
+              "props": {
+                "columns": [
+                  {
+                    "key": "title",
+                    "label": "Title"
+                  },
+                  {
+                    "key": "requester",
+                    "label": "Requester"
+                  },
+                  {
+                    "key": "department",
+                    "label": "Dept"
+                  },
+                  {
+                    "key": "vendor-name",
+                    "label": "Vendor"
+                  },
+                  {
+                    "key": "amount",
+                    "label": "Amount"
+                  },
+                  {
+                    "key": "urgency",
+                    "label": "Urgency"
+                  },
+                  {
+                    "key": "approval-status",
+                    "label": "Status"
+                  }
+                ],
+                "selectable": true
+              },
+              "width": "full",
+              "binding": {
+                "source": "custom_table",
+                "tableId": "e39bd71d-fd02-4afd-b818-2e67d1919acb"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_contracts",
+          "title": "Contracts (with Vendor Risk)",
+          "columns": 1,
+          "components": [
+            {
+              "id": "contracts_tbl",
+              "type": "data_table",
+              "label": "Contracts + Vendor",
+              "props": {
+                "columns": [
+                  {
+                    "key": "contract.contract-name",
+                    "label": "Contract"
+                  },
+                  {
+                    "key": "contract.vendor-name",
+                    "label": "Vendor"
+                  },
+                  {
+                    "key": "contract.contract-type",
+                    "label": "Type"
+                  },
+                  {
+                    "key": "contract.owner",
+                    "label": "Owner"
+                  },
+                  {
+                    "key": "contract.annual-value",
+                    "label": "Annual Value"
+                  },
+                  {
+                    "key": "contract.end-date",
+                    "label": "End Date"
+                  },
+                  {
+                    "key": "contract.status",
+                    "label": "Status"
+                  },
+                  {
+                    "key": "vendor.risk-score",
+                    "label": "Vendor Risk"
+                  }
+                ],
+                "selectable": true
+              },
+              "width": "full",
+              "binding": {
+                "source": "reference",
+                "referenceId": "91c1bbd0-f726-4fc0-b12f-ec7ce20a1a12"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_pos",
+          "title": "Purchase Orders (with Vendor Details)",
+          "columns": 1,
+          "components": [
+            {
+              "id": "po_tbl",
+              "type": "data_table",
+              "label": "POs + Vendor",
+              "props": {
+                "columns": [
+                  {
+                    "key": "po.po-number",
+                    "label": "PO #"
+                  },
+                  {
+                    "key": "po.vendor-name",
+                    "label": "Vendor"
+                  },
+                  {
+                    "key": "po.total-amount",
+                    "label": "Amount"
+                  },
+                  {
+                    "key": "po.status",
+                    "label": "Status"
+                  },
+                  {
+                    "key": "po.issue-date",
+                    "label": "Issued"
+                  },
+                  {
+                    "key": "vendor.risk-score",
+                    "label": "Vendor Risk"
+                  },
+                  {
+                    "key": "vendor.payment-terms",
+                    "label": "Terms"
+                  }
+                ],
+                "selectable": true
+              },
+              "width": "full",
+              "binding": {
+                "source": "reference",
+                "referenceId": "ed4a3402-1a08-45eb-8071-77b9f3e891d6"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true,
+    "has_unpublished_changes": false,
+    "allow_public_access": false,
+    "public_share_token": null,
+    "public_title": "Procurement Portal",
+    "public_description": null,
+    "redirect_url": null,
+    "published_at": "2026-04-15T22:49:55.367+00:00",
+    "updated_at": "2026-04-15T22:49:55.641734+00:00",
+    "created_at": "2026-04-15T22:49:55.036851+00:00"
+  }
+}

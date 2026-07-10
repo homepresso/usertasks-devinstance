@@ -1,0 +1,261 @@
+{
+  "format_version": 3,
+  "asset_type": "pages",
+  "id": "0766e608-3072-4e27-9ad5-fb58f44f000f",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "0766e608-3072-4e27-9ad5-fb58f44f000f",
+    "name": "Travel Home",
+    "description": "Landing page for the Travel Request app — quick actions, dashboards, and full request history.",
+    "schema": {
+      "rules": [
+        {
+          "id": "r_open_form",
+          "name": "Open Travel Request form",
+          "actions": [
+            {
+              "type": "open_asset",
+              "assetId": "b49a9bf9-a327-4512-b557-e66616fed031",
+              "assetSize": "xl",
+              "assetType": "form",
+              "assetPresentation": "drawer_right"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_new_request"
+        },
+        {
+          "id": "r_my_tasks",
+          "name": "Go to my tasks",
+          "actions": [
+            {
+              "url": "/tasks",
+              "type": "redirect"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "btn_my_tasks"
+        },
+        {
+          "id": "r_refresh_after_submit",
+          "name": "Refresh table after submit",
+          "actions": [
+            {
+              "type": "close_overlay"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "requests_table"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_asset_submitted",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": []
+        },
+        {
+          "id": "rule_auto_refresh_on_overlay_submit",
+          "name": "Refresh lists after a drawer form submits",
+          "actions": [
+            {
+              "type": "close_overlay"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "requests_table"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_asset_submitted",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "description": "Closes the launched form/page overlay and refreshes every data_table on this page so newly-written rows appear without a manual reload.",
+          "elseActions": []
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_hero",
+          "title": "Travel Requests",
+          "columns": 1,
+          "components": [
+            {
+              "id": "hero",
+              "type": "content",
+              "label": "Intro",
+              "props": {
+                "code": "<div style=\"padding:28px 32px;border-radius:12px;background:linear-gradient(135deg,#1e3a8a 0%,#4b6cb7 100%);color:#fff\"><h1 style=\"margin:0 0 8px 0;font-size:26px\">Travel Requests</h1><p style=\"margin:0;opacity:0.92;font-size:15px\">Submit, review, and track business travel. Trips under $5,000 need Manager and Finance approval. High-value or First class travel also needs CFO sign-off.</p></div>"
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_actions",
+          "title": "Quick Actions",
+          "columns": 2,
+          "components": [
+            {
+              "id": "btn_new_request",
+              "type": "button",
+              "label": "New Travel Request",
+              "props": {
+                "buttonSize": "lg",
+                "buttonAction": "custom",
+                "buttonVariant": "primary",
+                "buttonFullWidth": true
+              },
+              "validation": []
+            },
+            {
+              "id": "btn_my_tasks",
+              "type": "button",
+              "label": "My Approval Tasks",
+              "props": {
+                "buttonSize": "lg",
+                "buttonAction": "custom",
+                "buttonVariant": "outline",
+                "buttonFullWidth": true
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_charts",
+          "title": "Overview",
+          "columns": 2,
+          "components": [
+            {
+              "id": "report_by_status",
+              "type": "saved_report",
+              "label": "Status Breakdown",
+              "props": {
+                "reportId": "e82cc239-f0d4-48ee-9fdb-5866248cb379"
+              },
+              "width": "full",
+              "validation": []
+            },
+            {
+              "id": "report_spend",
+              "type": "saved_report",
+              "label": "Spend by Department",
+              "props": {
+                "reportId": "b0a589e0-f65f-4246-a212-31229df158a1"
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_pending",
+          "title": "Pending Approval Tasks",
+          "columns": 1,
+          "components": [
+            {
+              "id": "report_pending",
+              "type": "saved_report",
+              "label": "Pending Travel Approvals",
+              "props": {
+                "reportId": "866e6890-b175-41db-89a4-ced452ba079e"
+              },
+              "width": "full",
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_all_requests",
+          "title": "All Travel Requests",
+          "columns": 1,
+          "components": [
+            {
+              "id": "requests_table",
+              "type": "data_table",
+              "label": "Travel Requests",
+              "props": {
+                "columns": [
+                  {
+                    "key": "request_title",
+                    "label": "Request"
+                  },
+                  {
+                    "key": "requester_name",
+                    "label": "Requester"
+                  },
+                  {
+                    "key": "destination_city",
+                    "label": "Destination"
+                  },
+                  {
+                    "key": "depart_date",
+                    "label": "Depart"
+                  },
+                  {
+                    "key": "return_date",
+                    "label": "Return"
+                  },
+                  {
+                    "key": "travel_class",
+                    "label": "Class"
+                  },
+                  {
+                    "key": "estimated_cost_usd",
+                    "label": "Est. Cost ($)"
+                  },
+                  {
+                    "key": "status",
+                    "label": "Status"
+                  }
+                ],
+                "selectable": false
+              },
+              "width": "full",
+              "binding": {
+                "source": "custom_table",
+                "tableId": "9e3147e9-ca31-47a1-aeda-1d2e661c34db"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {
+        "padding": "normal",
+        "maxWidth": "full"
+      }
+    },
+    "version": 1,
+    "is_published": false,
+    "has_unpublished_changes": false,
+    "allow_public_access": false,
+    "public_share_token": null,
+    "public_title": "Travel Home",
+    "public_description": null,
+    "redirect_url": null,
+    "published_at": null,
+    "updated_at": "2026-04-17T14:47:44.217072+00:00",
+    "created_at": "2026-04-17T14:47:44.217072+00:00"
+  }
+}

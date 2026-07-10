@@ -1,0 +1,61 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "6b961b01-3987-4eab-89d5-25c8815c254e",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "6b961b01-3987-4eab-89d5-25c8815c254e",
+    "integration_id": "bb901d09-0e33-4d90-876e-8362685c4ee5",
+    "name": "Azure Blog Storage: Upload Blob",
+    "description": "Upload a file to Azure Blob Storage",
+    "tags": [],
+    "request_config": {
+      "method": "PUT",
+      "headers": {
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "body_template": "{{content}}",
+      "path_template": "/{{container}}/{{blob_name}}"
+    },
+    "inputs": [
+      {
+        "name": "container",
+        "type": "string",
+        "required": false,
+        "description": "Container name (uses default if empty)",
+        "default_value": ""
+      },
+      {
+        "name": "blob_name",
+        "type": "string",
+        "required": true,
+        "description": "Blob name / path (e.g. uploads/file.pdf)",
+        "default_value": ""
+      },
+      {
+        "name": "content",
+        "type": "string",
+        "required": true,
+        "description": "File content or base64 data",
+        "default_value": ""
+      },
+      {
+        "name": "content_type",
+        "type": "string",
+        "required": false,
+        "description": "MIME type",
+        "default_value": "application/octet-stream"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "etag",
+        "type": "string"
+      },
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ]
+  }
+}

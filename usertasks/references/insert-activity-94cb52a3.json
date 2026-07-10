@@ -1,0 +1,107 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "94cb52a3-bb85-4dae-923c-97d78bfd7a5c",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "94cb52a3-bb85-4dae-923c-97d78bfd7a5c",
+    "integration_id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "Insert Activity",
+    "description": "Insert a row into Activity",
+    "tags": [],
+    "request_config": {
+      "method": "INSERT",
+      "path_template": "INSERT INTO Activity (ActivityID, UserEmail, UserName, DateAdded, DateAddedUser, ActivityType, SFObject, Account, Time, SalesRep) VALUES (@ActivityID, @UserEmail, @UserName, @DateAdded, @DateAddedUser, @ActivityType, @SFObject, @Account, @Time, @SalesRep)"
+    },
+    "inputs": [
+      {
+        "id": "84480bf8-437a-4c9f-9268-25a073f74053",
+        "name": "ActivityID",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "923b0654-bac1-460a-bf0e-15a5ae66c5bd",
+        "name": "UserEmail",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "bafdbfe4-d395-442f-8119-6250395d48a0",
+        "name": "UserName",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "eab5694f-4774-4ad0-8db5-3e61569d15dc",
+        "name": "DateAdded",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "2cb8a8bb-6ed9-4c5c-857c-e4091015cca8",
+        "name": "DateAddedUser",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "199bbea8-6905-4cd6-8af2-769e5144abd3",
+        "name": "ActivityType",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "a00e7227-04ad-4cb6-9961-6cacff8bc1bf",
+        "name": "SFObject",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "55c5f74d-7f5a-4414-a65e-3b8a39f782ea",
+        "name": "Account",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "8b7d1478-db85-4f72-ac53-4759385b3750",
+        "name": "Time",
+        "type": "number",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "2f71f3c3-ecf2-44d4-8c59-db1ac30d1ed7",
+        "name": "SalesRep",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "138fce8e-1401-485a-b2d3-a9cef3ce28d7",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      }
+    ]
+  }
+}

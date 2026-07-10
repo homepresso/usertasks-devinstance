@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "data_tables",
+  "id": "57905dcb-c5f1-439c-8437-faeab7d955e1",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "57905dcb-c5f1-439c-8437-faeab7d955e1",
+    "name": "HD Comments",
+    "description": "Ticket comments and activity log",
+    "columns": [
+      {
+        "name": "ticket_id",
+        "type": "text"
+      },
+      {
+        "name": "author",
+        "type": "text"
+      },
+      {
+        "name": "body",
+        "type": "textarea"
+      },
+      {
+        "name": "posted_at",
+        "type": "date"
+      }
+    ]
+  }
+}

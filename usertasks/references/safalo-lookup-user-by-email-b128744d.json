@@ -1,0 +1,38 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "b128744d-b252-4b1f-a542-6fb2af9f2287",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "b128744d-b252-4b1f-a542-6fb2af9f2287",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Lookup User by Email",
+    "description": "Find a Slack user by their email address",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/users.lookupByEmail?email={{email}}"
+    },
+    "inputs": [
+      {
+        "name": "email",
+        "type": "string",
+        "required": true,
+        "description": "Email address",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "user",
+        "type": "object"
+      }
+    ]
+  }
+}

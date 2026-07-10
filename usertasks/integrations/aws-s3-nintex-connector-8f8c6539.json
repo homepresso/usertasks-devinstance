@@ -1,0 +1,27 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "8f8c6539-d8da-49d6-9113-d7f31f2a98f7",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "8f8c6539-d8da-49d6-9113-d7f31f2a98f7",
+    "name": "AWS S3 Nintex (Connector)",
+    "type": "rest_api",
+    "config": {
+      "headers": {},
+      "base_url": "https://nintexna.s3.us-west-1.amazonaws.com",
+      "auth_type": "api_key",
+      "auth_config": {
+        "bucket": "nintexna",
+        "region": "us-west-1",
+        "_executor": "aws_s3",
+        "access_key_id": "AKIAYW45XJEU3I3J2IGN",
+        "secret_access_key": "__SECRET__"
+      }
+    },
+    "is_active": true,
+    "tags": [
+      "aws-s3"
+    ]
+  }
+}

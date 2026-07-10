@@ -1,0 +1,63 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "aa22c16a-2915-4c45-adff-855ce3f87aab",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "aa22c16a-2915-4c45-adff-855ce3f87aab",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update tags of a workflow",
+    "description": "Update tags of a workflow.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "PUT",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{}",
+      "path_template": "/workflows/{{id}}/tags"
+    },
+    "inputs": [
+      {
+        "id": "c709aad9-f2e0-4884-b5d8-4a02f0d9ae72",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "dd0a8e6a-5f61-4868-b32c-e8ae3e627645",
+        "name": "results",
+        "path": "",
+        "type": "array"
+      },
+      {
+        "id": "bb71f1fe-79f7-44e4-b606-18b87dc28a19",
+        "name": "id",
+        "path": "[].id",
+        "type": "string"
+      },
+      {
+        "id": "e6f03cb8-e3e3-40a1-89e2-4adc406d3b61",
+        "name": "name",
+        "path": "[].name",
+        "type": "string"
+      },
+      {
+        "id": "6273b68d-15c3-46c4-9e92-4d836ac14c55",
+        "name": "createdAt",
+        "path": "[].createdAt",
+        "type": "string"
+      },
+      {
+        "id": "69d9acdb-88e5-481e-8793-f1c155745ea1",
+        "name": "updatedAt",
+        "path": "[].updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

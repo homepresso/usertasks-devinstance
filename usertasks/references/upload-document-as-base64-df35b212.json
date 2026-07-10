@@ -1,0 +1,71 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "df35b212-89cc-4338-9428-9e3139428303",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "df35b212-89cc-4338-9428-9e3139428303",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Upload Document as Base64",
+    "description": "Upload a document as a Base64-encoded string and receive a DocID.",
+    "tags": [
+      "File Management"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"Base64\": \"{{Base64}}\",\n  \"FileName\": \"{{FileName}}\",\n  \"ContentType\": \"{{ContentType}}\"\n}",
+      "path_template": "/upload/base64"
+    },
+    "inputs": [
+      {
+        "id": "f528693e-815b-409b-b0d6-c5b785589f7c",
+        "name": "Base64",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "713a0227-59f6-48c7-9b15-ef4c3156bde7",
+        "name": "FileName",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "af7b9280-4874-427b-86c9-08d3c8f3f681",
+        "name": "ContentType",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "a6eba1dc-227d-4595-924f-3b9fa4e025be",
+        "name": "DocId",
+        "path": "DocId",
+        "type": "string"
+      },
+      {
+        "id": "0d181686-83fb-44d9-9705-ad25af7f9e56",
+        "name": "FileName",
+        "path": "FileName",
+        "type": "string"
+      },
+      {
+        "id": "d0051525-e6d6-4a1f-b644-664bb7ebb41b",
+        "name": "FileSize",
+        "path": "FileSize",
+        "type": "number"
+      }
+    ]
+  }
+}

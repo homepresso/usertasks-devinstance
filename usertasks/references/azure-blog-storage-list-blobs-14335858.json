@@ -1,0 +1,48 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "14335858-fad5-4e9b-9ec0-51bd4a24f3ce",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "14335858-fad5-4e9b-9ec0-51bd4a24f3ce",
+    "integration_id": "bb901d09-0e33-4d90-876e-8362685c4ee5",
+    "name": "Azure Blog Storage: List Blobs",
+    "description": "List blobs in a container with optional prefix filter",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/{{container}}?restype=container&comp=list&prefix={{prefix}}&maxresults={{max_results}}"
+    },
+    "inputs": [
+      {
+        "name": "container",
+        "type": "string",
+        "required": false,
+        "description": "Container name",
+        "default_value": ""
+      },
+      {
+        "name": "prefix",
+        "type": "string",
+        "required": false,
+        "description": "Filter by blob name prefix",
+        "default_value": ""
+      },
+      {
+        "name": "max_results",
+        "type": "number",
+        "required": false,
+        "description": "Max results to return",
+        "default_value": "100"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "blobs",
+        "type": "array"
+      }
+    ]
+  }
+}

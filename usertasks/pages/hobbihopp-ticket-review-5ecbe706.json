@@ -1,0 +1,143 @@
+{
+  "format_version": 3,
+  "asset_type": "pages",
+  "id": "5ecbe706-dc9e-460e-b852-64430e331d44",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "5ecbe706-dc9e-460e-b852-64430e331d44",
+    "name": "hobbihopp Ticket Review",
+    "description": "Internal dashboard to review and manage all hobbihopp.com support tickets",
+    "schema": {
+      "rules": [
+        {
+          "id": "rule_auto_refresh_on_overlay_submit_2",
+          "name": "Refresh data after a drawer form submits",
+          "actions": [
+            {
+              "type": "close_asset_overlay"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "tickets_table"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_asset_submitted",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "description": "Closes the launched form/page overlay and refreshes every data_table on this page so newly-written rows appear without a manual reload.",
+          "elseActions": []
+        },
+        {
+          "id": "rule_auto_refresh_on_overlay_submit_2",
+          "name": "Refresh data after a drawer form submits",
+          "actions": [
+            {
+              "type": "close_asset_overlay"
+            },
+            {
+              "type": "refresh_datasource",
+              "targetField": "tickets_table"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_asset_submitted",
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "description": "Closes the launched form/page overlay and refreshes every data_table on this page so newly-written rows appear without a manual reload.",
+          "elseActions": []
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_header",
+          "title": "hobbihopp.com Support Tickets",
+          "columns": 1,
+          "components": [
+            {
+              "id": "header_content",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "<div style='padding:12px 0 4px 0'><h2 style='margin:0;font-size:20px;font-weight:600;color:#1e293b'>🎯 hobbihopp.com Support Queue</h2><p style='margin:6px 0 0 0;color:#64748b;font-size:14px'>Review incoming tickets, track status, and manage resolutions.</p></div>"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_tickets",
+          "title": "All Tickets",
+          "columns": 1,
+          "components": [
+            {
+              "id": "tickets_table",
+              "type": "data_table",
+              "label": "Support Tickets",
+              "props": {
+                "columns": [
+                  {
+                    "key": "created_date",
+                    "label": "Date"
+                  },
+                  {
+                    "key": "title",
+                    "label": "Subject"
+                  },
+                  {
+                    "key": "requester_email",
+                    "label": "Requester"
+                  },
+                  {
+                    "key": "category",
+                    "label": "Category"
+                  },
+                  {
+                    "key": "priority",
+                    "label": "Priority"
+                  },
+                  {
+                    "key": "status",
+                    "label": "Status"
+                  },
+                  {
+                    "key": "assigned_to",
+                    "label": "Assigned To"
+                  }
+                ],
+                "selectable": true,
+                "defaultSort": {
+                  "column": "created_date",
+                  "direction": "desc"
+                }
+              },
+              "binding": {
+                "source": "custom_table",
+                "tableId": "7e132ade-c6e5-444a-9e15-69d907a8cada"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true,
+    "has_unpublished_changes": false,
+    "allow_public_access": false,
+    "public_share_token": "__SECRET__",
+    "public_title": "hobbihopp Ticket Review",
+    "public_description": null,
+    "redirect_url": null,
+    "published_at": "2026-04-20T02:19:35.844+00:00",
+    "updated_at": "2026-05-07T02:25:57.824554+00:00",
+    "created_at": "2026-04-20T02:19:36.147289+00:00"
+  }
+}

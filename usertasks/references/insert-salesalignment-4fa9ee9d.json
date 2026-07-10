@@ -1,0 +1,51 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "4fa9ee9d-14c2-4395-b327-939ce4840b01",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "4fa9ee9d-14c2-4395-b327-939ce4840b01",
+    "integration_id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "Insert SalesAlignment",
+    "description": "Insert a row into SalesAlignment",
+    "tags": [],
+    "request_config": {
+      "method": "INSERT",
+      "path_template": "INSERT INTO SalesAlignment (AlignmentID, SalesRep, SalesSe) VALUES (@AlignmentID, @SalesRep, @SalesSe)"
+    },
+    "inputs": [
+      {
+        "id": "c7a58a97-8449-4389-8dff-05381b4fe6b2",
+        "name": "AlignmentID",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "3f2d2f71-6b49-4b23-8b68-f7765d4fc8c1",
+        "name": "SalesRep",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "c991d96b-1016-4e21-be57-a42e4f15cc57",
+        "name": "SalesSe",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "f4f88d13-f285-4ac1-b885-868e1457f671",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      }
+    ]
+  }
+}

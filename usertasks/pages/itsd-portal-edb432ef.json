@@ -1,0 +1,89 @@
+{
+  "format_version": 3,
+  "asset_type": "pages",
+  "id": "edb432ef-e6c7-4f0e-b97d-0dfda8bef14b",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "edb432ef-e6c7-4f0e-b97d-0dfda8bef14b",
+    "name": "ITSD Portal",
+    "description": "Service desk portal",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "c9e233bf-33e4-4c08-82c0-7d7676e661f3",
+          "title": "Welcome",
+          "columns": 1,
+          "components": [
+            {
+              "id": "e34346c7-6eeb-40a3-8e15-5d62c0cb6db4",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "<div style='padding:32px;background:linear-gradient(135deg,#0F766E 0%,#1E40AF 100%);border-radius:16px;color:white'><h1 style='margin:0 0 8px;font-size:32px;font-weight:800'>IT Service Desk</h1><p style='margin:0;opacity:0.9;font-size:16px'>Submit tickets, browse knowledge base, request assets, track requests</p></div>"
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "6de74e2c-e0f5-4d04-95c1-74bb69e5eb96",
+          "title": "Quick Actions",
+          "columns": 4,
+          "components": [
+            {
+              "id": "26c46fff-bbe1-4d29-9e59-1906644d9060",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "<div style='padding:20px;background:#F0FDFA;border:1px solid #99F6E4;border-radius:12px;text-align:center'><div style='font-size:28px;margin-bottom:6px'>🎫</div><h3 style='margin:0;color:#0F766E;font-size:14px'>Submit Ticket</h3></div>"
+              },
+              "validation": []
+            },
+            {
+              "id": "2e3570a0-b4f1-43f4-b2f9-a44400ad6e7e",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "<div style='padding:20px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;text-align:center'><div style='font-size:28px;margin-bottom:6px'>📚</div><h3 style='margin:0;color:#1E40AF;font-size:14px'>Knowledge Base</h3></div>"
+              },
+              "validation": []
+            },
+            {
+              "id": "9b38ef97-69ee-4177-8850-62e6436caae7",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "<div style='padding:20px;background:#FFF7ED;border:1px solid #FED7AA;border-radius:12px;text-align:center'><div style='font-size:28px;margin-bottom:6px'>💻</div><h3 style='margin:0;color:#C2410C;font-size:14px'>Request Asset</h3></div>"
+              },
+              "validation": []
+            },
+            {
+              "id": "9de63eb7-ee15-4b12-b7e1-f0cd69a49939",
+              "type": "content",
+              "label": "Content",
+              "props": {
+                "code": "<div style='padding:20px;background:#F5F3FF;border:1px solid #DDD6FE;border-radius:12px;text-align:center'><div style='font-size:28px;margin-bottom:6px'>📊</div><h3 style='margin:0;color:#7C3AED;font-size:14px'>Dashboard</h3></div>"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": false,
+    "has_unpublished_changes": false,
+    "allow_public_access": false,
+    "public_share_token": null,
+    "public_title": "ITSD Portal",
+    "public_description": null,
+    "redirect_url": null,
+    "published_at": null,
+    "updated_at": "2026-04-15T03:19:08.378771+00:00",
+    "created_at": "2026-04-15T03:19:08.378771+00:00"
+  }
+}

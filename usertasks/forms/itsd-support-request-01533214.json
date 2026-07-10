@@ -1,0 +1,321 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "01533214-81d6-4787-aabc-ace2023ae173",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "01533214-81d6-4787-aabc-ace2023ae173",
+    "name": "ITSD Support Request",
+    "description": "Public ticket intake",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "bffcd4f4-1d7a-4ad4-a482-1ad841cb2112",
+          "title": "Requester Information",
+          "fields": [
+            {
+              "id": "requester_name",
+              "type": "text",
+              "label": "Full Name",
+              "required": true
+            },
+            {
+              "id": "requester_email",
+              "type": "email",
+              "label": "Email",
+              "required": true
+            },
+            {
+              "id": "department",
+              "type": "select",
+              "label": "Department",
+              "options": [
+                "Engineering",
+                "Sales",
+                "Marketing",
+                "Finance",
+                "HR",
+                "Operations",
+                "Legal",
+                "Executive"
+              ],
+              "required": true
+            },
+            {
+              "id": "vip",
+              "type": "checkbox",
+              "label": "VIP / Executive"
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "requester_name",
+              "type": "text_input",
+              "label": "Full Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Full Name is required"
+                }
+              ]
+            },
+            {
+              "id": "requester_email",
+              "type": "text_input",
+              "label": "Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "department",
+              "type": "dropdown",
+              "label": "Department",
+              "props": {
+                "options": [
+                  {
+                    "id": "department_opt_0",
+                    "label": "Engineering",
+                    "value": "Engineering"
+                  },
+                  {
+                    "id": "department_opt_1",
+                    "label": "Sales",
+                    "value": "Sales"
+                  },
+                  {
+                    "id": "department_opt_2",
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  },
+                  {
+                    "id": "department_opt_3",
+                    "label": "Finance",
+                    "value": "Finance"
+                  },
+                  {
+                    "id": "department_opt_4",
+                    "label": "HR",
+                    "value": "HR"
+                  },
+                  {
+                    "id": "department_opt_5",
+                    "label": "Operations",
+                    "value": "Operations"
+                  },
+                  {
+                    "id": "department_opt_6",
+                    "label": "Legal",
+                    "value": "Legal"
+                  },
+                  {
+                    "id": "department_opt_7",
+                    "label": "Executive",
+                    "value": "Executive"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Department is required"
+                }
+              ]
+            },
+            {
+              "id": "vip",
+              "type": "checkbox",
+              "label": "VIP / Executive",
+              "props": {},
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "cfa11d84-0afd-4e7b-9ebe-31daa6463770",
+          "title": "Issue Details",
+          "fields": [
+            {
+              "id": "category",
+              "type": "select",
+              "label": "Category",
+              "options": [
+                "Hardware",
+                "Software",
+                "Network",
+                "Access",
+                "Security",
+                "Outage",
+                "Other"
+              ],
+              "required": true
+            },
+            {
+              "id": "impact",
+              "type": "select",
+              "label": "Impact",
+              "options": [
+                "Low",
+                "Medium",
+                "High"
+              ],
+              "required": true
+            },
+            {
+              "id": "subject",
+              "type": "text",
+              "label": "Subject",
+              "required": true
+            },
+            {
+              "id": "description",
+              "type": "textarea",
+              "label": "Description",
+              "required": true
+            },
+            {
+              "id": "asset_tag",
+              "type": "text",
+              "label": "Asset Tag (if applicable)"
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "category",
+              "type": "dropdown",
+              "label": "Category",
+              "props": {
+                "options": [
+                  {
+                    "id": "category_opt_0",
+                    "label": "Hardware",
+                    "value": "Hardware"
+                  },
+                  {
+                    "id": "category_opt_1",
+                    "label": "Software",
+                    "value": "Software"
+                  },
+                  {
+                    "id": "category_opt_2",
+                    "label": "Network",
+                    "value": "Network"
+                  },
+                  {
+                    "id": "category_opt_3",
+                    "label": "Access",
+                    "value": "Access"
+                  },
+                  {
+                    "id": "category_opt_4",
+                    "label": "Security",
+                    "value": "Security"
+                  },
+                  {
+                    "id": "category_opt_5",
+                    "label": "Outage",
+                    "value": "Outage"
+                  },
+                  {
+                    "id": "category_opt_6",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Category is required"
+                }
+              ]
+            },
+            {
+              "id": "impact",
+              "type": "dropdown",
+              "label": "Impact",
+              "props": {
+                "options": [
+                  {
+                    "id": "impact_opt_0",
+                    "label": "Low",
+                    "value": "Low"
+                  },
+                  {
+                    "id": "impact_opt_1",
+                    "label": "Medium",
+                    "value": "Medium"
+                  },
+                  {
+                    "id": "impact_opt_2",
+                    "label": "High",
+                    "value": "High"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Impact is required"
+                }
+              ]
+            },
+            {
+              "id": "subject",
+              "type": "text_input",
+              "label": "Subject",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Subject is required"
+                }
+              ]
+            },
+            {
+              "id": "description",
+              "type": "textarea",
+              "label": "Description",
+              "props": {
+                "rows": 3
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Description is required"
+                }
+              ]
+            },
+            {
+              "id": "asset_tag",
+              "type": "text_input",
+              "label": "Asset Tag (if applicable)",
+              "props": {},
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

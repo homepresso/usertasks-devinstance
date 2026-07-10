@@ -1,0 +1,29 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "70803eab-9adf-414e-9b6f-a8b7043f256b",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "70803eab-9adf-414e-9b6f-a8b7043f256b",
+    "name": "gdfgddf",
+    "description": null,
+    "trigger_type": "task_created",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "0d55098b-9e36-4d0d-84b7-f93ca8ffc793",
+        "type": "task_created",
+        "label": "Task Created",
+        "config": {},
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    ],
+    "edges": [],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

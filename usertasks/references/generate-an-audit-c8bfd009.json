@@ -1,0 +1,64 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c8bfd009-38d8-4d6c-9810-b70c1653f66a",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c8bfd009-38d8-4d6c-9810-b70c1653f66a",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Generate an audit",
+    "description": "Generate a security audit for your n8n instance.",
+    "tags": [
+      "Audit"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"additionalOptions\": \"{{additionalOptions}}\"\n}",
+      "path_template": "/audit"
+    },
+    "inputs": [
+      {
+        "id": "f97e3e1f-8c29-43e2-a733-7237cd313c19",
+        "name": "additionalOptions",
+        "type": "object",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "d9a22f1b-8a68-4858-b758-9eec35f904e9",
+        "name": "Credentials Risk Report",
+        "path": "Credentials Risk Report",
+        "type": "object"
+      },
+      {
+        "id": "756f95f8-ed39-4fbf-85cc-8a81fe4c6afb",
+        "name": "Database Risk Report",
+        "path": "Database Risk Report",
+        "type": "object"
+      },
+      {
+        "id": "91d875e4-ea7f-4783-9f76-b354c3b3697b",
+        "name": "Filesystem Risk Report",
+        "path": "Filesystem Risk Report",
+        "type": "object"
+      },
+      {
+        "id": "cba33ec3-dec6-4e7b-b730-afd990e2ce8d",
+        "name": "Nodes Risk Report",
+        "path": "Nodes Risk Report",
+        "type": "object"
+      },
+      {
+        "id": "ff1279a2-59a1-4f39-b677-0da6c36c1c07",
+        "name": "Instance Risk Report",
+        "path": "Instance Risk Report",
+        "type": "object"
+      }
+    ]
+  }
+}

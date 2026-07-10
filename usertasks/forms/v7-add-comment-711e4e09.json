@@ -1,0 +1,111 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "711e4e09-16cc-46ee-97f7-86e96ff795c4",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "711e4e09-16cc-46ee-97f7-86e96ff795c4",
+    "name": "v7 Add Comment",
+    "description": "Form for adding comments to tickets",
+    "schema": {
+      "id": "form_comment",
+      "name": "v7 Add Comment",
+      "rules": [
+        {
+          "id": "auto_submit_9137bf56",
+          "name": "Submit form",
+          "actions": [
+            {
+              "type": "save_to_datasource",
+              "datasource": {
+                "type": "custom_table",
+                "tableId": "23129f55-af93-4931-aa7e-6b9bc04a6887"
+              },
+              "rowMappings": [
+                {
+                  "column": "d52bcd7e-e390-44c5-9c4f-810caf2603bb",
+                  "sourceField": "d52bcd7e-e390-44c5-9c4f-810caf2603bb"
+                },
+                {
+                  "column": "2dac3747-2a46-4870-87bb-9058a4852b51",
+                  "sourceField": "2dac3747-2a46-4870-87bb-9058a4852b51"
+                }
+              ]
+            },
+            {
+              "type": "submit_form"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "priority": 50,
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "9137bf56-779b-4d64-8804-047e96129f70"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_main",
+          "title": "v7 Add Comment",
+          "columns": 1,
+          "components": [
+            {
+              "id": "d52bcd7e-e390-44c5-9c4f-810caf2603bb",
+              "key": "body",
+              "type": "textarea",
+              "label": "Comment",
+              "props": {
+                "rows": 3
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Comment is required"
+                }
+              ]
+            },
+            {
+              "id": "2dac3747-2a46-4870-87bb-9058a4852b51",
+              "key": "author",
+              "type": "text_input",
+              "label": "Author",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Author is required"
+                }
+              ]
+            },
+            {
+              "id": "9137bf56-779b-4d64-8804-047e96129f70",
+              "type": "button",
+              "label": "Submit",
+              "props": {
+                "buttonSize": "md",
+                "buttonAction": "submit",
+                "buttonVariant": "primary",
+                "buttonFullWidth": false
+              },
+              "style": {
+                "textAlign": "right"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "description": "Form for adding comments to tickets",
+      "formSettings": {},
+      "data_table_id": "23129f55-af93-4931-aa7e-6b9bc04a6887"
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

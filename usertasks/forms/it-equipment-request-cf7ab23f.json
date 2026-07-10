@@ -1,0 +1,275 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "cf7ab23f-fcdb-4187-90c6-c14f7f501733",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "cf7ab23f-fcdb-4187-90c6-c14f7f501733",
+    "name": "IT Equipment Request",
+    "description": "Request form for IT equipment provisioning",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_request",
+          "title": "Equipment Request Details",
+          "fields": [
+            {
+              "id": "employee_name",
+              "type": "text",
+              "label": "Employee Name",
+              "required": true
+            },
+            {
+              "id": "equipment_type",
+              "type": "select",
+              "label": "Equipment Type",
+              "options": [
+                "Laptop",
+                "Monitor",
+                "Keyboard",
+                "Mouse",
+                "Headset",
+                "Docking Station",
+                "Phone",
+                "Webcam",
+                "Software License",
+                "Other"
+              ],
+              "required": true
+            },
+            {
+              "id": "specifications",
+              "type": "textarea",
+              "label": "Specifications",
+              "placeholder": "Model, size, requirements..."
+            },
+            {
+              "id": "priority",
+              "type": "select",
+              "label": "Priority",
+              "options": [
+                "Urgent - Start within 3 days",
+                "Standard - Start within 2 weeks",
+                "Low - Start 2+ weeks out"
+              ]
+            },
+            {
+              "id": "needed_by",
+              "type": "date",
+              "label": "Needed By Date",
+              "required": true
+            },
+            {
+              "id": "delivery_location",
+              "type": "select",
+              "label": "Delivery Location",
+              "options": [
+                "Denver HQ",
+                "New York",
+                "San Francisco",
+                "London",
+                "Ship to Employee Home"
+              ]
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "employee_name",
+              "type": "text_input",
+              "label": "Employee Name",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Employee Name is required"
+                }
+              ]
+            },
+            {
+              "id": "equipment_type",
+              "type": "dropdown",
+              "label": "Equipment Type",
+              "props": {
+                "options": [
+                  {
+                    "id": "equipment_type_opt_0",
+                    "label": "Laptop",
+                    "value": "Laptop"
+                  },
+                  {
+                    "id": "equipment_type_opt_1",
+                    "label": "Monitor",
+                    "value": "Monitor"
+                  },
+                  {
+                    "id": "equipment_type_opt_2",
+                    "label": "Keyboard",
+                    "value": "Keyboard"
+                  },
+                  {
+                    "id": "equipment_type_opt_3",
+                    "label": "Mouse",
+                    "value": "Mouse"
+                  },
+                  {
+                    "id": "equipment_type_opt_4",
+                    "label": "Headset",
+                    "value": "Headset"
+                  },
+                  {
+                    "id": "equipment_type_opt_5",
+                    "label": "Docking Station",
+                    "value": "Docking Station"
+                  },
+                  {
+                    "id": "equipment_type_opt_6",
+                    "label": "Phone",
+                    "value": "Phone"
+                  },
+                  {
+                    "id": "equipment_type_opt_7",
+                    "label": "Webcam",
+                    "value": "Webcam"
+                  },
+                  {
+                    "id": "equipment_type_opt_8",
+                    "label": "Software License",
+                    "value": "Software License"
+                  },
+                  {
+                    "id": "equipment_type_opt_9",
+                    "label": "Other",
+                    "value": "Other"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Equipment Type is required"
+                }
+              ]
+            },
+            {
+              "id": "specifications",
+              "type": "textarea",
+              "label": "Specifications",
+              "props": {
+                "rows": 3,
+                "placeholder": "Model, size, requirements..."
+              },
+              "validation": []
+            },
+            {
+              "id": "priority",
+              "type": "dropdown",
+              "label": "Priority",
+              "props": {
+                "options": [
+                  {
+                    "id": "priority_opt_0",
+                    "label": "Urgent - Start within 3 days",
+                    "value": "Urgent - Start within 3 days"
+                  },
+                  {
+                    "id": "priority_opt_1",
+                    "label": "Standard - Start within 2 weeks",
+                    "value": "Standard - Start within 2 weeks"
+                  },
+                  {
+                    "id": "priority_opt_2",
+                    "label": "Low - Start 2+ weeks out",
+                    "value": "Low - Start 2+ weeks out"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "needed_by",
+              "type": "date_picker",
+              "label": "Needed By Date",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Needed By Date is required"
+                }
+              ]
+            },
+            {
+              "id": "delivery_location",
+              "type": "dropdown",
+              "label": "Delivery Location",
+              "props": {
+                "options": [
+                  {
+                    "id": "delivery_location_opt_0",
+                    "label": "Denver HQ",
+                    "value": "Denver HQ"
+                  },
+                  {
+                    "id": "delivery_location_opt_1",
+                    "label": "New York",
+                    "value": "New York"
+                  },
+                  {
+                    "id": "delivery_location_opt_2",
+                    "label": "San Francisco",
+                    "value": "San Francisco"
+                  },
+                  {
+                    "id": "delivery_location_opt_3",
+                    "label": "London",
+                    "value": "London"
+                  },
+                  {
+                    "id": "delivery_location_opt_4",
+                    "label": "Ship to Employee Home",
+                    "value": "Ship to Employee Home"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_notes",
+          "title": "Notes",
+          "fields": [
+            {
+              "id": "special_instructions",
+              "type": "textarea",
+              "label": "Special Instructions",
+              "placeholder": "Any additional setup or configuration needs..."
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "special_instructions",
+              "type": "textarea",
+              "label": "Special Instructions",
+              "props": {
+                "rows": 3,
+                "placeholder": "Any additional setup or configuration needs..."
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "b3baf630-0f82-4491-bc75-9e37c0772356",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "b3baf630-0f82-4491-bc75-9e37c0772356",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve an execution",
+    "description": "Retrieve an execution from your instance.",
+    "tags": [
+      "Execution"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/executions/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "dcb96ad3-59cf-41d0-8ca5-f5536269b000",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "38b7779c-b282-42ab-83b9-9f0ced98b663",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "324fe462-1544-441e-8345-60d257ef932c",
+        "name": "id",
+        "path": "id",
+        "type": "number"
+      },
+      {
+        "id": "5f47ebdd-09e2-47fc-9e16-02ffb9836929",
+        "name": "data",
+        "path": "data",
+        "type": "object"
+      },
+      {
+        "id": "069c9cf0-6005-48fe-a9c2-5f5e69f0b2b0",
+        "name": "finished",
+        "path": "finished",
+        "type": "boolean"
+      },
+      {
+        "id": "d91c8dc7-0132-4191-adcf-1a92e3108143",
+        "name": "mode",
+        "path": "mode",
+        "type": "string"
+      },
+      {
+        "id": "b95717a4-ffa9-41ba-a5c2-2a1fd07c8557",
+        "name": "retryOf",
+        "path": "retryOf",
+        "type": "number"
+      },
+      {
+        "id": "2199a855-c203-4bb5-a7b7-94f6914a47bb",
+        "name": "retrySuccessId",
+        "path": "retrySuccessId",
+        "type": "number"
+      },
+      {
+        "id": "b62c917c-1419-4953-910c-b2f551fe7fb5",
+        "name": "startedAt",
+        "path": "startedAt",
+        "type": "string"
+      },
+      {
+        "id": "68324134-040a-4ed0-9d78-3d28478b4a6f",
+        "name": "stoppedAt",
+        "path": "stoppedAt",
+        "type": "string"
+      },
+      {
+        "id": "b8f23c71-a24b-4da2-a627-0716062a2881",
+        "name": "workflowId",
+        "path": "workflowId",
+        "type": "number"
+      },
+      {
+        "id": "bb9f7828-dab8-4ea2-9458-df0082729975",
+        "name": "waitTill",
+        "path": "waitTill",
+        "type": "string"
+      },
+      {
+        "id": "d3df095e-6f69-4291-a562-c05427c33866",
+        "name": "customData",
+        "path": "customData",
+        "type": "object"
+      },
+      {
+        "id": "aa22434e-780f-401e-81fc-2f5381c214c6",
+        "name": "status",
+        "path": "status",
+        "type": "string"
+      }
+    ]
+  }
+}

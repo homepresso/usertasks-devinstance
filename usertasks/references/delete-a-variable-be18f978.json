@@ -1,0 +1,39 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "be18f978-5192-4d4f-8c3a-08b31fa437a2",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "be18f978-5192-4d4f-8c3a-08b31fa437a2",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a variable",
+    "description": "Delete a variable from your instance.",
+    "tags": [
+      "Variables"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/variables/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "44a738b2-6e42-4c3c-8b60-d1eebf195af6",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "703a2ebe-d416-46a8-bcef-a58607938015",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

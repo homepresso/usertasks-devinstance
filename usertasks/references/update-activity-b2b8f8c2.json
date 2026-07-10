@@ -1,0 +1,147 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "b2b8f8c2-f97e-4348-924c-f64bd623cb10",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "b2b8f8c2-f97e-4348-924c-f64bd623cb10",
+    "integration_id": "daf4515b-60d4-46fd-9eb7-f6bcc17370ec",
+    "name": "Update Activity",
+    "description": "Update a row in Activity by ActivityID",
+    "tags": [],
+    "request_config": {
+      "method": "QUERY",
+      "path_template": "UPDATE Activity SET UserEmail = @UserEmail, UserName = @UserName, DateAdded = @DateAdded, DateAddedUser = @DateAddedUser, ActivityType = @ActivityType, SFObject = @SFObject, Account = @Account, Time = @Time, SalesRep = @SalesRep, Notes = @Notes, SalesforceLink = @SalesforceLink, SFActivityID = @SFActivityID, KryonUpdated = @KryonUpdated, AddNoteSF = @AddNoteSF WHERE ActivityID = @ActivityID"
+    },
+    "inputs": [
+      {
+        "id": "08d14512-6772-47af-9128-719691596a45",
+        "name": "UserEmail",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "5ab50f73-aad3-4328-88c4-6779016ec1e5",
+        "name": "UserName",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "3b6fb881-c468-406f-8fa2-fff7e3d7aefe",
+        "name": "DateAdded",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "b529dcb5-9b84-4619-8205-b791a333e555",
+        "name": "DateAddedUser",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "0c2c65da-cc48-4498-92e6-b86c83027553",
+        "name": "ActivityType",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "d7794be8-09d2-4995-99d5-bcd5adbf75c5",
+        "name": "SFObject",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "e6cc5d9b-bab1-4c0b-974f-713f84ed6e9d",
+        "name": "Account",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "5d762330-dece-4cf7-b930-358b586464b7",
+        "name": "Time",
+        "type": "number",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "1d191c70-2243-4cff-882a-f8a89dbf65ce",
+        "name": "SalesRep",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "042206c3-84f2-4952-b502-21bb91f0fac1",
+        "name": "Notes",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "2f4acd69-b818-46f3-8d0d-df2375a8d02e",
+        "name": "SalesforceLink",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "da818931-b193-46f6-b778-81b28d7a4c2c",
+        "name": "SFActivityID",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "30204ac6-07dc-42b9-93c0-4617f38de43b",
+        "name": "KryonUpdated",
+        "type": "number",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "40b0373e-4000-4b90-8b28-f254434fb799",
+        "name": "AddNoteSF",
+        "type": "number",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "872eb2e6-e927-4175-8a7c-58b010c9b1d4",
+        "name": "ActivityID",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "9a328296-88fe-4af6-a5a9-2859e592f7b8",
+        "name": "affected_rows",
+        "path": "affected_rows",
+        "type": "number"
+      }
+    ]
+  }
+}

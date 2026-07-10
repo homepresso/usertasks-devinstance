@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "a83b9230-34c0-4dee-8263-8bff5c1dc9d8",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "a83b9230-34c0-4dee-8263-8bff5c1dc9d8",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Update a data table",
+    "description": "Update a data table's name.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "PATCH",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"name\": \"{{name}}\"\n}",
+      "path_template": "/data-tables/{{dataTableId}}"
+    },
+    "inputs": [
+      {
+        "id": "f7660400-94a0-408f-aca4-429daa055ec3",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "c670ffd7-ba14-44a5-b01b-261488cc2402",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "a6f5ea4c-4d5a-4a93-a529-16426f22e0b5",
+        "name": "id",
+        "path": "id",
+        "type": "string"
+      },
+      {
+        "id": "f2696cd9-e28d-4373-bd04-ec6f798cbfb1",
+        "name": "name",
+        "path": "name",
+        "type": "string"
+      },
+      {
+        "id": "a5f4fc2a-cb13-450e-85e1-ba486da7d3c5",
+        "name": "columns",
+        "path": "columns",
+        "type": "array"
+      },
+      {
+        "id": "45b7218e-81a2-4d12-b2d8-884b4609aae5",
+        "name": "projectId",
+        "path": "projectId",
+        "type": "string"
+      },
+      {
+        "id": "3b76bad6-7880-4545-b91a-6a06715b4cc4",
+        "name": "createdAt",
+        "path": "createdAt",
+        "type": "string"
+      },
+      {
+        "id": "0d1042bd-c022-4e79-90fe-e724342462be",
+        "name": "updatedAt",
+        "path": "updatedAt",
+        "type": "string"
+      }
+    ]
+  }
+}

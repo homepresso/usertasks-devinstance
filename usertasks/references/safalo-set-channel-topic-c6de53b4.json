@@ -1,0 +1,43 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c6de53b4-9d93-46eb-aa08-9d1e7526d64c",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "c6de53b4-9d93-46eb-aa08-9d1e7526d64c",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Set Channel Topic",
+    "description": "Set the topic for a channel",
+    "tags": [],
+    "request_config": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "{\"channel\":\"{{channel}}\",\"topic\":\"{{topic}}\"}",
+      "path_template": "/conversations.setTopic"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID",
+        "default_value": ""
+      },
+      {
+        "name": "topic",
+        "type": "string",
+        "required": true,
+        "description": "New channel topic",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      }
+    ]
+  }
+}

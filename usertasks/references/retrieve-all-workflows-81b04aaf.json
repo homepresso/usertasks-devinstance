@@ -1,0 +1,92 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "81b04aaf-4c12-48e4-b1dd-3cf05d6310f2",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "81b04aaf-4c12-48e4-b1dd-3cf05d6310f2",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve all workflows",
+    "description": "Retrieve all workflows from your instance.",
+    "tags": [
+      "Workflow"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/workflows"
+    },
+    "inputs": [
+      {
+        "id": "25c195bd-b250-4276-81a5-0f59efa3d87b",
+        "name": "active",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "ccc5c2d3-7154-4324-8f6c-8d9539fe9f6b",
+        "name": "tags",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "3c9f57b3-dac7-462f-8d11-5d9bc4a71208",
+        "name": "name",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "ec32b04c-bf74-4183-9408-bde70ee070f0",
+        "name": "projectId",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "928d5bf1-86f5-49b6-af10-3af43879a43d",
+        "name": "excludePinnedData",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "aeb7265e-ae93-4715-9ea5-6ef86cf6d60a",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "d07dd937-8a57-4324-8f31-8fd6c63d5f67",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "b2020f9f-05c7-4cff-91a2-b5f83f83c794",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "8a22ce79-b9ad-4c3e-8705-03aa90ab9ff3",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

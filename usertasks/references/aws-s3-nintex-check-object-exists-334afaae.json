@@ -1,0 +1,57 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "334afaae-0b0f-4e1c-98e1-fddcf62aea97",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "334afaae-0b0f-4e1c-98e1-fddcf62aea97",
+    "integration_id": "8f8c6539-d8da-49d6-9113-d7f31f2a98f7",
+    "name": "AWS S3 Nintex: Check Object Exists",
+    "description": "Check if an object exists and get its metadata (size, content type, last modified)",
+    "tags": [],
+    "request_config": {
+      "method": "HEAD",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/{{key}}"
+    },
+    "inputs": [
+      {
+        "name": "bucket",
+        "type": "string",
+        "required": false,
+        "description": "Bucket name",
+        "default_value": ""
+      },
+      {
+        "name": "key",
+        "type": "string",
+        "required": true,
+        "description": "Object key / file path",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "exists",
+        "type": "boolean"
+      },
+      {
+        "name": "content_type",
+        "type": "string"
+      },
+      {
+        "name": "content_length",
+        "type": "number"
+      },
+      {
+        "name": "last_modified",
+        "type": "string"
+      },
+      {
+        "name": "etag",
+        "type": "string"
+      }
+    ]
+  }
+}

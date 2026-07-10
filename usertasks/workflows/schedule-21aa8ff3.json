@@ -1,0 +1,58 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "21aa8ff3-0515-4616-9305-6e72dce9a33b",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "21aa8ff3-0515-4616-9305-6e72dce9a33b",
+    "name": "schedule",
+    "description": null,
+    "trigger_type": "schedule",
+    "trigger_config": {},
+    "nodes": [
+      {
+        "id": "18aaac22-c169-4288-9ec9-1f9771cff36d",
+        "type": "schedule",
+        "label": "Schedule",
+        "config": {
+          "timezone": "UTC",
+          "schedule_mode": "every_minutes",
+          "interval_minutes": 15
+        },
+        "position": {
+          "x": 340,
+          "y": 20
+        }
+      },
+      {
+        "id": "6fd1a16d-0f38-4059-b0e6-b1ed761821f9",
+        "type": "send_message",
+        "label": "Send Message",
+        "config": {
+          "body": "fdsffdfds",
+          "subject": "This is a test",
+          "user_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3",
+          "user_name": "Andy Hayes",
+          "sender_mode": "static",
+          "sender_user_id": "8258dee5-c5ec-4f74-825e-9dc21e4b75bd",
+          "sender_user_name": "cabralrey"
+        },
+        "position": {
+          "x": 340,
+          "y": 200
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "ff7aaafc-598f-44ab-990e-a61d08d7309b",
+        "source": "18aaac22-c169-4288-9ec9-1f9771cff36d",
+        "target": "6fd1a16d-0f38-4059-b0e6-b1ed761821f9",
+        "sourcePort": "bottom"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

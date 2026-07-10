@@ -1,0 +1,23 @@
+{
+  "format_version": 3,
+  "asset_type": "integrations",
+  "id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "EasyDocGen Document Processing",
+    "type": "rest_api",
+    "config": {
+      "headers": {},
+      "base_url": "https://wus2.easydocgen.com/api",
+      "auth_type": "api_key",
+      "auth_config": {
+        "key_name": "x-APIKEY"
+      }
+    },
+    "is_active": true,
+    "tags": [
+      "demo"
+    ]
+  }
+}

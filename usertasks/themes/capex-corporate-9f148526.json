@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "9f148526-67b4-4115-a9dc-a1c829f721a6",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "9f148526-67b4-4115-a9dc-a1c829f721a6",
+    "name": "CapEx Corporate",
+    "description": "Professional corporate theme for capital expenditure request forms with dark navy and gold accents",
+    "theme": {
+      "card": {
+        "border": "1px solid #D1D9E6",
+        "shadow": "0 2px 8px rgba(30,58,95,0.08)",
+        "padding": "28px",
+        "background": "#FFFFFF",
+        "borderRadius": "10px"
+      },
+      "page": {
+        "padding": "32px",
+        "maxWidth": "720px",
+        "background": "#F4F6F9"
+      },
+      "colors": {
+        "accent": "#C49B2A",
+        "cardBg": "#FFFFFF",
+        "danger": "#C0392B",
+        "primary": "#1E3A5F",
+        "success": "#2E8B57",
+        "surface": "#F4F6F9",
+        "warning": "#D4A017",
+        "cardText": "#1A2332",
+        "errorText": "#C0392B",
+        "focusRing": "#1E3A5F",
+        "mutedText": "#5A6A7E",
+        "primaryHover": "#152B47",
+        "primaryLight": "#E8EEF5",
+        "surfaceBorder": "#D1D9E6",
+        "placeholderText": "#8A9AB5"
+      },
+      "inputs": {
+        "height": "42px",
+        "fontSize": "14px",
+        "background": "#FAFBFD",
+        "borderColor": "#C8D1DE",
+        "borderWidth": "1px",
+        "borderRadius": "6px",
+        "focusRingColor": "#1E3A5F",
+        "focusRingWidth": "2px"
+      },
+      "buttons": {
+        "height": "44px",
+        "fontSize": "14px",
+        "primaryBg": "#1E3A5F",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "6px",
+        "primaryHoverBg": "#152B47"
+      },
+      "customCSS": "",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "",
+        "buttonBackground": "",
+        "headerBackground": "linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%)"
+      },
+      "typography": {
+        "fontSize": "14px",
+        "labelSize": "13px",
+        "fontFamily": "'Inter', -apple-system, sans-serif",
+        "labelColor": "#1A2332",
+        "lineHeight": "1.6",
+        "headingSize": "22px",
+        "labelWeight": "600",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

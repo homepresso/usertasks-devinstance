@@ -1,0 +1,86 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "300b07d2-823f-4ae1-b890-ec629a0cbcb0",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "300b07d2-823f-4ae1-b890-ec629a0cbcb0",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "PowerPoint Update Lists",
+    "description": "Update bullet lists in PowerPoint slides. Replaces ALL occurrences across all slides.",
+    "tags": [
+      "PowerPoint Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Placeholder\": \"{{Placeholder}}\",\n    \"ItemsString\": \"{{ItemsString}}\",\n    \"splitOption\": \"{{splitOption}}\"\n  }\n]",
+      "path_template": "/powerpoint/update-lists"
+    },
+    "inputs": [
+      {
+        "id": "c588519e-a32b-4e6a-9bb3-44f3a734c6f6",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "261833a3-dcad-4892-b42a-0dd9e99e9ec9",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "5006a79e-28f5-4c3a-9b85-6f94dce2f1d9",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "6fc11a70-f74b-4d0f-bcb3-f6f8bc9f71d5",
+        "name": "Placeholder",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "6246282f-d88b-427e-946d-249dd4a4c143",
+        "name": "ItemsString",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "72f7f79a-42b3-4724-81af-75bfcf4eaa28",
+        "name": "splitOption",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": "LineBreak"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "43c76c2a-c880-41e4-b98d-26f0aa7aabc2",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

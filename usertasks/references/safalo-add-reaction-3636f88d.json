@@ -1,0 +1,50 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "3636f88d-0270-44b9-a9da-7e078a84bdda",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "3636f88d-0270-44b9-a9da-7e078a84bdda",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Add Reaction",
+    "description": "Add an emoji reaction to a message",
+    "tags": [],
+    "request_config": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "{\"channel\":\"{{channel}}\",\"timestamp\":\"{{ts}}\",\"name\":\"{{emoji}}\"}",
+      "path_template": "/reactions.add"
+    },
+    "inputs": [
+      {
+        "name": "channel",
+        "type": "string",
+        "required": true,
+        "description": "Channel ID",
+        "default_value": ""
+      },
+      {
+        "name": "ts",
+        "type": "string",
+        "required": true,
+        "description": "Message timestamp",
+        "default_value": ""
+      },
+      {
+        "name": "emoji",
+        "type": "string",
+        "required": true,
+        "description": "Emoji name without colons (e.g. thumbsup, white_check_mark)",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      }
+    ]
+  }
+}

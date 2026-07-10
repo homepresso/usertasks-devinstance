@@ -1,0 +1,104 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "d2cee9b5-3c1c-4b43-a3f0-026d99bf1bb7",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "d2cee9b5-3c1c-4b43-a3f0-026d99bf1bb7",
+    "integration_id": "800b32b6-67d8-4243-99dd-481fa7b4d623",
+    "name": "Andy: List All",
+    "description": "Query all rows from Andy",
+    "tags": [],
+    "request_config": {
+      "method": "QUERY",
+      "object_id": "7c503e96-13ce-4b4e-a35a-ddf8a34f80a6",
+      "operation": "list"
+    },
+    "inputs": [
+      {
+        "id": "8abbf107-3e89-495a-90f1-7e9a17dd4a04",
+        "name": "limit",
+        "type": "number",
+        "location": "query",
+        "required": false,
+        "default_value": "50"
+      },
+      {
+        "id": "7d2d6dd2-1de2-45d0-9923-181e901c55aa",
+        "name": "offset",
+        "type": "number",
+        "location": "query",
+        "required": false,
+        "default_value": "0"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "35695202-d8e9-4a30-bb09-42189371f2c5",
+        "name": "vendor_name",
+        "path": "vendor_name",
+        "type": "text"
+      },
+      {
+        "id": "a5f14513-6aff-4077-bab9-2dab49f9230f",
+        "name": "vendor_code",
+        "path": "vendor_code",
+        "type": "text"
+      },
+      {
+        "id": "3055cdc4-c870-4a49-b569-485f07616df2",
+        "name": "category",
+        "path": "category",
+        "type": "select"
+      },
+      {
+        "id": "57531b39-e10b-41aa-992e-d501b50c8db5",
+        "name": "risk_tier",
+        "path": "risk_tier",
+        "type": "select"
+      },
+      {
+        "id": "c34affb2-c60f-4eb9-b24f-347d4a080779",
+        "name": "country",
+        "path": "country",
+        "type": "text"
+      },
+      {
+        "id": "0505ed0e-c717-436b-bb84-485aa73ede90",
+        "name": "annual_spend",
+        "path": "annual_spend",
+        "type": "number"
+      },
+      {
+        "id": "ad9d9dac-1ae4-4279-aeec-b6e0586dbe16",
+        "name": "contract_status",
+        "path": "contract_status",
+        "type": "select"
+      },
+      {
+        "id": "65988dad-8f2f-434f-bfa6-7fa32084c2ad",
+        "name": "primary_contact",
+        "path": "primary_contact",
+        "type": "text"
+      },
+      {
+        "id": "ec1fe585-865e-4d0c-9694-bfdb65b39aa2",
+        "name": "contact_email",
+        "path": "contact_email",
+        "type": "text"
+      },
+      {
+        "id": "1c75f1ab-ae44-48d6-b896-8715bc429638",
+        "name": "rating",
+        "path": "rating",
+        "type": "number"
+      },
+      {
+        "id": "f14ae05a-e038-4bee-aa05-4268eefbb056",
+        "name": "last_review_date",
+        "path": "last_review_date",
+        "type": "date"
+      }
+    ]
+  }
+}

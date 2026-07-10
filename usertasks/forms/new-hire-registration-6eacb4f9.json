@@ -1,0 +1,517 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "6eacb4f9-adf8-451e-ad7c-b958e6f98527",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "6eacb4f9-adf8-451e-ad7c-b958e6f98527",
+    "name": "New Hire Registration",
+    "description": "HR fills out this form to kick off onboarding for a new employee",
+    "schema": {
+      "rules": [],
+      "sections": [
+        {
+          "id": "sec_employee_info",
+          "title": "Employee Information",
+          "fields": [
+            {
+              "id": "full_name",
+              "type": "text",
+              "label": "Full Name",
+              "required": true,
+              "placeholder": "Jane Smith"
+            },
+            {
+              "id": "personal_email",
+              "type": "email",
+              "label": "Personal Email",
+              "required": true,
+              "placeholder": "jane@example.com"
+            },
+            {
+              "id": "department",
+              "type": "select",
+              "label": "Department",
+              "options": [
+                "Engineering",
+                "Product",
+                "Design",
+                "Marketing",
+                "Sales",
+                "Finance",
+                "HR",
+                "Operations",
+                "Legal"
+              ],
+              "required": true
+            },
+            {
+              "id": "job_title",
+              "type": "text",
+              "label": "Job Title",
+              "required": true,
+              "placeholder": "Software Engineer"
+            },
+            {
+              "id": "manager_name",
+              "type": "text",
+              "label": "Reporting Manager",
+              "required": true,
+              "placeholder": "Manager full name"
+            },
+            {
+              "id": "manager_email",
+              "type": "email",
+              "label": "Manager Email",
+              "required": true
+            },
+            {
+              "id": "start_date",
+              "type": "date",
+              "label": "Start Date",
+              "required": true
+            },
+            {
+              "id": "location",
+              "type": "select",
+              "label": "Office Location",
+              "options": [
+                "Denver HQ",
+                "New York",
+                "San Francisco",
+                "London",
+                "Remote"
+              ],
+              "required": true
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "full_name",
+              "type": "text_input",
+              "label": "Full Name",
+              "props": {
+                "placeholder": "Jane Smith"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Full Name is required"
+                }
+              ]
+            },
+            {
+              "id": "personal_email",
+              "type": "text_input",
+              "label": "Personal Email",
+              "props": {
+                "placeholder": "jane@example.com"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Personal Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "department",
+              "type": "dropdown",
+              "label": "Department",
+              "props": {
+                "options": [
+                  {
+                    "id": "department_opt_0",
+                    "label": "Engineering",
+                    "value": "Engineering"
+                  },
+                  {
+                    "id": "department_opt_1",
+                    "label": "Product",
+                    "value": "Product"
+                  },
+                  {
+                    "id": "department_opt_2",
+                    "label": "Design",
+                    "value": "Design"
+                  },
+                  {
+                    "id": "department_opt_3",
+                    "label": "Marketing",
+                    "value": "Marketing"
+                  },
+                  {
+                    "id": "department_opt_4",
+                    "label": "Sales",
+                    "value": "Sales"
+                  },
+                  {
+                    "id": "department_opt_5",
+                    "label": "Finance",
+                    "value": "Finance"
+                  },
+                  {
+                    "id": "department_opt_6",
+                    "label": "HR",
+                    "value": "HR"
+                  },
+                  {
+                    "id": "department_opt_7",
+                    "label": "Operations",
+                    "value": "Operations"
+                  },
+                  {
+                    "id": "department_opt_8",
+                    "label": "Legal",
+                    "value": "Legal"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Department is required"
+                }
+              ]
+            },
+            {
+              "id": "job_title",
+              "type": "text_input",
+              "label": "Job Title",
+              "props": {
+                "placeholder": "Software Engineer"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Job Title is required"
+                }
+              ]
+            },
+            {
+              "id": "manager_name",
+              "type": "text_input",
+              "label": "Reporting Manager",
+              "props": {
+                "placeholder": "Manager full name"
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Reporting Manager is required"
+                }
+              ]
+            },
+            {
+              "id": "manager_email",
+              "type": "text_input",
+              "label": "Manager Email",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Manager Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Invalid email"
+                }
+              ]
+            },
+            {
+              "id": "start_date",
+              "type": "date_picker",
+              "label": "Start Date",
+              "props": {},
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Start Date is required"
+                }
+              ]
+            },
+            {
+              "id": "location",
+              "type": "dropdown",
+              "label": "Office Location",
+              "props": {
+                "options": [
+                  {
+                    "id": "location_opt_0",
+                    "label": "Denver HQ",
+                    "value": "Denver HQ"
+                  },
+                  {
+                    "id": "location_opt_1",
+                    "label": "New York",
+                    "value": "New York"
+                  },
+                  {
+                    "id": "location_opt_2",
+                    "label": "San Francisco",
+                    "value": "San Francisco"
+                  },
+                  {
+                    "id": "location_opt_3",
+                    "label": "London",
+                    "value": "London"
+                  },
+                  {
+                    "id": "location_opt_4",
+                    "label": "Remote",
+                    "value": "Remote"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": [
+                {
+                  "type": "required",
+                  "message": "Office Location is required"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec_equipment",
+          "title": "Equipment & Access",
+          "fields": [
+            {
+              "id": "laptop_type",
+              "type": "select",
+              "label": "Laptop Preference",
+              "options": [
+                "MacBook Pro 14\"",
+                "MacBook Pro 16\"",
+                "Dell XPS 15",
+                "ThinkPad X1 Carbon",
+                "No Laptop Needed"
+              ]
+            },
+            {
+              "id": "monitor",
+              "type": "select",
+              "label": "External Monitor",
+              "options": [
+                "None",
+                "Single 27\" 4K",
+                "Dual 27\" 4K",
+                "Ultrawide 34\""
+              ]
+            },
+            {
+              "id": "software_access",
+              "type": "multi_select",
+              "label": "Software Access Needed",
+              "options": [
+                "Slack",
+                "GitHub",
+                "Jira",
+                "Figma",
+                "Salesforce",
+                "HubSpot",
+                "Tableau",
+                "AWS Console",
+                "Google Workspace"
+              ]
+            },
+            {
+              "id": "special_equipment",
+              "type": "textarea",
+              "label": "Special Equipment or Accommodations",
+              "placeholder": "Standing desk, ergonomic keyboard, etc."
+            }
+          ],
+          "columns": 2,
+          "components": [
+            {
+              "id": "laptop_type",
+              "type": "dropdown",
+              "label": "Laptop Preference",
+              "props": {
+                "options": [
+                  {
+                    "id": "laptop_type_opt_0",
+                    "label": "MacBook Pro 14\"",
+                    "value": "MacBook Pro 14\""
+                  },
+                  {
+                    "id": "laptop_type_opt_1",
+                    "label": "MacBook Pro 16\"",
+                    "value": "MacBook Pro 16\""
+                  },
+                  {
+                    "id": "laptop_type_opt_2",
+                    "label": "Dell XPS 15",
+                    "value": "Dell XPS 15"
+                  },
+                  {
+                    "id": "laptop_type_opt_3",
+                    "label": "ThinkPad X1 Carbon",
+                    "value": "ThinkPad X1 Carbon"
+                  },
+                  {
+                    "id": "laptop_type_opt_4",
+                    "label": "No Laptop Needed",
+                    "value": "No Laptop Needed"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "monitor",
+              "type": "dropdown",
+              "label": "External Monitor",
+              "props": {
+                "options": [
+                  {
+                    "id": "monitor_opt_0",
+                    "label": "None",
+                    "value": "None"
+                  },
+                  {
+                    "id": "monitor_opt_1",
+                    "label": "Single 27\" 4K",
+                    "value": "Single 27\" 4K"
+                  },
+                  {
+                    "id": "monitor_opt_2",
+                    "label": "Dual 27\" 4K",
+                    "value": "Dual 27\" 4K"
+                  },
+                  {
+                    "id": "monitor_opt_3",
+                    "label": "Ultrawide 34\"",
+                    "value": "Ultrawide 34\""
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "software_access",
+              "type": "multi_select",
+              "label": "Software Access Needed",
+              "props": {
+                "options": [
+                  {
+                    "id": "software_access_opt_0",
+                    "label": "Slack",
+                    "value": "Slack"
+                  },
+                  {
+                    "id": "software_access_opt_1",
+                    "label": "GitHub",
+                    "value": "GitHub"
+                  },
+                  {
+                    "id": "software_access_opt_2",
+                    "label": "Jira",
+                    "value": "Jira"
+                  },
+                  {
+                    "id": "software_access_opt_3",
+                    "label": "Figma",
+                    "value": "Figma"
+                  },
+                  {
+                    "id": "software_access_opt_4",
+                    "label": "Salesforce",
+                    "value": "Salesforce"
+                  },
+                  {
+                    "id": "software_access_opt_5",
+                    "label": "HubSpot",
+                    "value": "HubSpot"
+                  },
+                  {
+                    "id": "software_access_opt_6",
+                    "label": "Tableau",
+                    "value": "Tableau"
+                  },
+                  {
+                    "id": "software_access_opt_7",
+                    "label": "AWS Console",
+                    "value": "AWS Console"
+                  },
+                  {
+                    "id": "software_access_opt_8",
+                    "label": "Google Workspace",
+                    "value": "Google Workspace"
+                  }
+                ],
+                "maxSelections": 0
+              },
+              "validation": []
+            },
+            {
+              "id": "special_equipment",
+              "type": "textarea",
+              "label": "Special Equipment or Accommodations",
+              "props": {
+                "rows": 3,
+                "placeholder": "Standing desk, ergonomic keyboard, etc."
+              },
+              "validation": []
+            }
+          ]
+        },
+        {
+          "id": "sec_notes",
+          "title": "Additional Information",
+          "fields": [
+            {
+              "id": "onboarding_buddy",
+              "type": "text",
+              "label": "Assigned Onboarding Buddy",
+              "placeholder": "Name of buddy/mentor"
+            },
+            {
+              "id": "hr_notes",
+              "type": "textarea",
+              "label": "HR Notes",
+              "placeholder": "Any special considerations for this hire..."
+            }
+          ],
+          "columns": 1,
+          "components": [
+            {
+              "id": "onboarding_buddy",
+              "type": "text_input",
+              "label": "Assigned Onboarding Buddy",
+              "props": {
+                "placeholder": "Name of buddy/mentor"
+              },
+              "validation": []
+            },
+            {
+              "id": "hr_notes",
+              "type": "textarea",
+              "label": "HR Notes",
+              "props": {
+                "rows": 3,
+                "placeholder": "Any special considerations for this hire..."
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

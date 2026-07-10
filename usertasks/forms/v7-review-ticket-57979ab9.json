@@ -1,0 +1,102 @@
+{
+  "format_version": 3,
+  "asset_type": "forms",
+  "id": "57979ab9-4478-4a5a-a26c-8b2a963c1e89",
+  "exported_at": "2026-07-10T22:54:35.392Z",
+  "asset": {
+    "id": "57979ab9-4478-4a5a-a26c-8b2a963c1e89",
+    "name": "v7 Review Ticket",
+    "description": "Review form for workflow triage task",
+    "schema": {
+      "id": "form_review",
+      "name": "v7 Review Ticket",
+      "rules": [
+        {
+          "id": "auto_submit_a88cc8cf",
+          "name": "Submit form",
+          "actions": [
+            {
+              "type": "submit_form"
+            }
+          ],
+          "enabled": true,
+          "trigger": "on_click",
+          "priority": 50,
+          "conditions": {
+            "logic": "and",
+            "conditions": []
+          },
+          "elseActions": [],
+          "sourceField": "a88cc8cf-08f5-41b5-a2fe-31bbc1433a63"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec_main",
+          "title": "v7 Review Ticket",
+          "columns": 1,
+          "components": [
+            {
+              "id": "53e07f62-01cb-411c-aa37-3463df6c9037",
+              "key": "resolution_notes",
+              "type": "textarea",
+              "label": "Resolution Notes",
+              "props": {
+                "rows": 3
+              },
+              "validation": []
+            },
+            {
+              "id": "ef120d0c-8afa-4f8a-9739-dba51f911ac7",
+              "key": "approve_status",
+              "type": "dropdown",
+              "label": "Approve Status",
+              "props": {
+                "options": [
+                  {
+                    "id": "opt_0",
+                    "label": "Approved",
+                    "value": "approved"
+                  },
+                  {
+                    "id": "opt_1",
+                    "label": "Rejected",
+                    "value": "rejected"
+                  },
+                  {
+                    "id": "opt_2",
+                    "label": "Needs More Info",
+                    "value": "needs_info"
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              "validation": []
+            },
+            {
+              "id": "a88cc8cf-08f5-41b5-a2fe-31bbc1433a63",
+              "type": "button",
+              "label": "Submit",
+              "props": {
+                "buttonSize": "md",
+                "buttonAction": "submit",
+                "buttonVariant": "primary",
+                "buttonFullWidth": false
+              },
+              "style": {
+                "textAlign": "right"
+              },
+              "validation": []
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "ruleGroups": [],
+      "description": "Review form for workflow triage task",
+      "formSettings": {}
+    },
+    "version": 1,
+    "is_published": true
+  }
+}

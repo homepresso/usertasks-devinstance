@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "7e1e104b-b078-4ea5-b0ba-c50b19c521b5",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "7e1e104b-b078-4ea5-b0ba-c50b19c521b5",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve all tags",
+    "description": "Retrieve all tags from your instance.",
+    "tags": [
+      "Tags"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/tags"
+    },
+    "inputs": [
+      {
+        "id": "793eb290-f372-44e7-8af6-9a0c586b1a08",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "4191884b-0ef3-4f75-a244-2a00ae60a07b",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "753907ff-aefa-4dd6-8580-c19d9b802e94",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "e5e0d7ee-e19b-408c-b7c3-dd724270bf2d",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

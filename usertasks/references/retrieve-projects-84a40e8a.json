@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "84a40e8a-80eb-4ba9-b944-e362b4c07bae",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "84a40e8a-80eb-4ba9-b944-e362b4c07bae",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Retrieve projects",
+    "description": "Retrieve projects from your instance.",
+    "tags": [
+      "Projects"
+    ],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/projects"
+    },
+    "inputs": [
+      {
+        "id": "624296b5-4d22-45f8-8a04-a0846014c308",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "aee2c606-2b1d-406c-bca4-91a9b5881969",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "faa544ac-b3a2-4e49-9c10-9846baa27264",
+        "name": "data",
+        "path": "data",
+        "type": "array"
+      },
+      {
+        "id": "c35c6403-8410-4dab-9e88-9a3a0307fd9d",
+        "name": "nextCursor",
+        "path": "nextCursor",
+        "type": "string"
+      }
+    ]
+  }
+}

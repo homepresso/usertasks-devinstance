@@ -1,0 +1,216 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "d0d9e6c2-d30a-4b2a-bf86-881fe007fc17",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "d0d9e6c2-d30a-4b2a-bf86-881fe007fc17",
+    "name": "Vendor Registration Review v2",
+    "description": "Risk assessment and compliance review with user_task outcome branching",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_template_id": "3755710c-1901-4cae-8100-d6781ec8c25c"
+    },
+    "nodes": [
+      {
+        "id": "trigger",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_template_id": "3755710c-1901-4cae-8100-d6781ec8c25c"
+        },
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "Vendor: {{vendor_name}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "risk_check",
+        "type": "decision_table",
+        "label": "Decision Table",
+        "config": {
+          "input_mappings": {
+            "category": "{{category}}",
+            "annual_spend": "{{annual_spend_estimate}}",
+            "has_contract": "No"
+          },
+          "decision_table_id": "56d0ca97-4513-4153-af5b-9205ddfff090"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "update_risk",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "dbffebdd-acd7-416c-a4b4-27918315de07",
+          "operation": "update",
+          "column_values": {
+            "Risk Score": "{{risk_check.risk_score}}",
+            "Compliance Status": "Pending Review"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      },
+      {
+        "id": "review_task",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "outcomes": [
+            "Approved",
+            "Conditionally Approved",
+            "Blocked"
+          ],
+          "task_title": "Review vendor: {{vendor_name}} (Risk: {{risk_check.risk_score}})",
+          "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
+        },
+        "position": {
+          "x": 220,
+          "y": 580
+        }
+      },
+      {
+        "id": "approved_update",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "dbffebdd-acd7-416c-a4b4-27918315de07",
+          "operation": "update",
+          "column_values": {
+            "Compliance Status": "Approved"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 720
+        }
+      },
+      {
+        "id": "conditional_update",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "dbffebdd-acd7-416c-a4b4-27918315de07",
+          "operation": "update",
+          "column_values": {
+            "Compliance Status": "Conditionally Approved"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 860
+        }
+      },
+      {
+        "id": "blocked_update",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{_data_row_id}}",
+          "table_id": "dbffebdd-acd7-416c-a4b4-27918315de07",
+          "operation": "update",
+          "column_values": {
+            "Status": "Suspended",
+            "Compliance Status": "Blocked"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 1000
+        }
+      },
+      {
+        "id": "log",
+        "type": "log",
+        "label": "Log",
+        "config": {
+          "message": "Vendor {{vendor_name}} review complete. Risk: {{risk_check.risk_score}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 1140
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "a5a99bdc-4777-4661-bb26-06ca199f6b9e",
+        "source": "trigger",
+        "target": "title"
+      },
+      {
+        "id": "bd5d71bb-3cd4-4520-ad34-b9453b3d2551",
+        "source": "title",
+        "target": "risk_check"
+      },
+      {
+        "id": "25363e93-8432-4495-9bb3-6b891dd2c324",
+        "source": "risk_check",
+        "target": "update_risk"
+      },
+      {
+        "id": "ac19d85e-4184-477e-b8db-7916f0df8869",
+        "source": "update_risk",
+        "target": "review_task"
+      },
+      {
+        "id": "eccb4e80-1aa7-4937-84b5-b9d7a2e84ca8",
+        "label": "Approved",
+        "source": "review_task",
+        "target": "approved_update"
+      },
+      {
+        "id": "f44eb8d8-1a13-400c-a106-efefed57026c",
+        "label": "Conditionally Approved",
+        "source": "review_task",
+        "target": "conditional_update"
+      },
+      {
+        "id": "8f05b51b-7c34-4bc1-9599-2707be7697a1",
+        "label": "Blocked",
+        "source": "review_task",
+        "target": "blocked_update"
+      },
+      {
+        "id": "0a3ea198-e777-4649-b405-d11f22789b63",
+        "source": "approved_update",
+        "target": "log"
+      },
+      {
+        "id": "16d17fe9-9011-45ab-b9d7-6a002d009947",
+        "source": "conditional_update",
+        "target": "log"
+      },
+      {
+        "id": "e11c933f-1526-4a44-b7a6-e6b8815d8972",
+        "source": "blocked_update",
+        "target": "log"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

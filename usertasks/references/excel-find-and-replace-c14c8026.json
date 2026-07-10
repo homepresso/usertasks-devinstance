@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c14c8026-c147-452e-b4b5-560d34a62bf8",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c14c8026-c147-452e-b4b5-560d34a62bf8",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Excel Find and Replace",
+    "description": "Find and replace text placeholders in an Excel spreadsheet.",
+    "tags": [
+      "Excel Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Find\": \"{{Find}}\",\n    \"Replace\": \"{{Replace}}\"\n  }\n]",
+      "path_template": "/excel/find-replace"
+    },
+    "inputs": [
+      {
+        "id": "5f32655a-8640-4c45-a991-e42e10dcfe97",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "92a8efad-e38f-4499-bdd0-519ab6b08162",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "2c1da429-dc1b-47ae-890d-9c2ef8e53f0a",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "2d7a9b80-ea9c-4e10-a5cf-e5681db1afd1",
+        "name": "Find",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "993f5081-e86b-45ab-908d-b7fbe36d5a60",
+        "name": "Replace",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "3c5764cb-21cd-4b15-83bc-a2117356382d",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

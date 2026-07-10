@@ -1,0 +1,74 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "caf685be-6fa2-43e8-b519-4ccd17c98d08",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "caf685be-6fa2-43e8-b519-4ccd17c98d08",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Pull changes from the remote repository",
+    "description": "Requires the Source Control feature to be licensed and connected to a repository.",
+    "tags": [
+      "SourceControl"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"force\": \"{{force}}\",\n  \"autoPublish\": \"{{autoPublish}}\",\n  \"variables\": \"{{variables}}\"\n}",
+      "path_template": "/source-control/pull"
+    },
+    "inputs": [
+      {
+        "id": "2adf3374-edca-47d1-9456-1ef839014f68",
+        "name": "force",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "16fd694c-d887-4aab-b60b-10cee8747155",
+        "name": "autoPublish",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": "none"
+      },
+      {
+        "id": "c450f877-34f0-4686-ae91-b9e50b56dc7a",
+        "name": "variables",
+        "type": "object",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "8b781b91-6151-4769-a3f2-c7775e86bb1e",
+        "name": "variables",
+        "path": "variables",
+        "type": "object"
+      },
+      {
+        "id": "74a1f5a0-48ec-4f1b-bf20-68403df1a90d",
+        "name": "credentials",
+        "path": "credentials",
+        "type": "array"
+      },
+      {
+        "id": "52efaef7-c0a5-4fbc-96d5-d2ea600537f8",
+        "name": "workflows",
+        "path": "workflows",
+        "type": "array"
+      },
+      {
+        "id": "44a221c0-6edb-4651-a48f-8aa9cbfea5b5",
+        "name": "tags",
+        "path": "tags",
+        "type": "object"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "76d5fa14-0c53-462a-ad75-fa517910f75c",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "76d5fa14-0c53-462a-ad75-fa517910f75c",
+    "name": "ITSD Asset Request Pipeline",
+    "description": "Process asset requests",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_name": "ITSD Asset Request",
+      "form_template_id": "8b686ef8-7024-419b-9631-71c5fd41911a"
+    },
+    "nodes": [
+      {
+        "id": "7ea136ca-6d1e-46cd-a46d-740ffb9efee0",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_name": "ITSD Asset Request",
+          "form_template_id": "8b686ef8-7024-419b-9631-71c5fd41911a"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Title",
+        "config": {
+          "title": "Asset: {{asset_type}} — {{requestor_name}}",
+          "template": "Asset: {{asset_type}} — {{requestor_name}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "log",
+        "type": "log",
+        "label": "Log",
+        "config": {
+          "message": "Asset request: {{asset_type}} for {{requestor_name}} — {{urgency}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "64441a36-1a2a-4f1d-ab4b-b8e91d86ffb9",
+        "source": "7ea136ca-6d1e-46cd-a46d-740ffb9efee0",
+        "target": "title"
+      },
+      {
+        "id": "6526a4b5-3df7-45a9-88bc-c7910f707519",
+        "source": "title",
+        "target": "log"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

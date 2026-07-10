@@ -1,0 +1,59 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "1060e990-b7c9-4302-aa12-38de5c125518",
+  "exported_at": "2026-07-10T22:54:35.395Z",
+  "asset": {
+    "id": "1060e990-b7c9-4302-aa12-38de5c125518",
+    "integration_id": "5f37d365-a6c5-4a4b-b8e0-a4878905fcb6",
+    "name": "Safalo: Search Messages",
+    "description": "Search for messages across the workspace",
+    "tags": [],
+    "request_config": {
+      "method": "GET",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/search.messages?query={{query}}&count={{count}}&sort={{sort}}&sort_dir={{sort_dir}}"
+    },
+    "inputs": [
+      {
+        "name": "query",
+        "type": "string",
+        "required": true,
+        "description": "Search query (supports Slack search modifiers: from:, in:, has:, before:, after:)",
+        "default_value": ""
+      },
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "description": "Max results",
+        "default_value": "20"
+      },
+      {
+        "name": "sort",
+        "type": "string",
+        "required": false,
+        "description": "Sort by: score or timestamp",
+        "default_value": "score"
+      },
+      {
+        "name": "sort_dir",
+        "type": "string",
+        "required": false,
+        "description": "Sort direction: asc or desc",
+        "default_value": "desc"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ok",
+        "type": "boolean"
+      },
+      {
+        "name": "messages",
+        "type": "object"
+      }
+    ]
+  }
+}

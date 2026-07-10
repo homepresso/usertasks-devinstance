@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "a348b540-d430-4d0e-8a99-8fb4ad15bb72",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "a348b540-d430-4d0e-8a99-8fb4ad15bb72",
+    "name": "Electric Coral",
+    "description": "A vibrant, eye-catching theme with coral-to-violet gradients, bright accents, and smooth animations",
+    "theme": {
+      "card": {
+        "border": "1.5px solid #EDE7F6",
+        "shadow": "0 4px 24px rgba(132, 94, 247, 0.08), 0 1px 4px rgba(0,0,0,0.04)",
+        "padding": "28px",
+        "background": "#FFFFFF",
+        "borderRadius": "20px"
+      },
+      "page": {
+        "padding": "32px",
+        "maxWidth": "820px",
+        "background": "#FAFBFF"
+      },
+      "colors": {
+        "accent": "#845EF7",
+        "cardBg": "#FFFFFF",
+        "danger": "#FF6B6B",
+        "primary": "#FF6B6B",
+        "success": "#51CF66",
+        "surface": "#FAFBFF",
+        "warning": "#FCC419",
+        "cardText": "#2D2B55",
+        "errorText": "#E03131",
+        "focusRing": "#845EF7",
+        "mutedText": "#8B83A8",
+        "primaryHover": "#EE5A5A",
+        "primaryLight": "#FFF0F0",
+        "surfaceBorder": "#E8E0F0",
+        "placeholderText": "#AEA8C4"
+      },
+      "inputs": {
+        "height": "44px",
+        "fontSize": "14px",
+        "background": "#FFFFFF",
+        "borderColor": "#DDD6F3",
+        "borderWidth": "1.5px",
+        "borderRadius": "12px",
+        "focusRingColor": "#845EF7",
+        "focusRingWidth": "3px"
+      },
+      "buttons": {
+        "height": "48px",
+        "fontSize": "15px",
+        "primaryBg": "#FF6B6B",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "12px",
+        "primaryHoverBg": "#EE5A5A"
+      },
+      "customCSS": "* { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); } input:focus, select:focus, textarea:focus { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(132, 94, 247, 0.15) !important; } .form-card:hover { box-shadow: 0 8px 32px rgba(132, 94, 247, 0.12), 0 2px 8px rgba(0,0,0,0.04); transform: translateY(-2px); } button[type=submit]:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255, 107, 107, 0.35); }",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "linear-gradient(135deg, #FAFBFF 0%, #F3EEFF 40%, #FFF0F0 100%)",
+        "buttonBackground": "linear-gradient(135deg, #FF6B6B 0%, #845EF7 100%)",
+        "headerBackground": "linear-gradient(135deg, #FF6B6B 0%, #845EF7 50%, #339AF0 100%)"
+      },
+      "typography": {
+        "fontSize": "14px",
+        "labelSize": "13px",
+        "fontFamily": "'Inter', 'SF Pro Display', system-ui, sans-serif",
+        "labelColor": "#4A4570",
+        "lineHeight": "1.6",
+        "headingSize": "22px",
+        "labelWeight": "600",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

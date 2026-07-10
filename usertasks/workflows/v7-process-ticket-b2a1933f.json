@@ -1,0 +1,224 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "b2a1933f-e3f4-46bd-8db0-6fce83ea1c1b",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "b2a1933f-e3f4-46bd-8db0-6fce83ea1c1b",
+    "name": "v7 Process Ticket",
+    "description": "Main ticket processing workflow triggered by form submission",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_template_id": "e173b467-16b5-4cd6-b8b0-bd96aa16ae7a"
+    },
+    "nodes": [
+      {
+        "id": "50b1dd45-9808-4557-bbc0-8986fe7d7020",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_template_id": "e173b467-16b5-4cd6-b8b0-bd96aa16ae7a"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "node_log_comment",
+        "name": "Log ticket received",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "table_id": "23129f55-af93-4931-aa7e-6b9bc04a6887",
+          "operation": "insert",
+          "column_values": {
+            "body": "Ticket received: {{ticket_title}}",
+            "author": "System",
+            "posted_at": "{{now}}",
+            "ticket_id": "{{ticket_row_id}}"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "node_route",
+        "name": "Route by priority",
+        "type": "decision_table",
+        "label": "Decision Table",
+        "config": {
+          "input_mappings": {
+            "category": "{{ticket_category}}",
+            "priority": "{{ticket_priority}}"
+          },
+          "decision_table_id": "9f4b0078-ff56-4304-8392-8cac943d4346"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "node_branch",
+        "name": "Priority branch",
+        "type": "condition",
+        "label": "Branch by Condition",
+        "config": {
+          "branches": [
+            {
+              "label": "Critical",
+              "logic": "and",
+              "rules": [
+                {
+                  "field": "ticket_priority",
+                  "value": "critical",
+                  "operator": "equals"
+                }
+              ]
+            },
+            {
+              "label": "Standard",
+              "logic": "or",
+              "rules": [
+                {
+                  "field": "ticket_priority",
+                  "value": "critical",
+                  "operator": "not_equals"
+                }
+              ]
+            }
+          ],
+          "has_else": true
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      },
+      {
+        "id": "node_triage",
+        "name": "Triage ticket",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "outcomes": [
+            "approved",
+            "rejected",
+            "needs_info"
+          ],
+          "task_title": "Triage: {{ticket_title}}",
+          "assignee_id": "{{ticket_requester_email}}",
+          "description": "Review and triage the submitted ticket",
+          "form_template_id": "57979ab9-4478-4a5a-a26c-8b2a963c1e89",
+          "task_description": "Review and triage the submitted ticket"
+        },
+        "position": {
+          "x": 220,
+          "y": 580
+        }
+      },
+      {
+        "id": "node_update_status",
+        "name": "Set status in_progress",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "row_id": "{{ticket_row_id}}",
+          "table_id": "1d0f53e0-14b2-42f2-ac8a-ab653fb69b7c",
+          "operation": "update",
+          "column_values": {
+            "status": "in_progress"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 720
+        }
+      },
+      {
+        "id": "node_email",
+        "name": "Notify requester",
+        "type": "send_email",
+        "label": "Send Email",
+        "config": {
+          "to": "{{ticket_requester_email}}",
+          "body": "Your ticket '{{ticket_title}}' is now being processed.",
+          "subject": "Ticket update: {{ticket_title}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 860
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "713189cc-83b9-47a7-9a2b-da7742ba6578",
+        "source": "50b1dd45-9808-4557-bbc0-8986fe7d7020",
+        "target": "node_log_comment"
+      },
+      {
+        "id": "8ab8d44f-baaa-42e9-b928-c12b88620e77",
+        "source": "node_log_comment",
+        "target": "node_route"
+      },
+      {
+        "id": "ccaacf77-3fe6-412c-96f7-608f15fbb18e",
+        "source": "node_route",
+        "target": "node_branch"
+      },
+      {
+        "id": "cda0bc72-1739-4383-a232-642fb114a17a",
+        "source": "node_branch",
+        "target": "node_triage"
+      },
+      {
+        "id": "7994fc9d-df99-4c81-a050-c1a3307edcab",
+        "source": "node_triage",
+        "target": "node_update_status"
+      },
+      {
+        "id": "7f8089ae-773c-4d3f-b504-bf567963bf88",
+        "source": "node_update_status",
+        "target": "node_email"
+      }
+    ],
+    "user_variables": [
+      {
+        "name": "ticket_title",
+        "type": "text",
+        "mapping": "{{form.title}}"
+      },
+      {
+        "name": "ticket_description",
+        "type": "text",
+        "mapping": "{{form.description}}"
+      },
+      {
+        "name": "ticket_category",
+        "type": "text",
+        "mapping": "{{form.category}}"
+      },
+      {
+        "name": "ticket_priority",
+        "type": "text",
+        "mapping": "{{form.priority}}"
+      },
+      {
+        "name": "ticket_requester_email",
+        "type": "text",
+        "mapping": "{{form.requester_email}}"
+      },
+      {
+        "name": "ticket_row_id",
+        "type": "text",
+        "mapping": "{{form.row_id}}"
+      }
+    ],
+    "swimlanes": [],
+    "is_active": true
+  }
+}

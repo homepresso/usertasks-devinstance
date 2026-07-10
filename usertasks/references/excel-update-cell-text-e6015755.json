@@ -1,0 +1,86 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "e6015755-577e-4b3d-9c0d-5937024e3dcd",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "e6015755-577e-4b3d-9c0d-5937024e3dcd",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Excel Update Cell Text",
+    "description": "Update text values in specific Excel cells.",
+    "tags": [
+      "Excel Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Cell\": \"{{Cell}}\",\n    \"Text\": \"{{Text}}\",\n    \"Sheet\": \"{{Sheet}}\"\n  }\n]",
+      "path_template": "/excel/update-cell-text"
+    },
+    "inputs": [
+      {
+        "id": "1a26153d-e9f2-448d-8e18-92e4b17e86a8",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "44982736-cbb4-4893-8145-5598c0e6b33b",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "c194e77a-72a0-4025-ad4d-9f84cc469c70",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "5b36f719-36e9-4e00-b748-32fbcc378858",
+        "name": "Cell",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "6c80e6d7-8bb6-443a-8d59-c0f9e42dd113",
+        "name": "Text",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "f14b9874-5a72-46bc-ace1-d3b1a29f964f",
+        "name": "Sheet",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "baf472a4-2b7f-46b9-bfd5-8b0802cd8585",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

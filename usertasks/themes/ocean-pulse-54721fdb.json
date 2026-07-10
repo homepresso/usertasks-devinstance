@@ -1,0 +1,78 @@
+{
+  "format_version": 3,
+  "asset_type": "themes",
+  "id": "54721fdb-8dfd-4199-857e-322c8797e860",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "54721fdb-8dfd-4199-857e-322c8797e860",
+    "name": "Ocean Pulse",
+    "description": "Bold teal-to-indigo theme with vivid gradients, crisp white cards, and energetic hover animations",
+    "theme": {
+      "card": {
+        "border": "1.5px solid #BAE6FD",
+        "shadow": "0 4px 24px rgba(14, 165, 233, 0.08), 0 1px 4px rgba(0,0,0,0.03)",
+        "padding": "28px",
+        "background": "#FFFFFF",
+        "borderRadius": "20px"
+      },
+      "page": {
+        "padding": "32px",
+        "maxWidth": "900px",
+        "background": "#F0F9FF"
+      },
+      "colors": {
+        "accent": "#F472B6",
+        "cardBg": "#FFFFFF",
+        "danger": "#EF4444",
+        "primary": "#0EA5E9",
+        "success": "#22C55E",
+        "surface": "#F0F9FF",
+        "warning": "#F59E0B",
+        "cardText": "#0C4A6E",
+        "errorText": "#DC2626",
+        "focusRing": "#0EA5E9",
+        "mutedText": "#7BA5C4",
+        "primaryHover": "#0284C7",
+        "primaryLight": "#E0F7FF",
+        "surfaceBorder": "#BAE6FD",
+        "placeholderText": "#93C5FD"
+      },
+      "inputs": {
+        "height": "44px",
+        "fontSize": "14px",
+        "background": "#FFFFFF",
+        "borderColor": "#BAE6FD",
+        "borderWidth": "1.5px",
+        "borderRadius": "12px",
+        "focusRingColor": "#0EA5E9",
+        "focusRingWidth": "3px"
+      },
+      "buttons": {
+        "height": "48px",
+        "fontSize": "15px",
+        "primaryBg": "#0EA5E9",
+        "fontWeight": "600",
+        "primaryText": "#FFFFFF",
+        "borderRadius": "12px",
+        "primaryHoverBg": "#0284C7"
+      },
+      "customCSS": "* { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); } input:focus, select:focus, textarea:focus { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(14, 165, 233, 0.18) !important; } .form-card:hover { box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12); transform: translateY(-2px); } button[type=submit]:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 28px rgba(99, 102, 241, 0.3); }",
+      "gradients": {
+        "cardBackground": "",
+        "formBackground": "linear-gradient(160deg, #F0F9FF 0%, #E0F2FE 30%, #FCE7F3 70%, #F0F9FF 100%)",
+        "buttonBackground": "linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%)",
+        "headerBackground": "linear-gradient(135deg, #0EA5E9 0%, #6366F1 50%, #F472B6 100%)"
+      },
+      "typography": {
+        "fontSize": "14px",
+        "labelSize": "13px",
+        "fontFamily": "'Inter', 'SF Pro Display', system-ui, sans-serif",
+        "labelColor": "#0C4A6E",
+        "lineHeight": "1.6",
+        "headingSize": "22px",
+        "labelWeight": "600",
+        "headingWeight": "700"
+      }
+    }
+  }
+}

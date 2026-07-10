@@ -1,0 +1,107 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "f303be68-5469-47dd-88d7-c52fc013d1b5",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "f303be68-5469-47dd-88d7-c52fc013d1b5",
+    "name": "Equipment Request Fulfillment",
+    "description": "Triggered when an IT equipment request form is submitted. Creates a task for IT to fulfill the request.",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_name": "IT Equipment Request",
+      "form_template_id": "cf7ab23f-fcdb-4187-90c6-c14f7f501733"
+    },
+    "nodes": [
+      {
+        "id": "3caed45f-eaa6-4ced-afba-66ffc058f145",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_name": "IT Equipment Request",
+          "form_template_id": "cf7ab23f-fcdb-4187-90c6-c14f7f501733"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "Equipment: {{equipment_type}} for {{employee_name}}",
+          "template": "Equipment: {{equipment_type}} for {{employee_name}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "it_task",
+        "type": "user_task",
+        "label": "User Task",
+        "config": {
+          "title": "Provision {{equipment_type}} for {{employee_name}}",
+          "outcomes": [
+            "Fulfilled",
+            "Backordered",
+            "Substitution Provided"
+          ],
+          "description": "Equipment Request Details:\n\nEmployee: {{employee_name}}\nType: {{equipment_type}}\nSpecs: {{specifications}}\nPriority: {{priority}}\nNeeded By: {{needed_by}}\nDeliver To: {{delivery_location}}\n\nSpecial Instructions: {{special_instructions}}",
+          "assign_to_user_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "update_status",
+        "type": "update_data_table",
+        "label": "Data",
+        "config": {
+          "values": {
+            "Status": "In Progress",
+            "Assigned IT Staff": "IT Team"
+          },
+          "table_id": "aab91ac1-714d-4bf5-9014-5a2f1ba89e94",
+          "operation": "update",
+          "table_name": "Equipment Requests",
+          "match_value": "{{employee_name}}",
+          "match_column": "Employee Name",
+          "column_values": {
+            "Status": "In Progress",
+            "Assigned IT Staff": "IT Team"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "cdde5f06-3305-4701-b70a-7da05002d2dd",
+        "source": "3caed45f-eaa6-4ced-afba-66ffc058f145",
+        "target": "title"
+      },
+      {
+        "id": "8bc2b09e-c633-4748-b766-811448e5a1ef",
+        "source": "title",
+        "target": "it_task"
+      },
+      {
+        "id": "dd520eab-77f3-415e-ac42-4508bc22c02d",
+        "source": "it_task",
+        "target": "update_status"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

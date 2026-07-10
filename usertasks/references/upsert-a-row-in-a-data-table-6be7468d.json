@@ -1,0 +1,71 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "6be7468d-327e-49ce-85c3-8a072750b2ca",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "6be7468d-327e-49ce-85c3-8a072750b2ca",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Upsert a row in a data table",
+    "description": "Update an existing row or insert a new one if no row matches the filter conditions.",
+    "tags": [
+      "DataTable"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"filter\": \"{{filter}}\",\n  \"data\": \"{{data}}\",\n  \"returnData\": \"{{returnData}}\",\n  \"dryRun\": \"{{dryRun}}\"\n}",
+      "path_template": "/data-tables/{{dataTableId}}/rows/upsert"
+    },
+    "inputs": [
+      {
+        "id": "1a43e483-c650-451c-8555-443bc5018662",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "c439d250-dddf-4be6-9429-f68050d5c882",
+        "name": "filter",
+        "type": "object",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "efba09d0-d293-4a8d-ac02-735a514b5b64",
+        "name": "data",
+        "type": "object",
+        "source": "variable",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "571482a6-8f19-49e6-9108-ff502391bfeb",
+        "name": "returnData",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "c148103d-4aca-4771-a514-025e25d304c8",
+        "name": "dryRun",
+        "type": "boolean",
+        "source": "variable",
+        "required": false,
+        "default_value": "false"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "05458464-2fae-45fd-9423-456b5a67c8d2",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

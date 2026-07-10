@@ -1,0 +1,41 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "c1286551-fca3-4115-80a2-f0dd9391f6d9",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "c1286551-fca3-4115-80a2-f0dd9391f6d9",
+    "integration_id": "bb901d09-0e33-4d90-876e-8362685c4ee5",
+    "name": "Azure Blog Storage: Delete Blob",
+    "description": "Delete a blob from Azure Storage",
+    "tags": [],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "body_template": "",
+      "path_template": "/{{container}}/{{blob_name}}"
+    },
+    "inputs": [
+      {
+        "name": "container",
+        "type": "string",
+        "required": false,
+        "description": "Container name",
+        "default_value": ""
+      },
+      {
+        "name": "blob_name",
+        "type": "string",
+        "required": true,
+        "description": "Blob name / path to delete",
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "name": "status",
+        "type": "number"
+      }
+    ]
+  }
+}

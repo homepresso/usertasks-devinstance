@@ -1,0 +1,95 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "27cad82a-e028-46f2-b8f6-b3ccbd358825",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "27cad82a-e028-46f2-b8f6-b3ccbd358825",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Excel Complex Operations",
+    "description": "Execute multiple Excel operations in a single request.",
+    "tags": [
+      "Excel Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "{\n  \"UpdateCellTextitems\": [\n    \"{{UpdateCellTextitems}}\"\n  ],\n  \"UpdateCellValueitems\": [\n    \"{{UpdateCellValueitems}}\"\n  ],\n  \"FindAndReplaceitems\": [\n    \"{{FindAndReplaceitems}}\"\n  ],\n  \"InsertData\": {\n    \"Placeholder\": \"{{InsertData.Placeholder}}\",\n    \"Values\": \"{{InsertData.Values}}\"\n  }\n}",
+      "path_template": "/excel/complex"
+    },
+    "inputs": [
+      {
+        "id": "2aad6bbb-4018-4292-82c9-5161491e6c64",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "12b1c245-30f4-48b6-a487-869f4470266b",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "47bc9662-5133-4ecc-b5c5-b2a4139a5f9d",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "a60637c4-41d4-4567-91ea-066b72ce8501",
+        "name": "UpdateCellTextitems",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "9c479156-fec1-4036-84cd-443e69c81308",
+        "name": "UpdateCellValueitems",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "48a1b600-d410-4197-ab9d-47bfcff93970",
+        "name": "FindAndReplaceitems",
+        "type": "array",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      },
+      {
+        "id": "abd04363-4973-4cdc-8098-ef79c831fc27",
+        "name": "InsertData",
+        "type": "object",
+        "source": "variable",
+        "location": "body",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "36399c2a-75b9-478e-a086-a096f1d34148",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

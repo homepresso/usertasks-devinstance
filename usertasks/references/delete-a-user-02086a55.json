@@ -1,0 +1,39 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "02086a55-d5b9-4b61-bb86-0d9524d597b7",
+  "exported_at": "2026-07-10T22:54:35.393Z",
+  "asset": {
+    "id": "02086a55-d5b9-4b61-bb86-0d9524d597b7",
+    "integration_id": "d0ebf538-c6d3-4986-ad29-6364913f968a",
+    "name": "Delete a user",
+    "description": "Delete a user from your instance.",
+    "tags": [
+      "User"
+    ],
+    "request_config": {
+      "method": "DELETE",
+      "headers": {},
+      "query_params": {},
+      "body_template": "",
+      "path_template": "/users/{{id}}"
+    },
+    "inputs": [
+      {
+        "id": "1e28d712-8849-46db-8461-7257c1dc0371",
+        "type": "string",
+        "source": "variable",
+        "required": false,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "fb9b30be-f276-4494-adcc-a4406a35b445",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}

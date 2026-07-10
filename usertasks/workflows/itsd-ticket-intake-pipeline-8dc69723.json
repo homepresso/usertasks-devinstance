@@ -1,0 +1,347 @@
+{
+  "format_version": 3,
+  "asset_type": "workflows",
+  "id": "8dc69723-ac2d-43e5-9801-f7bca101d065",
+  "exported_at": "2026-07-10T22:54:35.391Z",
+  "asset": {
+    "id": "8dc69723-ac2d-43e5-9801-f7bca101d065",
+    "name": "ITSD Ticket Intake Pipeline",
+    "description": "Full intake: gen# → priority → team → SLA → log → title → email → P1 escalation branch with escalation log",
+    "trigger_type": "form_submitted",
+    "trigger_config": {
+      "form_name": "ITSD Support Request",
+      "form_template_id": "01533214-81d6-4787-aabc-ace2023ae173"
+    },
+    "nodes": [
+      {
+        "id": "0aed6ace-7d5e-4ac7-805c-391cdbdb2668",
+        "type": "form_submitted",
+        "label": "Form Submitted",
+        "config": {
+          "form_name": "ITSD Support Request",
+          "form_template_id": "01533214-81d6-4787-aabc-ace2023ae173"
+        },
+        "position": {
+          "x": 300,
+          "y": 20
+        }
+      },
+      {
+        "id": "gen",
+        "type": "custom_activity",
+        "label": "Generate Ticket#",
+        "config": {
+          "inputs": {
+            "prefix": "INC"
+          },
+          "activity_name": "ITSD Ticket Number Generator",
+          "input_mappings": {
+            "prefix": "INC"
+          },
+          "custom_activity_id": "c6627fc1-6a50-4e12-ba74-15596904422f"
+        },
+        "position": {
+          "x": 220,
+          "y": 160
+        }
+      },
+      {
+        "id": "pri",
+        "type": "decision_table",
+        "label": "Route Priority",
+        "config": {
+          "inputs": {
+            "vip": "{{vip}}",
+            "impact": "{{impact}}",
+            "category": "{{category}}"
+          },
+          "input_mappings": {
+            "vip": "{{vip}}",
+            "impact": "{{impact}}",
+            "category": "{{category}}"
+          },
+          "decision_table_id": "15dff7b0-c33b-4b3e-a72e-918801cd851f",
+          "decision_table_name": "ITSD Priority Router"
+        },
+        "position": {
+          "x": 220,
+          "y": 300
+        }
+      },
+      {
+        "id": "team",
+        "type": "decision_table",
+        "label": "Route Team",
+        "config": {
+          "inputs": {
+            "category": "{{category}}"
+          },
+          "input_mappings": {
+            "category": "{{category}}"
+          },
+          "decision_table_id": "e509f839-8230-49ef-b0d6-2bc4617195b7",
+          "decision_table_name": "ITSD Team Router"
+        },
+        "position": {
+          "x": 220,
+          "y": 440
+        }
+      },
+      {
+        "id": "sla",
+        "type": "custom_activity",
+        "label": "Calculate SLA",
+        "config": {
+          "inputs": {
+            "response_minutes": 60,
+            "resolution_minutes": 480
+          },
+          "activity_name": "ITSD SLA Calculator",
+          "input_mappings": {
+            "response_minutes": "60",
+            "resolution_minutes": "480"
+          },
+          "custom_activity_id": "fe153cad-68b1-469f-8e79-f25261ae1024"
+        },
+        "position": {
+          "x": 220,
+          "y": 580
+        }
+      },
+      {
+        "id": "log",
+        "type": "update_data_table",
+        "label": "Log Ticket",
+        "config": {
+          "values": {
+            "status": "Open",
+            "subject": "{{subject}}",
+            "category": "{{category}}",
+            "priority": "{{pri.priority}}",
+            "sla_tier": "{{pri.sla_tier}}",
+            "department": "{{department}}",
+            "description": "{{description}}",
+            "submitted_at": "{{$now}}",
+            "assigned_team": "{{team.team}}",
+            "ticket_number": "{{gen.ticket_number}}",
+            "requester_name": "{{requester_name}}",
+            "requester_email": "{{requester_email}}"
+          },
+          "table_id": "80587cfb-732c-4e5a-ad2a-7656288ea9d1",
+          "operation": "insert",
+          "table_name": "ITSD Ticket Log",
+          "column_values": {
+            "status": "Open",
+            "subject": "{{subject}}",
+            "category": "{{category}}",
+            "priority": "{{pri.priority}}",
+            "sla_tier": "{{pri.sla_tier}}",
+            "department": "{{department}}",
+            "description": "{{description}}",
+            "submitted_at": "{{$now}}",
+            "assigned_team": "{{team.team}}",
+            "ticket_number": "{{gen.ticket_number}}",
+            "requester_name": "{{requester_name}}",
+            "requester_email": "{{requester_email}}"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 720
+        }
+      },
+      {
+        "id": "title",
+        "type": "set_title",
+        "label": "Set Title",
+        "config": {
+          "title": "{{gen.ticket_number}} — {{subject}}",
+          "template": "{{gen.ticket_number}} — {{subject}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 860
+        }
+      },
+      {
+        "id": "email",
+        "type": "send_email",
+        "label": "Confirmation",
+        "config": {
+          "to": "{{requester_email}}",
+          "body": "Hi {{requester_name}}, Ticket {{gen.ticket_number}} assigned to {{team.team}}. Priority: {{pri.priority}} | SLA: {{pri.sla_tier}}",
+          "subject": "{{gen.ticket_number}} — Your request has been received"
+        },
+        "position": {
+          "x": 220,
+          "y": 1000
+        }
+      },
+      {
+        "id": "check",
+        "type": "condition",
+        "label": "P1 Escalation?",
+        "config": {
+          "conditions": [
+            {
+              "if": "{{pri.escalate}} == true"
+            }
+          ]
+        },
+        "position": {
+          "x": 220,
+          "y": 1140
+        }
+      },
+      {
+        "id": "esc_gen",
+        "type": "custom_activity",
+        "label": "Gen Escalation ID",
+        "config": {
+          "inputs": {
+            "prefix": "ESC"
+          },
+          "activity_name": "ITSD Escalation ID Generator",
+          "input_mappings": {
+            "prefix": "ESC"
+          },
+          "custom_activity_id": "4305a23c-92b8-4992-a292-a46a00f2f7bb"
+        },
+        "position": {
+          "x": 220,
+          "y": 1280
+        }
+      },
+      {
+        "id": "esc_log",
+        "type": "update_data_table",
+        "label": "Log Escalation",
+        "config": {
+          "values": {
+            "reason": "Auto-escalation: {{pri.priority}} — {{category}}",
+            "escalated_at": "{{$now}}",
+            "escalated_by": "System",
+            "escalated_to": "{{team.team}}",
+            "new_priority": "{{pri.priority}}",
+            "escalation_id": "{{esc_gen.escalation_id}}",
+            "ticket_number": "{{gen.ticket_number}}"
+          },
+          "table_id": "230ba095-16c0-4738-b41f-aaef6f028f3c",
+          "operation": "insert",
+          "table_name": "ITSD Escalation Log",
+          "column_values": {
+            "reason": "Auto-escalation: {{pri.priority}} — {{category}}",
+            "escalated_at": "{{$now}}",
+            "escalated_by": "System",
+            "escalated_to": "{{team.team}}",
+            "new_priority": "{{pri.priority}}",
+            "escalation_id": "{{esc_gen.escalation_id}}",
+            "ticket_number": "{{gen.ticket_number}}"
+          }
+        },
+        "position": {
+          "x": 220,
+          "y": 1420
+        }
+      },
+      {
+        "id": "alert",
+        "type": "send_message",
+        "label": "P1 Alert",
+        "config": {
+          "body": "{{subject}} — {{category}} from {{requester_name}}",
+          "title": "P1 ESCALATION: {{gen.ticket_number}}",
+          "target_type": "project"
+        },
+        "position": {
+          "x": 220,
+          "y": 1560
+        }
+      },
+      {
+        "id": "done",
+        "type": "log",
+        "label": "Complete",
+        "config": {
+          "message": "Intake: {{gen.ticket_number}} — {{pri.priority}} — {{team.team}}"
+        },
+        "position": {
+          "x": 220,
+          "y": 1700
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "afa5b2c7-2844-4d90-ab75-1efa69a3cfcb",
+        "source": "0aed6ace-7d5e-4ac7-805c-391cdbdb2668",
+        "target": "gen"
+      },
+      {
+        "id": "95e47a05-b653-4b40-8a50-89ec6ee4bc0d",
+        "source": "gen",
+        "target": "pri"
+      },
+      {
+        "id": "4332fcce-65b1-49f2-b129-ed20eaf69df7",
+        "source": "pri",
+        "target": "team"
+      },
+      {
+        "id": "3a97067d-e15d-4893-87f7-48ed2ddec139",
+        "source": "team",
+        "target": "sla"
+      },
+      {
+        "id": "0dea90eb-84b8-41c6-b87b-d9e92a00d9aa",
+        "source": "sla",
+        "target": "log"
+      },
+      {
+        "id": "6b5fdbe5-fa63-46c5-9c34-5201567ee692",
+        "source": "log",
+        "target": "title"
+      },
+      {
+        "id": "477282b0-62a9-4f8a-a356-8c5980572a9f",
+        "source": "title",
+        "target": "email"
+      },
+      {
+        "id": "f2e396c7-4bf7-4ecf-a7f1-ab20d7a5dde4",
+        "source": "email",
+        "target": "check"
+      },
+      {
+        "id": "afcd4638-138a-41ed-a336-dfc911c36302",
+        "label": "if_0",
+        "source": "check",
+        "target": "esc_gen"
+      },
+      {
+        "id": "4bad86f3-a848-4994-aabe-43651613b370",
+        "label": "else",
+        "source": "check",
+        "target": "done"
+      },
+      {
+        "id": "776083bc-d892-4424-8a98-ff6ec614ce21",
+        "source": "esc_gen",
+        "target": "esc_log"
+      },
+      {
+        "id": "8f89ea7b-be3e-476d-b9bb-c3eff8f2fb9b",
+        "source": "esc_log",
+        "target": "alert"
+      },
+      {
+        "id": "14df1743-e5f7-45ec-8725-2c936dc84d5c",
+        "source": "alert",
+        "target": "done"
+      }
+    ],
+    "user_variables": [],
+    "swimlanes": [],
+    "is_active": false
+  }
+}

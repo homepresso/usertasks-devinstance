@@ -1,0 +1,77 @@
+{
+  "format_version": 3,
+  "asset_type": "references",
+  "id": "ccdb7a5d-e5c0-416c-aae8-e2524cab476e",
+  "exported_at": "2026-07-10T22:54:35.396Z",
+  "asset": {
+    "id": "ccdb7a5d-e5c0-416c-aae8-e2524cab476e",
+    "integration_id": "b3a7a914-4ece-4189-ab20-a4f22112ff62",
+    "name": "Word Find and Replace",
+    "description": "Find and replace text placeholders in a Word document. Replaces ALL occurrences of each placeholder.",
+    "tags": [
+      "Word Processing"
+    ],
+    "request_config": {
+      "method": "POST",
+      "headers": {},
+      "query_params": {},
+      "body_template": "[\n  {\n    \"Find\": \"{{Find}}\",\n    \"Replace\": \"{{Replace}}\"\n  }\n]",
+      "path_template": "/word/find-replace"
+    },
+    "inputs": [
+      {
+        "id": "7ef56038-22a6-4fe0-8ba7-86cb56e65d23",
+        "name": "DocID",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "9b5a116b-6d4e-41fc-a76a-9942bb2d20f5",
+        "name": "responseFormat",
+        "type": "string",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "file"
+      },
+      {
+        "id": "1620d118-1c88-4dab-846b-1fa95f792ee8",
+        "name": "AutoDeleteDoc",
+        "type": "boolean",
+        "source": "variable",
+        "location": "query",
+        "required": false,
+        "default_value": "false"
+      },
+      {
+        "id": "9e45b569-79f4-4760-9940-47600203e622",
+        "name": "Find",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      },
+      {
+        "id": "f443fbc9-36c9-479c-aab8-d874b9c42e0d",
+        "name": "Replace",
+        "type": "string",
+        "source": "variable",
+        "location": "body",
+        "required": true,
+        "default_value": ""
+      }
+    ],
+    "outputs": [
+      {
+        "id": "1f329954-6cbc-407f-8acd-972d6c4184d0",
+        "name": "response",
+        "path": "",
+        "type": "object"
+      }
+    ]
+  }
+}
