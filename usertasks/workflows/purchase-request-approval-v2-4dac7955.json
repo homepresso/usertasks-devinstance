@@ -2,7 +2,7 @@
   "format_version": 3,
   "asset_type": "workflows",
   "id": "4dac7955-0c3b-462c-97d0-6ec13cf91825",
-  "exported_at": "2026-07-10T23:47:41.661Z",
+  "exported_at": "2026-07-16T00:55:22.704Z",
   "asset": {
     "id": "4dac7955-0c3b-462c-97d0-6ec13cf91825",
     "name": "Purchase Request Approval v2",
@@ -20,7 +20,7 @@
           "form_template_id": "40726f03-daf8-4fa6-a3db-46b1d898792f"
         },
         "position": {
-          "x": 40,
+          "x": 80,
           "y": 20
         }
       },
@@ -32,7 +32,7 @@
           "title": "PR: {{title}} - ${{amount}}"
         },
         "position": {
-          "x": 220,
+          "x": 80,
           "y": 160
         }
       },
@@ -49,7 +49,7 @@
           }
         },
         "position": {
-          "x": 220,
+          "x": 80,
           "y": 300
         }
       },
@@ -66,8 +66,8 @@
           "decision_table_id": "108d014a-b432-4307-929c-626f709d205c"
         },
         "position": {
-          "x": 220,
-          "y": 440
+          "x": 80,
+          "y": 420
         }
       },
       {
@@ -84,8 +84,8 @@
           "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
         },
         "position": {
-          "x": 220,
-          "y": 580
+          "x": 80,
+          "y": 560
         }
       },
       {
@@ -102,8 +102,8 @@
           }
         },
         "position": {
-          "x": 220,
-          "y": 720
+          "x": 80,
+          "y": 680
         }
       },
       {
@@ -116,8 +116,8 @@
           "subject": "Approved: {{title}}"
         },
         "position": {
-          "x": 220,
-          "y": 860
+          "x": 80,
+          "y": 820
         }
       },
       {
@@ -133,8 +133,8 @@
           }
         },
         "position": {
-          "x": 220,
-          "y": 1000
+          "x": 380,
+          "y": 680
         }
       },
       {
@@ -147,8 +147,8 @@
           "subject": "Declined: {{title}}"
         },
         "position": {
-          "x": 220,
-          "y": 1140
+          "x": 380,
+          "y": 820
         }
       },
       {
@@ -161,8 +161,8 @@
           "subject": "More info needed: {{title}}"
         },
         "position": {
-          "x": 220,
-          "y": 1280
+          "x": 680,
+          "y": 680
         }
       },
       {
@@ -178,8 +178,8 @@
           "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
         },
         "position": {
-          "x": 220,
-          "y": 1420
+          "x": 380,
+          "y": 560
         }
       },
       {
@@ -195,8 +195,8 @@
           }
         },
         "position": {
-          "x": 220,
-          "y": 1560
+          "x": 1000,
+          "y": 680
         }
       },
       {
@@ -213,8 +213,8 @@
           "assignee_id": "12ef3b91-cb1d-479a-8537-c690647c3bd3"
         },
         "position": {
-          "x": 220,
-          "y": 1700
+          "x": 680,
+          "y": 820
         }
       },
       {
@@ -231,8 +231,8 @@
           }
         },
         "position": {
-          "x": 220,
-          "y": 1840
+          "x": 80,
+          "y": 960
         }
       },
       {
@@ -245,8 +245,8 @@
           "subject": "Fully Approved: {{title}}"
         },
         "position": {
-          "x": 220,
-          "y": 1980
+          "x": 80,
+          "y": 1080
         }
       },
       {
@@ -262,8 +262,8 @@
           }
         },
         "position": {
-          "x": 220,
-          "y": 2120
+          "x": 1300,
+          "y": 680
         }
       },
       {
@@ -279,8 +279,8 @@
           }
         },
         "position": {
-          "x": 220,
-          "y": 2260
+          "x": 380,
+          "y": 960
         }
       },
       {
@@ -291,8 +291,8 @@
           "message": "PR '{{title}}' workflow completed"
         },
         "position": {
-          "x": 220,
-          "y": 2400
+          "x": 80,
+          "y": 1220
         }
       }
     ],
@@ -431,6 +431,6 @@
       }
     ],
     "swimlanes": [],
-    "is_active": false
+    "is_active": true
   }
 }
